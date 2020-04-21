@@ -1,0 +1,18 @@
+Acest director include un exemplu de invocare a unui serviciu Web
+via HTTP (se bazeaza pe unele dintre principiile REST).
+
+* rest.php - un program PHP care recurge la libcurl si DOM pentru 
+             a invoca un serviciu Web public de prescurtare de URL-uri
+
+Detalii privitoare la biblioteca libcurl sunt disponibile la 
+<https://curl.haxx.se/>.
+
+A se consulta si manualul PHP aferent:
+<https://secure.php.net/manual/en/book.curl.php>.
+
+Toate aceste fisiere au fost concepute de Sabin-Corneliu Buraga (2012, 2014, 2017)
+putand fi utilizate sub auspiciile prevazute de 
+Creative Commons Attribution-NonCommercial-ShareAlike License: 
+http://creativecommons.org/licenses/
+
+Ultima actualizare: 14 mai 2018

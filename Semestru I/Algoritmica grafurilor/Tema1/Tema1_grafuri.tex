@@ -1,0 +1,193 @@
+\documentclass[paper=a4, fontsize=12pt]{scrartcl}
+\usepackage[left=29mm,top=26mm,right=29mm,bottom=25mm]{geometry}
+\usepackage{titling}
+\usepackage{mathtools}
+\usepackage{amsmath}
+
+\renewcommand{\thesubsection}{\thesection.\alph{subsection}}
+\setlength{\droptitle}{-9em}
+\title{\textbf{Algoritmica grafurilor - Tema 1}}
+\author{Bucătaru Andreea A2 \and Bulboacă Maria A2}
+\date{\normalsize\ 09 noiembrie 2018}
+
+\begin{document}
+
+\maketitle
+
+\section*{Problema 1}
+\paragraph{}
+Definirea grafului: $G=\left(V,E\right)$ digraf conex, unde $V$ este mulțimea
+nodurilor, un nod reprezentând intersecțiile dintre străzi,
+iar $E$ este mulțimea muchiilor (sensurilor de stradă).
+
+Întrebarea se rezumă la câte muchii trebuie eliminate astfel încât să nu existe
+circuite în graful dat. Observăm că blocarea unui sens al unei străzi cu dublu sens este același lucru cu inversarea acelui sens.
+
+Pentru a nu exista circuite în digraful dat, nodurile ar trebui să poată fi 
+sortate topologic.
+
+Sortarea topologică realizează o aranjare liniară a nodurilor în funcție de
+muchiile dintre ele. Orientarea muchiilor corespunde unei relații de ordine
+de la nodul sursă către cel destinație. Astfel, dacă $(u, v)$ este una dintre
+muchiile grafului, $u$ trebuie să apară înaintea lui $x$ în înșiruire. Dacă
+graful ar fi ciclic, nu ar putea exista o astfel de înșiruire (nu se poate
+stabili o ordine între nodurile care alcătuiesc un ciclu).
+
+Altfel spus, pentru a obține un digraf aciclic putem elimina (inversa) p
+muchii (sensuri de străzi) astfel încât să obținem o sortare topologică,
+după următorul algoritm:
+\vspace{-1.3em}
+\subparagraph{-}
+cât timp mai există noduri, încercăm să le sortăm topologic
+\vspace{-1.3em}
+\subparagraph{-}
+dacă există un nod cu gradul interior 0, îl eliminăm din digraf și eliminăm toate muchiile incidente cu el
+\vspace{-1.3em}
+\subparagraph{-}
+dacă nu există niciun astfel de nod, atunci alegem unul cu gradul interior minim și îi inversăm sensurile (aceleași pe care le-am bloca) astfel încât gradul lui interior să devină 0. Apoi îl eliminăm pe el și toate muchiile incidente.
+
+În acest fel, ne asigurăm că scapăm de circuite (nu putem merge în cerc) și că la fiecare pas blocăm/inversăm un număr minim de sensuri, deoarece alegem acel vârf cu gradul interior cel mai mic.
+
+\bigskip
+Mai jos prezentăm o soluție alternativă.
+
+Fie mulțimea de circuite $C = \{C_1, ..., C_n\}$ înainte de blocarea vreunui sens.
+Procesăm fiecare circuit în următorul fel:
+\vspace{-1.3em}
+\subparagraph{-}
+În cazul în care circuitul curent nu mai există (a fost eliminat anterior), trecem la circuitul următor.
+\vspace{-1.3em}
+\subparagraph{-}
+În cazul circuitelor care conțin doar străzi cu dublu sens sau doar 
+străzi cu sens unic, inversăm același sens pe care l-am fi blocat.
+\vspace{-1.3em}
+\subparagraph{-}
+În cazul circuitelor care conțin străzi cu dublu sens și străzi cu 
+sens unic, alegem oricare stradă cu dublu sens și inversăm sensul care 
+ajută la formarea circuitului.
+
+Astfel, se poate îndepărta posibilitatea de a merge în cerc în oraș, 
+inversând $p$ sensuri de străzi.
+
+\section*{Problema 2}
+\paragraph{}
+Operația binară definită în enunț se referă la produsul cartezian (puțin modificat) între două grafuri, fiecare graf având măcar 2 noduri.
+Trebuie să arătăm că $G_1 \odot G_2$ este conex dacă și numai dacă $G_1$ și $G_2$ sunt conexe și unul dintre ele conține un circuit impar.
+
+"$\Rightarrow$" Arătăm că $G_1$, $G_2$ conexe și unul dintre ele conține un circuit impar, dacă $G_1 \odot G_2$ conex.
+
+Fie $u_1, v_1 \in V_1$ și $u_2 \in V_2$.
+Presupunem că există un drum de la $(u_1, u_2)$ la $(v_1, u_2)$ în $G_1 \odot G_2$, de forma
+$(u_1u_2, u_1x_2, ..., u_1t_2, u_1v_2, ..., x_1u_2, ..., v_1u_2, v_1v_2)$.
+
+Din prima componentă extragem un drum din $G_1$, renunțând la copiile multiple ale aceluiași nod: $(u_1, t_1, w_1, ..., z_1, ..., v_1)$
+$\Rightarrow \exists$ în $G_1$ un drum de la $u_1$ la $v_1$, deci $G_1$ este conex.
+
+Analog, extragem un drum din $G_2$,  renunțând la copiile multiple ale aceluiași nod: $(u_2, x_2, t_2, ...,v_2)$
+$\Rightarrow \exists$ în $G_2$ un drum de la $u_2$ la $v_2$, deci $G_2$ este conex.
+
+Pentru ca un graf să aibă un circuit impar, trebuie să nu fie bipartit.
+
+\bigskip
+"$\Leftarrow$" Arătăm că $G_1 \odot G_2$ conex, dacă $G_1$, $G_2$ conexe și unul dintre ele conține un circuit impar.
+
+Fie $u_1, v_1 \in V_1$ și $u_2, v_2 \in V_2$.
+Presupunem că există un drum de la $u_1$ la $v_1$ din $G_1$ și
+un drum de la $u_2$ la $v_2$ din $G_2$.
+
+Drumul din $G_1$ este de forma $(u_1, x_1, ..., t_1, v_1)$.
+
+Drumul din $G_2$ este de forma $(u_2, x_2, ..., t_2, v_2)$.
+
+Aplicând produsul cartezian, obținem:
+$(u_1u_2, u_1x_2, ..., u_1t_2, u_1v_2, ..., x_1u_2, ..., v_1u_2, v_1v_2)$.
+$\Rightarrow \exists$ un drum de la $u_1u_2$ la $v_1v_2$ în $G_1 \odot G_2$, deci $G_1 \odot G_2$ este conex. 
+   
+\section*{Problema 3}
+\paragraph{a)}
+Arătăm că, dacă îndepărtăm din matricea de incidență a unui arbore o coloană corespunzătoare unui nod dat, se obține o matrice pătratică nesingulară.
+
+Fie un arbore $T$. Notăm matricea de incidență a lui $T$ cu $M_T$, iar matricea de incidență rezultată prin îndepărtarea unei coloane corespunzătoare unui nod dat, cu $N_T$.
+
+Observații:
+\vspace{-1.3em}
+\subparagraph{-}
+O matrice pătratică $A$ este nesingulară dacă $det(A) \neq 0$.
+\vspace{-1.3em}
+\subparagraph{-}
+O matrice pătratică $n \times n$ este nesingulară dacă $rang(A) = n$.
+\vspace{-1.3em}
+\subparagraph{-}
+Cum fiecare muchie este incidență cu exact alte 2 muchii, matricea de incidență va avea pe fiecare coloană câte două valori de 1. Numărul de valori de 1 de pe fiecare linie este gradul nodului respectiv.
+\vspace{-1.3em}
+\subparagraph{-}
+Rangul matricei de incidență pentru un graf conex este $n-1$. Rangul matricei de incidență pentru un graf neconex, cu $k$ componente conexe, este $n-k$.
+
+Un arbore $T$ cu n noduri are $n-1$ muchii și este conex. Deci $N_T$ este o matrice pătratică de ordin $n-1$ și rang $n-1$.
+
+Presupunem un graf $G$ cu $n$ noduri și $n-1$ muchii care nu este un arbore. Deci $G$ este neconex. Rangul unei matrice de incidență pentru un graf neconex, cu $k$ componente conexe, este $n-k$. Deci rangul $N_G$ este $< (n-1)$. $(1)$
+
+Matricea $N_T$ este $(n-1) \times (n-1)$, deci rangul ei ar trebui să fie $n-1$ pentru ca matricea să fie nesingulară. $(2)$
+
+Din $(1)$ și $(2)$ rezultă contradicție. Matricea $N_T$ este nesingulară dacă și numai dacă graful este un arbore.
+
+\paragraph{b)}
+Arătăm că dacă $C$ este un circuit, atunci $M_C$ este matrice nesingulară $\Leftrightarrow C$ este impar. 
+
+Fie $C$ un circuit cu nodurile $1, …, n$ cu $n \geq 3$ și $M$ este matricea de incidență a lui $C$. Atunci determinatul lui $M$ este $0$ dacă $n$ este par și $2$ dacă $n$ este impar.
+
+Pentru ca un graf să aibă un circuit impar, trebuie să nu fie bipartit.
+
+Fie $G$ un graf conex cu $n$ noduri și $M$ matricea de incidență a lui $G$. Atunci rangul lui $M$ este $n-1$ dacă $G$ este bipartit și $n$ dacă nu este bipartit.
+
+\section*{Problema 4}
+\paragraph{a)}
+Presupunem că suntem la iterația $i$ a buclei $while$. Există un $j$ din $V \backslash S$ și un drum $p$ de la $s$ la $j$, astfel încât $\underset{x \in V \backslash S}{min} u^F_x = a(p)$.
+$\underset{x \in V \backslash S}{min} u^F_x$ nu se schimbă cât timp $j$ este din $V \backslash S$. În momentul în care $j$ este ales ca $j ^ *$, $j$ este adăugat mulțimii $S$, deci $\underset{x \in V \backslash S}{min} u^F_x \neq a(p)$. 
+În acest moment, există un alt nod $j'$ și un drum $p'$ de la $s$ la $j'$, astfel încât $\underset{x \in V \backslash S}{min} u^F_x = a(p')$. 
+Presupunem prin reducere la absurd că $a(p') < a(p)$ (minimul ar descrește). Dar dacă aceasta s-ar întâmpla, atunci $j'$ ar fi fost ales în locul lui $j$ la început.
+Deci $a(p') \geq a(p)$, deci $\underset{j \in V \backslash S}{min} u^F_j$ nu descrește. 
+
+După același raționament, $\underset{l \in V \backslash T}{min} u^B_l$ nu descrește.
+
+\paragraph{b)}
+Invariantul algoritmului Dijkstra ne spune că $u^F_j = a(P_{sj}), \forall j \in S$. Analog, $u^B_k = a(P_{kt}), \forall k \in T$.
+
+Știm că $P_{st}$ este un drum de cost minim între $(s,t)$ format din nodurile $s, ..., j, j', l', l, ..., t$.
+Deducem că drumul $(i, ..., x, ..., j), \forall i,j \in V(P_{st})$, are costul minim. Deci $a(i, ..., j) = a(P_{ij})$.
+Presupunem prin reducere la absurd că ar exista un alt drum $(i, ..., x', ..., j)$ cu cost mai mic. 
+Asta înseamnă că am putea alege această variantă de a ajunge din $i$ în $j$ (prin intermediul lui $x'$) pentru a scădea costul drumului $P_{st}$.
+Dar știm deja că $a(P_{st})$ este minim, deci avem contradicție.
+
+Folosind aceasta, demonstrăm $a(P_{st}) \geq u^F_j + a_{jj'} + a_{l'l} + u^B_l$. Putem scrie costul drumului ca fiind următorul: 
+$a(P_{st}) = a(P_{sj}) + a_{jj'} + a(P_{j'l'}) + a_{l'l} + a(P_{l't})$. Deoarece $P_{sj}, P_{j'l'}$ și $P_{l't}$ au costuri minime, rezultă că
+$a(P_{sj}) = u^F_j$ și $a(P_{l't}) = u^B_{l'}$. Deci $a(P_{st}) = u^F_j + a_{jj'} + a(P_{j'l'}) + a_l'l + u^B_{l'}$.
+Lucrăm doar cu muchii cu costuri pozitive, deci $a(P_{j'l'}) \geq 0 \Rightarrow a(P_{st}) \geq u^F_j + a_{jj'} + a_{l'l} + u^B_l$.
+În cazul în care $j' = l'$, avem $a(P_{j'l'}) = 0$, deci $a(P_{st}) = u^F_j + a_{jj'} + a_{l'l} + u^B_l$. 
+
+Demonstrăm că $u^F_j + a_{jj'} + a_{l'l} + u^B_l \geq \underset{h \in V \backslash S}{min} u^F_h + \underset{k \in V \backslash T}{min} u^B_k$.
+Știm că drumul $(s, ..., j')$ are cost minim, deci $a(s, ..., j') = u^F_{j'} = u^F_j + a_{jj'}$, unde $j' \in V \backslash S$.
+Analog, $a(l', ..., t) = u^B_{l'} = u^B_l + a_{l'l}$, unde $l' \in V \backslash T$. Presupunem prin reducere la absurd că
+$\underset{h \in V \backslash S}{min} u^F_h > u^F_j + a_{jj'}$ și că 
+$\underset{k \in V \backslash T}{min} u^B_k > u^B_l + a_{l'l} \Leftrightarrow \underset{h \in V \backslash S}{min} u^F_h > u^F_{j'}$ și $\underset{k \in V \backslash T}{min} u^B_k > u^B_{l'}$.
+Observăm că $h, j' \in V \backslash S$ și că $k, l' \in V \backslash T$. Dacă $\underset{h \in V \backslash S}{min} u^F_h$ ar fi mai mare decât $u^F_{j'}$, atunci
+$u^F_{j'}$ ar fi ales ca $\underset{h \in V \backslash S}{min} u^F_h$. Analog pentru $\underset{k \in V \backslash T}{min} u^B_k$. Contradicție 
+$\Rightarrow \underset{h \in V \backslash S}{min} u^F_h \leq u^F_{j'}$ și
+$\underset{k \in V \backslash T}{min} u^B_k \leq u^B_{l'} \Rightarrow u^F_{j'} + u^B_{l'} \geq \underset{h \in V \backslash S}{min} u^F_h + \underset{k \in V \backslash T}{min} u^B_k$
+$\Rightarrow u^F_j + a_{jj'} + a_{l'l} + u^B_l \geq \underset{h \in V \backslash S}{min} u^F_h + \underset{k \in V \backslash T}{min} u^B_k$.
+
+Avem $a(P_{st}) \geq u^F_j + a_{jj'} + a_{l'l} + u^B_l$ și 
+$u^F_j + a_{jj'} + a_{l'l} + u^B_l \geq \underset{h \in V \backslash S}{min} u^F_h + \underset{k \in V \backslash T}{min} u^B_k$.
+Rezultă că $a(P_{st}) \geq u^F_j + a_{jj'} + a_{l'l} + u^B_l \geq u^F_j + a_{jj'} + a_{l'l} + u^B_l \geq \underset{h \in V \backslash S}{min} u^F_h + \underset{k \in V \backslash T}{min} u^B_k$.
+
+\paragraph{c)}
+Observăm că $after(x)$ și $before(y)$ întotdeauna sunt noduri din $S$, respectiv $T$.
+În funcție de $return$-ul pe care s-a intrat, avem două cazuri pentru drumul $p = s, ..., before(i),$ $i, after(i), ..., t$:
+\vspace{-1.3em}
+\subparagraph{\normalfont 1.}
+$s, ..., before(i) \in S$ și $i, after(i), ..., t \in T$
+\vspace{-1.3em}
+\subparagraph{\normalfont 2.}
+$s, ..., before(i), i \in S$ și $after(i), ..., t \in T$ 
+
+\end{document}

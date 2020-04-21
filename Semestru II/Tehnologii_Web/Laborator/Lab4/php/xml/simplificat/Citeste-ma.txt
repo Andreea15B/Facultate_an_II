@@ -1,0 +1,22 @@
+Acest director contine exemplificari de procesare simplificata 
+a documentelor XML folosind limbajul PHP.
+
+Pentru detalii, a se studia Sabin Buraga, "Tehnologii XML", Polirom, 2006:
+http://www.info.uaic.ro/~busaco/books/xml/
+
+In directorul projects\
+* projects.php - program care proceseaza un document XML prin intermediul
+                 interfetei simplificate SimpleXML
+* projects.xml - un document XML de test
+
+In directorul atom\
+* atom.xml     - document Atom continand stirile privitoare la un blog,
+                 generate de Blogger.com
+* viewatom.php - program folosit la extragerea stirilor dintr-un document Atom
+
+Toate aceste fisiere au fost scrise de Sabin-Corneliu Buraga (2006-2009, 2013).
+Permisiunile de utilizare sunt cele stipulate de 
+Creative Commons Attribution-NonCommercial-ShareAlike: 
+http://creativecommons.org/licenses/
+
+Ultima actualizare: 16 aprilie 2013

@@ -1,0 +1,42 @@
+Acest director contine o serie de fisiere pentru a ilustra modul de validare
+a unui document XML, folosind declaratii DTD -- aceste exemple de 
+cod-sursa sunt prezentate pe larg in cartea Sabin Buraga, 
+"Tehnologii XML", Polirom, 2006 -- disponibila online la adresa
+<https://www.slideshare.net/busaco/sabin-buraga-tehnologii-xml>.
+
+In directorul projects/
+* projects-dtd.xml 
+    - un exemplu de fisier XML stocand informatii despre proiecte studentesti 
+      si incluzand un DTD intern
+
+In directorul cuprins/
+* cuprins.dtd 
+    - DTD-ul folosit pentru validarea documentelor XML referitoare 
+      la cuprinsul unei carti
+* cuprins-dtd.xml 
+    - un fisier XML valid utilizat pentru verificarea validitatii 
+      via un DTD extern
+
+Alte exemple sunt oferite de situl ZVON
+<http://zvon.org/xxl/DTDTutorial/General/contents.html>.
+
+Pentru verificarea validitatii, folositi una dintre alternativele:
+
+- analizorul facand parte din Apache Xerces <https://xerces.apache.org/>
+- utilitarul xmllint disponibil in majoritatea distributiilor Linux
+    (poate fi apelat si via editorul Kate din KDE) 
+    bazat pe biblioteca libxml <http://xmlsoft.org/>
+- programul xml-validator.cs -- se pot folosi atat scheme XML, 
+    cat si declaratii DTD; a se compila cu "csc xml-validator.cs" si 
+    a se executa cu "xml-validator <fisier.xml> [ --dtd ]" 
+- programul xml-validator.php -- poate valida conform declaratiilor DTD, 
+    schemelor XML si RELAX NG
+- editorul <oXygen /> disponibil la <https://www.oxygenxml.com/>
+- mediul Visual Studio <https://www.visualstudio.com/free-developer-offers/>
+
+Toate aceste fisiere au fost scrise de Sabin-Corneliu Buraga
+(2000-2007, 2009, 2011, 2012, 2018).
+
+Portiuni din codul programului xml-validator.cs apartin Microsoft.
+
+Ultima actualizare: 20 martie 2019

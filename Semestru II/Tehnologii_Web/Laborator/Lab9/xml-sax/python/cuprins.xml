@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<!-- Exemplu de marcare a datelor in XML 
+     (un fragment de cuprins de carte)
+
+     Autor: Sabin-Corneliu Buraga - http://www.infoiasi.ro/~busaco/
+     Versiune: 2.0 / 2008, 2009
+     Ultima modificare: 20 martie 2009
+-->
+<cuprins titlu="Programarea in Web 2.0" editura="Polirom" an="2007">
+  <capitol id="cap3">
+    <nume>Inginerie Web -- revizuirea codului-sursa</nume>
+    <autor>Ciprian Amariei</autor>
+    <autor>Andreea Pantescu</autor>
+    <descriere>In acest capitol, vom prezenta aspecte ale dezvoltarii unei aplicatii Web pentru revizuirea codului sursa ca parte integranta a ingineriei software. Conceptul de revizuire a codului-sursa a fost generalizat, implementand o platforma pentru compararea si revizuirea oricaror tipuri de date pe baza de plugin-uri ale cadrului de lucru pe care l-am dezvoltat in limbajul PHP 5 -- DRF (Data Review Framework). De asemenea, vom descrie si arhitectura unei aplicatii Web -- CodeReview -- care a fost creata utilizand interfata de programare oferita de DRF.</descriere>
+  </capitol>
+  <capitol id="cap4">
+    <nume>Recomandari Web prin intermediul microformatelor</nume>
+    <autor>Anca Paula Luca</autor>
+    <descriere>Vom prezenta o privire generala asupra sistemelor de recomandare de continut Web din perspectiva aplicabilitatii acestora in Web-ul actual si a folosirii marcajului semantic definit de microformate ca sursa de date. Vom urmari pasii constructiei unui instrument care poate "intelege" comportamentul unui utilizator pe Web si care filtreaza datele irelevante, prezentandu-i acestuia numai informatiile de interes. Din punctul de vedere al interactiunii cu utilizatorul, scopul este constructia unui asistent de navigare discret, non-intruziv, care sa nu solicite utilizatorului comunicarea preferintelor sau feedback explicit.</descriere>
+  </capitol>  
+</cuprins>  

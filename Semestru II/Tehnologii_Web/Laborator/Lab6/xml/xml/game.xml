@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<game>
+	<title>Angry Profs</title>
+	<platform type="tablet">Android</platform>
+	<platform min-version="9" type="tablet">iOS</platform>
+	<platform min-version="10">Windows</platform>
+	<url>...</url>
+	<player>
+		<identity>
+			<first-name>Sabin</first-name>
+			<last-name>Buraga</last-name>
+			<!-- ... -->
+		</identity>
+		<points>30374</points>
+	</player>
+</game>

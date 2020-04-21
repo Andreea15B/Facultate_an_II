@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head>
+<title>Generare dinamica a unui formular Web</title>
+<meta charset="utf-8" />
+<style type="text/css">
+div.interactiv {
+  border-style: dotted;
+  border-width: 1px;
+  border-color: gray;
+  width: 20em;
+  padding: 1em;
+  margin: 0.1em;
+  font-family: sans-serif;
+}
+</style>
+<script type="text/javascript">
+function adaugaControl (element, tip, nume, explicatie) {
+  var control = document.createElement ('input');
+  control.type = tip;
+  control.id = nume;
+  
+  var eticheta = document.createElement('label');
+  eticheta.htmlFor = nume;
+  eticheta.innerHTML = explicatie;
+  eticheta.style["background"] = '#333'; // alterare stiluri CSS
+  eticheta.style["color"] = '#fff';
+  eticheta.style["padding"] = '0.1em';
+  
+  var container = document.createElement ('div'); 
+  container.className = "interactiv";
+  container.appendChild (eticheta);
+  container.appendChild (control);
+
+  element.appendChild (container);
+}
+</script>
+</head>
+<body>
+<form id="unFormular">
+<!-- corpul formularului va fi generat via JavaScript -->
+</form>
+<script type="text/javascript">
+var formular = document.getElementById ('unFormular');
+adaugaControl (formular, 'text', 'nume', 'Numele meu: ');
+adaugaControl (formular, 'password', 'parola', 'Codul secret: ');
+adaugaControl (formular, 'checkbox', 'particip', 'Particip? ');
+</script>
+</body>
+</html>

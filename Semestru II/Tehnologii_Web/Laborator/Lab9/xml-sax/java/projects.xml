@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<!-- Document XML continind informatii despre proiectele propuse
+     la "Tehnologii Web" (fragment)
+     
+     Autor: Sabin-Corneliu Buraga - busaco@infoiasi.ro
+     Versiune: 1.7 / 2002-2005
+     Ultima actualizare: 20 noiembrie 2005
+-->     
+<p:projects xmlns:p="urn:infoiasi.ro:projects" update="20 noiembrie 2005">
+
+   <project class="B">
+      <title>Update!</title>
+      <desc>Sa se realizeze o aplicatie Web care sa permita utilizatorilor sa realizeze managementul...
+      </desc>
+      <stud>2</stud>
+    </project>
+    
+    <project class="A">
+      <title>MLoW (Machine Learning on Web)</title>
+      <desc>Sa se realizeze o aplicatie Web cu interfata SVG care sa permita studiul comportarii mai multor algoritmi de clasificare automata...
+      </desc>
+      <stud>1</stud>
+    </project> 
+    
+    <project class="C">
+      <title>CSS'or</title>
+      <desc>Sa se conceapa o aplicatie Web capabila sa...
+      </desc>
+      <stud>2</stud>
+      <url>http://www.w3.org/Style</url>
+    </project> 
+    
+    <project class="A">
+      <title>relXist</title>
+      <desc>Se se implementeze un instrument Web vizual care va putea stoca...
+      </desc>
+      <stud>2</stud>
+      <url>http://www.dublincore.org/</url>
+      <url>http://xml.apache.org/</url>
+    </project>
+    <!-- si alte proiecte -->
+</p:projects>

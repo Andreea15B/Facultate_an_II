@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Exemplu de marcare a datelor in XML 
+    (un fragment de cuprins de carte)
+    
+    Autor: Sabin-Corneliu Buraga - http://www.infoiasi.ro/~busaco/
+    Versiune: 2.0 / 2003, 2008
+    Ultima modificare: 12 februarie 2008
+-->     
+<cuprins titlu="Programarea in Web 2.0" editura="Polirom" an="2007">
+    <capitol>
+        <nume>Prefata</nume>
+        <autor>Sabin Buraga</autor>
+        <descriere></descriere>
+    </capitol>
+    <capitol>
+        <nume>Load-balancing in clustere Web</nume>
+        <autor>Andrei Mihaila</autor>
+        <descriere>Capitolul prezinta pas cu pas crearea unui modul Apache care sa 
+            functioneze intr-un cluster Web - scopul declarat al modulului este 
+            sa echilibreze incarcarea pe masinile care fac parte din cluster. 
+            Se incepe cu o scurta prezentare a serverului Apache si se continua 
+            cu discutarea unei parti a interfetei de programare a acestuia, 
+            ilustrindu-se chestiunile de interes pe baza unor exemple. 
+            Pe parcursul prezentarii se accentueaza latura practica a lucrurilor, 
+            astfel ca la sfirsit cititorul sa aiba la indemina un modul de Apache 
+            functional.</descriere>
+    </capitol>
+    <capitol>
+        <nume>Aplicatii hibride - mashups</nume>
+        <autor>Ecaterina Valica</autor>
+        <descriere>Acest capitol prezinta detaliat termenul de mashup si instrumentele 
+            necesare crearii de aplicatii Web in acest stil. Sunt furnizate 
+            informatii privind accesul la informatii provenind din surse multiple 
+            pentru a fi integrate intr-o aplicatie Web hibrida. De asemenea, 
+            capitolul ilustreaza diverse exemple privind accesul la si refolosirea 
+            datelor oferite de servicii precum Google Maps, Yahoo! Search, Flickr 
+            sau Picasa prin intermediul unor tehnologii/paradigme ca XML-RPC, SOAP, 
+            REST sau AJAX. In plus, se discuta despre modalitati de creare 
+            a aplicatiilor mashup via diverse instrumente (e.g., Yahoo Pipes) si 
+            a componentelor Web de tip gadget sau mapplet.</descriere>
+    </capitol>
+</cuprins>

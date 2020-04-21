@@ -1,0 +1,57 @@
+body {
+    padding: 0 50px 0;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+nav {
+    top: 0;
+    right: 0;
+    left: 0;
+    position: absolute;
+    padding: 15px;
+    text-align: center;
+    background-image: linear-gradient(rgb(134, 5, 5), red);
+    color: white;
+    font-size: 1.5em;
+    font-weight: 900;
+    font-family: "Quicksand", sans-serif;
+    font-weight: 900;
+}
+
+.app {
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#onclick {
+    font-size: 1.5em;
+    font-weight: 900;
+    font-family: "Quicksand", sans-serif;
+    font-weight: 900;
+    color: red;
+    top: 10%;
+    right: 25%;
+    left: 25%;
+    position: absolute;
+    text-align: center;
+    visibility: collapse;
+}
+
+.refresh{
+    border: none;
+    background: none;
+    background-size: cover;
+    color: white;   
+    visibility: visible; 
+    transition: all 0.7s linear; 
+}
+
+.refresh:hover {
+    cursor: pointer;    
+}
+
+.refresh.down{
+    transform: rotate(360deg);
+} 

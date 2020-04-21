@@ -1,0 +1,22 @@
+<!-- DTD definind tipul de document 'cuprins' -->
+<!ELEMENT cuprins	(coordonator?,capitol+)>
+<!ELEMENT coordonator 	ANY>
+<!ELEMENT capitol	(nume,autor*,descriere?)>
+<!ELEMENT nume		(#PCDATA)>
+<!ELEMENT autor		(#PCDATA)>
+<!ELEMENT descriere	(#PCDATA)>
+
+<!-- declararea unei entitati (cu utilizarea entitatilor predefinite) -->
+<!ENTITY busaco "Sabin Buraga &lt;busaco@infoiasi.ro&gt;">
+
+<!ATTLIST cuprins
+      titlu 	CDATA		#REQUIRED
+      editura	CDATA		#IMPLIED
+      ANY 		(2004|2005|2007|2009)	"2007"
+>      
+<!ATTLIST capitol 
+      numar 	CDATA 		#REQUIRED
+>
+<!ATTLIST autor 
+      email 	CDATA 		#IMPLIED
+>

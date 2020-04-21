@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<c:cuprins xmlns:c='xsdCuprins' 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="xsdCuprins cuprins.xsd">  
+   <c:coordonator><necunoscut /></c:coordonator>      
+   <c:capitol id=0>    
+      <c:nume>Prefata</c:nume>    
+      <c:autor email="busaco@localhost.localdomain">
+        Sabin Buraga
+      </c:autor>    
+      <c:descriere />
+   </c:capitol> 
+   <c:capitol id="-1">    
+      <c:nume>Managementul blog-urilor in Perl</c:nume>    
+      <c:autor email="@infoiasi.ro">
+        Sabin Buraga
+      </c:autor>    
+      <c:descriere>
+        Acest capitol descrie fenomenul Weblogging si maniera 
+        de implementare si de exploatare a unui sistem rapid si 
+        flexibil de Weblog-uri. Aplicatia - ruland ca o suita de 
+        programe CGI - este scrisa in limbajul Perl. Functionalitatile 
+        de baza sunt implementate gratie expresiilor regulate si 
+        a modulului CGI.
+      </c:descriere>  
+      <c:descriere>
+        Descriere suplimentara.
+      </c:descriere>  
+   </c:capitol> 
+</c:cuprins>

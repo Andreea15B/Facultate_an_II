@@ -1,0 +1,83 @@
+<?xml version="1.0" ?>
+<!-- Document XML continind informatii despre proiectele propuse
+     la "Retele de calculatoare" (fragment)
+     
+     Autor: Sabin-Corneliu Buraga - busaco@infoiasi.ro
+     Versiune: 1.5 / 2002-2004
+     Ultima actualizare: 16 octombrie 2004
+-->     
+<projects update="16 octombrie 2004">
+
+    <project class="C">
+      <title>RFCnetS</title>
+      <desc>
+	Sa se scrie o aplicatie server care da posibilitatea sa... 
+      </desc>
+      <stud>1</stud>
+      <url>http://www.ietf.org/rfc/</url>
+    </project>
+
+    <project class="C">
+      <title>RFCnetC</title>
+      <desc>
+	Sa se scrie un client pentru serverul RFCnetC.
+      </desc>
+      <stud>1</stud>
+      <url>http://www.ietf.org/rfc/</url>
+    </project>
+    
+    <project class="A">
+      <title>NetChatS</title>
+      <desc>
+	Sa se conceapa un server de chat.
+      </desc>
+      <stud>2</stud>
+      <url>http://www.infoiasi.ro/~busaco/gaen/</url>
+    </project>
+    
+    <project class="A">
+      <title>NetChatC</title>
+      <desc>
+	Sa se conceapa un client de chat, utilizat in conjunctie cu NetChatS.
+      </desc>
+      <stud>1</stud>
+      <url>http://www.infoiasi.ro/~busaco/gaen/</url>
+    </project>
+    
+    <project class="A">
+      <title>CVSnet</title>
+      <desc>
+	Sa se implementeze o interfata (client) pentru un server CVS 
+	(Concurrent Versioning System).
+      </desc>
+      <stud>3</stud>
+      <url>http://cvsbook.red-bean.com/</url>
+    </project>
+    
+    <project class="B">
+      <title>SBiblionet</title>
+      <desc>
+	Sa se implementeze un server care sa ofere servicii pentru...
+      </desc>
+      <stud>1</stud>
+      <url></url>
+    </project>
+    
+    <project class="B">
+      <title>CBiblionet</title>
+      <desc>
+	Pentru serverul SBiblionet se va concepe un client oferind...       </desc>
+      <stud>2</stud>
+      <url></url>
+    </project>
+    
+    <project class="A">
+      <title>Super Proiect</title>
+      <desc>
+	Un super proiect pentru niste super studenti!
+      </desc>
+      <stud>3</stud>
+      <url>http://www.super.org/</url>
+    </project>
+    
+</projects>

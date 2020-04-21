@@ -1,0 +1,4 @@
+[
+    { "ID":1, "romanian":"pojar", "english":"measles", "german":"masern", "french":"rougeole", "spanish":"sarampion" },
+    { "ID":2, "romanian":"varicelă", "english":"chicken pox", "german":"windpocken", "french":"varicelle", "spanish":"varicela" }
+]

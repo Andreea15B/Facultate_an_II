@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Leaflet Cluster Example</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <link rel="stylesheet" type="text/css" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+    <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/MarkerCluster.css" />
+    <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/MarkerCluster.Default.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+    <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js'></script>
+    <script type='text/javascript' src='http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js'></script>
+    <script type='text/javascript' src='http://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/leaflet.markercluster.js'></script>
+    <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@nytimes">
+<meta name="twitter:creator" content="@SarahMaslinNir">
+<meta name="twitter:title" content="Parade of Fans for Houston’s Funeral">
+<meta name="twitter:description" content="NEWARK - The guest list and parade of limousines with celebrities emerging from them seemed more suited to a red carpet event in Hollywood or New York than than a gritty stretch of Sussex Avenue near the former site of the James M. Baxter Terrace public housing project here.">
+<meta name="twitter:image" content="http://graphics8.nytimes.com/images/2012/02/19/us/19whitney-span/19whitney-span-articleLarge.jpg">
+  </head>
+  <body>
+    <div style="display: none" id="markers">
+      <%= JSON.stringify(markers) %>
+    </div>
+    <div class="sus">
+      <a class="logo" href="index.html">
+        <img src="logoalb.png">
+      </a>
+      <div class="butonFiltre">
+        <i class="fas fa-sliders-h" onclick="$('.filtre').toggle('slow');"></i>
+      </div>
+    </div>
+    <div class="filtre">
+      <form action="filtre.php" method="post">
+      <div class="formular">
+          <div class="titluForm">
+            FILTRE
+          </div>
+          <div class="linieForm">
+            <div class="label">
+              Limba
+            </div>
+            <div class="input">
+              <select name="limba">
+                <option value="">Oricare</option>
+                <option value="ro">Romana</option>
+                <option value="en">Engleza</option>
+                <option value="fr">Franceza</option>
+                <option value="de">Germana</option>
+                <option value="es">Spaniola</option>
+              </select>
+            </div>
+          </div>
+          <div class="linieForm">
+            <div class="label">
+              Longitutine
+            </div>
+            <div class="input">
+              <input type="text" name="longitudine" placeholder="Longitutine">
+            </div>
+          </div>
+          <div class="linieForm">
+            <div class="label">
+              Latitudine
+            </div>
+            <div class="input">
+              <input type="text" name="latitudine" placeholder="Latitudine">
+            </div>
+          </div>
+          <div class="linieForm">
+            <div class="label">
+              De la
+            </div>
+            <div class="input">
+              <input type="date" name="dela" class="dela" placeholder="De la:"/>
+            </div>
+          </div>
+          <div class="linieForm">
+            <div class="label">
+              Pana la
+            </div>
+            <div class="input">
+              <input type="date" name="panala" class="dela" placeholder="Pana la:"/>
+            </div>
+          </div>
+          <div class="linieForm">
+            <div class="label">
+              Boala
+            </div>
+            <div class="input">
+              <input type="text" name="boala" placeholder="Boala">
+            </div>
+          </div>
+          <div class="submit">
+            <input type="submit" name="submit" value="Submit">
+          </div>
+      </div>
+      </form>
+    </div>
+    <div id="map">
+      <div class="stanga">
+        <div class="stangaSus">
+          Tweet-uri
+          <span class="x">X</span>
+        </div>
+        <div class="stangaContent"></div>
+      </div>
+    </div>
+    <div class="footer">
+      <a href="aboutus">About Us</a>
+      <a href="contactUs">Contact Us</a>
+      <a href="map">Map</a>
+      <a href="">Home</a>
+    </div>
+    <script type='text/javascript' src='maps/leaf-demo.js'></script>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Exemplu (relativ mai complex) de document SVG ce recurge la XLink, diverse marcaje + proprietati CSS
+
+     Autor principal: Catalin Bulancea (2004), absolvent FII
+     Modificari realizate de Sabin-Corneliu Buraga (2014, 2016)
+-->     
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1024px" height="768px">
+  <title>Grafică vectorială cu SVG</title>
+  <defs>
+    <!-- definim un dégradé (gradient) liniar -->
+    <linearGradient id="aGradient">
+           <stop offset="33%" stop-color="#ADA" />
+           <stop offset="74%" stop-color="#069" />
+    </linearGradient>
+    <rect id="aRectangle" width="15px" height="15px" rx="2" ry="2" fill="green" />
+    <!-- o cale de redare -->
+    <path id="aPath" d="M15 50 C10 0 90 0 90 40" />
+    <!-- un filtru cromatic --> 
+    <filter id="visualFilter">
+      <feColorMatrix in="SourceGraphic" type="matrix"
+                                 values="0 0 0 0 0
+                                         1 0 1 1 0
+                                         0 1 1 0 0
+                                         0 0 0 1 0" />
+    </filter>
+  </defs>
+  <!-- o formă rectangulară umplută cu dégradé-ul definit anterior -->
+  <rect x="1cm" y="1cm" width="6cm" height="1cm" round="1em" fill="url(#aGradient)" />
+
+  <!-- folosim 4 instanțe ale pătratului definit, 
+         plasate la diverse coordonate și având diverse proprietăți grafice -->
+  <use x="40"  y="40" xlink:href="#aRectangle" />
+  <use x="100" y="80" xlink:href="#aRectangle" filter="url(#visualFilter)" />
+  <use x="160" y="80" xlink:href="#aRectangle" fill-opacity="0.33" />
+  <use x="220" y="80" xlink:href="#aRectangle" />
+
+  <!-- un text redat conform căii specificate -->
+  <text fill="red">
+     <!-- de studiat și http://www.w3.org/TR/SVG/fonts.html -->
+    <textPath xlink:href="#aPath">&#10084; Web &#x2605;</textPath>
+  </text>
+</svg>

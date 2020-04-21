@@ -1,0 +1,3 @@
+CREATE sequence seq_prietenie
+START WITH 50000
+INCREMENT BY 1;

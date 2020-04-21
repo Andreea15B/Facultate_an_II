@@ -1,0 +1,100 @@
+Acest director contine o serie de programe-sursa si resurse aditionale, 
+ilustrand anumite aspecte legate de programarea Web in PHP -- a se studia si
+volumele disponibile liber: 
+* S.Buraga, "Tehnologii XML", Polirom, 2006 <https://www.slideshare.net/busaco/sabin-buraga-tehnologii-xml> 
+* L.Alboaie, S.Buraga, "Servicii Web", Polirom, 2006 <https://www.slideshare.net/busaco/l-alboaie-s-buraga-servicii-web-concepte-de-baz-i-implementri-2006>.
+
+De parcurs si cartea disponibila liber: 
+J. Lockhart, P. Sturgeon, "PHP The Right Way" (2019): https://www.phptherightway.com/
+
+Pentru detalii "teoretice", a se consulta prelegerea disponibila la adresa Web
+https://profs.info.uaic.ro/~busaco/teach/courses/web/web-film.html#week4
+
+In directorul sintaxa/ (aspecte legate de sintaxa PHP)
+* valori.php            - exemplifica utilizarea variabilelor de diverse tipuri 
+                          si folosirea instructiunilor de ciclare 'for' 
+                          si 'foreach'
+* valori2.php           - ca mai sus, dar recurge la utilizarea de constante
+* patrat.php            - ilustreaza definirea unei functii si utilizarea 
+                          instructiunilor 'if' si 'while'
+* tipuri-stricte.php    - program PHP7 exemplificand verificarea stricta a tipurilor de date (strong-type)
+* funct.php             - adoptarea paradigmei functionale in conjunctie cu tablourile
+
+In directorul clase/ (detalii privind caracterul orientat-obiect -- vezi prelegerea de la curs)
+* student.php           - exemplifica specificarea de clase si clase derivate, 
+                          de constructori & destructori, plus 
+                          utilizarea modificatorilor de acces
+* introspect.php        - ilustreaza mecanismul de introspectie via ReflectionClass
+* macheta.php           - exemplu de definire a unei interfete
+* figuri.php            - exemplifica maniera de folosire a trasaturilor (traits)
+
+In directorul interactiune/ (amanunte legate de interactiunea cu utilizatorul)
+* formular.html         - pagina Web specificand un formular HTML
+* afiseaza.php          - exemplifica preluarea datelor receptionate 
+                          via un formular Web
+* culori.php            - exemplifica folosirea cookie-urilor pentru a retine 
+                          culoarea de fundal preferata de un utilizator
+
+In directorul fisiere/ (prelucrarea fisierelor transferate de la client)
+* exif.php              - exemplifica preluarea unei imagini via un formular
+                          pentru a oferi meta-date de interes; se folosesc
+                          si exceptii specificate de programator
+                          (in fisierul de configurare 'php.ini', a se verifica 
+                          daca exista extensiile 'php_fileinfo' si 'php_exif'
+                          activate -- e.g., pentru Windows trebuie sa existe 
+                          'extension=php_fileinfo.dll')
+* exif.html             - documentul HTML ce defineste formularul Web folosit
+
+In directorul baze-de-date/ (detalii referitoare la manipularea bazelor de date)
+* interogare-mysqli.php - program simplu folosind extensia mysqli pentru accesul la
+                          MySQL din PHP5
+* interogare-pdo.php    - program demonstrand utilizarea accesului de un server de
+                          baze de date via PDO (PHP Data Object);
+                          de citit tutorialul de la <https://phpdelusions.net/pdo>                          
+* interogare.php        - program simplu ilustrand maniera de interogare a 
+                          serverului MySQL in PHP4
+                          (varianta demodata; nu mai e suportata de PHP7)
+* bd.php                - defineste o clasa de manipulare a bazelor de date 
+* bd_ex.php             - exemplifica utilizarea clasei din fisierul precedent
+* stud.sql              - baza de data 'stud' folosita in exemple -- a se popula 
+                          baza de date cu mysql -u utilizator -p < stud.sql
+* sqlite.php            - ilustreaza utilizarea extensiei SQLite in conjunctie 
+                          cu procesarea XML simplificata
+* punctaje.xml          - document XML folosit de script-ul sqlite.php
+
+In directorul xml/ (aspecte privitoare la procesarea documentelor XML 
+                    ce vor fi prezentate in cursurile viitoare)
+
+- directorul DOM/ contine exemple referitoare la prelucrarea via DOM
+
+- directorul SAX/ include exemple privitoare la procesari SAX
+
+- directorul simplificat/ contine exemplificari legate de procesarea XML 
+  simplificata (Simple XML)
+
+In directorul servicii-web/ (detalii referitoare la implementarea si 
+                             apelarea de servicii Web -- vezi cursurile viitoare)
+* oranges-server.php    - server SOAP implementat in PHP5
+* oranges-client.php    - client SOAP scris in PHP5
+* rest.php              - exemplifica accesul la un serviciu REST 
+                          prin intermediul bibliotecii cURL
+
+Sursele exemplelor sunt furnizate in regim open-source, conform termenilor 
+stipulati de Creative Commons Attribution-NonCommercial-ShareAlike License: 
+https://creativecommons.org/licenses/
+
+Ca medii de exploatare, se poate recurge la:
+* AMPPS  <http://www.ampps.com/>
+* XAMMP  <https://www.apachefriends.org/>
+* WinNMP <https://winnmp.wtriple.com/>
+
+Pentru realizarea diverselor experimente direct pe Web, 
+se poate folosi una dintre solutiile:
+* Ideone    <https://ideone.com/>
+* PhpFiddle <http://phpfiddle.org/>
+* Codenvy   <https://codenvy.com/developers/>
+
+Diverse (parti de) programe au fost concepute de Dr. Sabin-Corneliu Buraga: 
+https://profs.info.uaic.ro/~busaco/
+
+Ultima actualizare: 06 martie 2019

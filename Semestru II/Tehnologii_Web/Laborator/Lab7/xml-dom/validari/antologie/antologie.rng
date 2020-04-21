@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Schema RELAX NG care specifica structura unei antologii -->
+<grammar xmlns="http://relaxng.org/ns/structure/1.0"
+    xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+    datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+    <!-- elementul de start -->
+    <start>
+        <element name="antologie">
+            <oneOrMore>
+                <ref name="poeme"/>
+            </oneOrMore>
+            <!-- un atribut obligatoriu -->
+            <attribute name="data">
+                <value type="string"/>
+            </attribute>
+        </element>
+    </start>
+    <define name="poeme">
+        <oneOrMore>
+            <ref name="elem-poem"/>
+        </oneOrMore>
+    </define>
+    <define name="elem-poem">
+        <element name="poem">
+            <!-- un grup de elemente -->
+            <group>
+                <element name="titlu">
+                    <text/>
+                </element>
+                <oneOrMore>
+                    <ref name="elem-vers"/>
+                </oneOrMore>
+            </group>
+        </element>
+    </define>
+    <define name="elem-vers">
+        <element name="vers">
+            <text/>
+        </element>
+    </define>
+</grammar>

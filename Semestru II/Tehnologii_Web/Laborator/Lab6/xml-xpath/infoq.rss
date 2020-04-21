@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+  <channel>
+    <title>InfoQ</title>
+    <link>https://www.infoq.com</link>
+    <description>InfoQ feed</description>
+    <item>
+      <title>Presentation: Would You Have Clicked on What We Would Have Recommended?</title>
+      <link>https://www.infoq.com/presentations/recommender-system-ab-tests?utm_campaign=infoq_content&amp;utm_source=infoq&amp;utm_medium=feed&amp;utm_term=global</link>
+      <description>&lt;img src="https://res.infoq.com/presentations/recommender-system-ab-tests/en/headerimage/Peter-B-Golbus-h-1553005280434.jpg"/&gt;&lt;p&gt;Peter B. Golbus describes recent work on the offline estimation of recommender system A/B tests using counterfactual reasoning techniques.&lt;/p&gt; &lt;i&gt;By Peter Golbus&lt;/i&gt;</description>
+      <category>PAPI 2018</category>
+      <category>A/B Testing</category>
+      <category>User Experience</category>
+      <category>Architecture &amp; Design</category>
+      <category>AI, ML &amp; Data Engineering</category>
+      <category>presentation</category>
+      <pubDate>Wed, 20 Mar 2019 00:00:00 GMT</pubDate>
+      <guid>https://www.infoq.com/presentations/recommender-system-ab-tests?utm_campaign=infoq_content&amp;utm_source=infoq&amp;utm_medium=feed&amp;utm_term=global</guid>
+      <dc:creator>Peter Golbus</dc:creator>
+      <dc:date>2019-03-20T00:00:00Z</dc:date>
+      <dc:identifier>/presentations/recommender-system-ab-tests/en</dc:identifier>
+    </item>
+    <item>
+      <title>Presentation: Planting the Service Design Seeds at CBC</title>
+      <link>https://www.infoq.com/presentations/cbc-service-design?utm_campaign=infoq_content&amp;utm_source=infoq&amp;utm_medium=feed&amp;utm_term=global</link>
+      <description>&lt;img src="https://res.infoq.com/presentations/cbc-service-design/en/headerimage/Hira-Javed-h-1552987292418.jpeg"/&gt;&lt;p&gt;Hira Javed discusses the increasing adoption of the service design discipline, and CBC's adventures in embracing this approach.&lt;/p&gt; &lt;i&gt;By Hira Javed&lt;/i&gt;</description>
+      <category>Services</category>
+      <category>Design</category>
+      <category>Deliver Conference</category>
+      <category>Deliver Conference 2018</category>
+      <category>Architecture &amp; Design</category>
+      <category>presentation</category>
+      <pubDate>Tue, 19 Mar 2019 21:00:00 GMT</pubDate>
+      <guid>https://www.infoq.com/presentations/cbc-service-design?utm_campaign=infoq_content&amp;utm_source=infoq&amp;utm_medium=feed&amp;utm_term=global</guid>
+      <dc:creator>Hira Javed</dc:creator>
+      <dc:date>2019-03-19T21:00:00Z</dc:date>
+      <dc:identifier>/presentations/cbc-service-design/en</dc:identifier>
+    </item>
+    <item>
+      <title>Xiaoya Wei on Airbnb's Knowledge Graph</title>
+      <link>https://www.infoq.com/news/2019/03/wei-airbnb-knowledge-graph?utm_campaign=infoq_content&amp;utm_source=infoq&amp;utm_medium=feed&amp;utm_term=global</link>
+      <description>&lt;img src="https://www.infoq.com/styles/i/logo_bigger.jpg"/&gt;&lt;p&gt;Airbnb's knowledge graph encodes information about their inventory and the world in a graph structure. This structure is based on a hierarchical taxonomy. InfoQ caught up with Xiaoya Wei, software engineer at Airbnb, regarding their knowledge graph and how it helps them categorize their inventory and deliver travel context to their users.&lt;/p&gt; &lt;i&gt;By Anthony Alford&lt;/i&gt;</description>
+      <category>User Interface</category>
+      <category>Graph Database</category>
+      <category>Database</category>
+      <category>AI, ML &amp; Data Engineering</category>
+      <category>news</category>
+      <pubDate>Tue, 19 Mar 2019 09:05:00 GMT</pubDate>
+      <guid>https://www.infoq.com/news/2019/03/wei-airbnb-knowledge-graph?utm_campaign=infoq_content&amp;utm_source=infoq&amp;utm_medium=feed&amp;utm_term=global</guid>
+      <dc:creator>Anthony Alford</dc:creator>
+      <dc:date>2019-03-19T09:05:00Z</dc:date>
+      <dc:identifier>/news/2019/03/wei-airbnb-knowledge-graph/en</dc:identifier>
+    </item>
+    <item>
+      <title>Protocols are Important: Martin Thompson at QCon London</title>
+      <link>https://www.infoq.com/news/2019/03/network-protocols-analysis?utm_campaign=infoq_content&amp;utm_source=infoq&amp;utm_medium=feed&amp;utm_term=global</link>
+      <description>&lt;img src="https://www.infoq.com/styles/i/logo_bigger.jpg"/&gt;&lt;p&gt;The protocols we use should be studied and practiced more, they are really important in many aspects, Martin Thompson claimed in his presentation at QCon London 2019, where he first looked back at the evolution of mankind and argued that protocols is the most significant human discovery, and then did a critical analysis of the protocols and ideas we use today.&lt;/p&gt; &lt;i&gt;By Jan Stenberg&lt;/i&gt;</description>
+      <category>Performance</category>
+      <category>Microservices</category>
+      <category>Distributed Systems</category>
+      <category>QCon London 2019</category>
+      <category>Network Programming</category>
+      <category>Architecture &amp; Design</category>
+      <category>Development</category>
+      <category>news</category>
+      <pubDate>Tue, 19 Mar 2019 03:45:00 GMT</pubDate>
+      <guid>https://www.infoq.com/news/2019/03/network-protocols-analysis?utm_campaign=infoq_content&amp;utm_source=infoq&amp;utm_medium=feed&amp;utm_term=global</guid>
+      <dc:creator>Jan Stenberg</dc:creator>
+      <dc:date>2019-03-19T03:45:00Z</dc:date>
+      <dc:identifier>/news/2019/03/network-protocols-analysis/en</dc:identifier>
+    </item>
+    <item>
+      <title>Next.js 8 Static Site Framework Adds Serverless Support</title>
+      <link>https://www.infoq.com/news/2019/03/nextjs-8-serverless?utm_campaign=infoq_content&amp;utm_source=infoq&amp;utm_medium=feed&amp;utm_term=global</link>
+      <description>&lt;img src="https://www.infoq.com/styles/i/logo_bigger.jpg"/&gt;&lt;p&gt;The Next.js team recently released version 8 of their static site generation framework, improving reliability and scalability through splitting applications into smaller parts for use with cloud services such as AWS lambda and ZEIT Now lambdas.&lt;/p&gt; &lt;i&gt;By Dylan Schiemann&lt;/i&gt;</description>
+      <category>JavaScript</category>
+      <category>Server-side rendering</category>
+      <category>Server-side JavaScript</category>
+      <category>Architecture &amp; Design</category>
+      <category>Development</category>
+      <category>DevOps</category>
+      <category>news</category>
+      <pubDate>Mon, 18 Mar 2019 16:00:00 GMT</pubDate>
+      <guid>https://www.infoq.com/news/2019/03/nextjs-8-serverless?utm_campaign=infoq_content&amp;utm_source=infoq&amp;utm_medium=feed&amp;utm_term=global</guid>
+      <dc:creator>Dylan Schiemann</dc:creator>
+      <dc:date>2019-03-18T16:00:00Z</dc:date>
+      <dc:identifier>/news/2019/03/nextjs-8-serverless/en</dc:identifier>
+    </item>
+    <item>
+      <title>Amazon Alexa Enables an Ambient Computing Lifestyle</title>
+      <link>https://www.infoq.com/news/2019/03/amazon-alexa-ambient?utm_campaign=infoq_content&amp;utm_source=infoq&amp;utm_medium=feed&amp;utm_term=global</link>
+      <description>&lt;img src="https://www.infoq.com/styles/i/logo_bigger.jpg"/&gt;&lt;p&gt;Alexa is becoming ubiquitous in the home through a purposeful Amazon Web Services (AWS) strategy to make Alexa, voice-activated service, a central component of an ambient computing lifestyle, according to Dave Limp, Amazon’s senior VP of devices and services in a recent article in the Verge.&lt;/p&gt; &lt;i&gt;By Aslan Brooke&lt;/i&gt;</description>
+      <category>Artificial Intelligence</category>
+      <category>Natural Language Processing</category>
+      <category>Machine Learning</category>
+      <category>Amazon Web Services</category>
+      <category>Alexa</category>
+      <category>AI, ML &amp; Data Engineering</category>
+      <category>news</category>
+      <pubDate>Mon, 18 Mar 2019 15:10:00 GMT</pubDate>
+      <guid>https://www.infoq.com/news/2019/03/amazon-alexa-ambient?utm_campaign=infoq_content&amp;utm_source=infoq&amp;utm_medium=feed&amp;utm_term=global</guid>
+      <dc:creator>Aslan Brooke</dc:creator>
+      <dc:date>2019-03-18T15:10:00Z</dc:date>
+      <dc:identifier>/news/2019/03/amazon-alexa-ambient/en</dc:identifier>
+    </item>
+    <item>
+      <title>TC39 Finalizes the Feature Set for ECMAScript 2019</title>
+      <link>https://www.infoq.com/news/2019/03/ES2019-feature-set-released?utm_campaign=infoq_content&amp;utm_source=infoq&amp;utm_medium=feed&amp;utm_term=global</link>
+      <description>&lt;img src="https://www.infoq.com/styles/i/logo_bigger.jpg"/&gt;&lt;p&gt;The ECMA TC39 panel recently finalized the feature set for the ES2019 edition of Javascript (also referred to as ECMAScript 2019). ES2019 improves arrays, objects, strings, symbols, try/catch blocks and JSON with new or updated features.&lt;/p&gt; &lt;i&gt;By Bruno Couriol&lt;/i&gt;</description>
+      <category>JavaScript</category>
+      <category>Web Development</category>
+      <category>Dynamic Languages</category>
+      <category>Next Generation HTML5 and JavaScript</category>
+      <category>Development</category>
+      <category>news</category>
+      <pubDate>Mon, 18 Mar 2019 14:16:00 GMT</pubDate>
+      <guid>https://www.infoq.com/news/2019/03/ES2019-feature-set-released?utm_campaign=infoq_content&amp;utm_source=infoq&amp;utm_medium=feed&amp;utm_term=global</guid>
+      <dc:creator>Bruno Couriol</dc:creator>
+      <dc:date>2019-03-18T14:16:00Z</dc:date>
+      <dc:identifier>/news/2019/03/ES2019-feature-set-released/en</dc:identifier>
+    </item>
+    <item>
+      <title>ImageSharp: Funding an Open Source Project</title>
+      <link>https://www.infoq.com/news/2019/03/ImageSharp-Licensing?utm_campaign=infoq_content&amp;utm_source=infoq&amp;utm_medium=feed&amp;utm_term=global</link>
+      <description>&lt;img src="https://www.infoq.com/styles/i/logo_bigger.jpg"/&gt;&lt;p&gt;Recently ImageSharp decided to change their license from Apache to the AGPLv3/Commercial dual license model. The new license will be effective as of release candidate 1, which is expected in Q1 of 2019. In this report we look at the history ImageSharp and reason for the change.&lt;/p&gt; &lt;i&gt;By Jonathan Allen&lt;/i&gt;</description>
+      <category>.NET Core</category>
+      <category>Open Source</category>
+      <category>Licensing</category>
+      <category>.NET</category>
+      <category>Development</category>
+      <category>news</category>
+      <pubDate>Mon, 18 Mar 2019 11:31:00 GMT</pubDate>
+      <guid>https://www.infoq.com/news/2019/03/ImageSharp-Licensing?utm_campaign=infoq_content&amp;utm_source=infoq&amp;utm_medium=feed&amp;utm_term=global</guid>
+      <dc:creator>Jonathan Allen</dc:creator>
+      <dc:date>2019-03-18T11:31:00Z</dc:date>
+      <dc:identifier>/news/2019/03/ImageSharp-Licensing/en</dc:identifier>
+    </item>
+  </channel>
+</rss>

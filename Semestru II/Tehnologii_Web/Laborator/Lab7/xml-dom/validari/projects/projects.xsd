@@ -1,0 +1,66 @@
+<xsd:schema xmlns="http://infoiasi.ro/web/Projects"
+   targetNamespace="http://infoiasi.ro/web/Projects"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+   elementFormDefault="qualified"
+   attributeFormDefault="qualified">
+
+   <xsd:annotation>
+      <xsd:documentation xml:lang="ro">
+         <![CDATA[ 
+         Exemplu de schema utilizata la validarea proiectelor propuse 
+         Autor: Sabin-Corneliu Buraga -- http://www.purl.org/net/busaco 
+         2004-2005, 2009, 2011
+         
+         Ultima actualizare: 26 martie 2011
+         ]]>
+      </xsd:documentation>
+   </xsd:annotation>
+
+   <!-- definirea elementului-radacina "projects" -->
+   <xsd:element name="projects" type="projectsType"/>
+
+   <xsd:complexType name="projectsType">
+      <xsd:sequence>
+         <!-- macar o aparitie a elementului "project" -->
+         <xsd:element name="project" type="projectType" minOccurs="1"
+            maxOccurs="unbounded"/>
+      </xsd:sequence>
+      <xsd:attribute name="update" type="xsd:string"/>
+   </xsd:complexType>
+
+   <!-- tipul complex "projectType" -->
+   <xsd:complexType name="projectType">
+      <!-- secventa de elemente -->
+      <xsd:sequence>
+         <xsd:element name="title" type="xsd:string"/>
+         <xsd:element name="desc" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+         <xsd:element name="stud" type="studType"/>
+         <xsd:element name="url" type="xsd:anyURI" minOccurs="0" maxOccurs="1"/>
+      </xsd:sequence>
+      <xsd:attribute name="class" type="classType"/>
+   </xsd:complexType>
+
+   <!-- definirea tipului simplu "studType" folosit pentru
+     specificarea valorilor elementului "stud" -->
+   <xsd:simpleType name="studType">
+      <xsd:restriction base="xsd:unsignedInt">
+         <!-- un intreg fara semn in intervalul [1, 5) -->
+         <xsd:minInclusive value="1"/>
+         <xsd:maxExclusive value="5"/>
+      </xsd:restriction>
+   </xsd:simpleType>
+
+   <!-- definirea tipului simplu "classType" folosit pentru 
+     a specifica valorile atributului "class" -->
+   <xsd:simpleType name="classType">
+      <xsd:restriction base="xsd:string">
+         <!-- sir de caractere de lungime 1 -->
+         <xsd:length value="1" fixed="true"/>
+         <!-- enumerarea valorilor permise -->
+         <xsd:enumeration value="A"/>
+         <xsd:enumeration value="B"/>
+         <xsd:enumeration value="C"/>
+      </xsd:restriction>
+   </xsd:simpleType>
+
+</xsd:schema>

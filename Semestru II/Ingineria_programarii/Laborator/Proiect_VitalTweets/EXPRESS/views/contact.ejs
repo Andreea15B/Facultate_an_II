@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>Contact</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Arvo"
+        rel="stylesheet">
+    
+    <link rel="stylesheet"
+        href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+        crossorigin="anonymous">
+    
+    <link rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../stylesheets/contact.css">
+</head>
+
+<body>
+    <header class="logo-section">
+            <img src="images/logoalb.png" alt="javascript:void(0)" class="logo">
+    </header>
+
+    
+
+    <main class="main-section container">
+                                <div class="col-sm-12 col-lg-12">
+                                    <h1 class="h1">
+                                        Feel free to contact us </h1>
+                                        <hr></hr>
+                                </div>   
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="well well-sm">
+                        <form>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="name">
+                                        Name</label>
+                                    <input type="text" class="form-control" id="name" placeholder="Enter name" required="required" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">
+                                        Email Address</label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span>
+                                        </span>
+                                        <input type="email" class="form-control" id="email" placeholder="Enter email" required="required" /></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="subject">
+                                        Subject</label>
+                                    <select id="subject" name="subject" class="form-control" required="required">
+                                        <option value="na" selected="">Choose One:</option>
+                                        <option value="service">Statistics</option>
+                                        <option value="suggestions">Map</option>
+                                        <option value="product">Suggestions</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="name">
+                                        Message</label>
+                                    <textarea name="message" id="message" class="form-control" rows="9" cols="25" required="required"
+                                        placeholder="Message"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <button type="submit" class="btn btn-primary pull-right" id="btnContactUs">
+                                    Send Message</button>
+                            </div>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <form>
+                    <legend><span class="glyphicon glyphicon-globe"></span> Our adress</legend>
+                    <address>
+                        Street General Henri Mathias Berthelot<br>
+                        No. 16, Iasi 700259<br>
+                         Phone:0232 201 090
+                        </address>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="page-footer font-small indigo">
+        <div class="container">
+            <div class="row text-center d-flex justify-content-center pt-5 mb-3">
+                <div class="col-md-2 mb-3">
+                    <h6 class="font-weight-bold">
+                        <a href="index.html" class="footer-text-color">Home</a>
+                    </h6>
+                </div>
+    
+                <div class="col-md-2 mb-3">
+                    <h6 class="font-weight-bold">
+                        <a href="aboutus.html" class="footer-text-color">About us</a>
+                    </h6>
+                </div>
+
+                <div class="col-md-2 mb-3">
+                    <h6 class="font-weight-bold">
+                        <a href="contact.html" class="footer-text-color">Contact</a>
+                    </h6>
+                </div>
+            </div>
+
+            <hr class="rgba-white-light" style="background-color:#faf9f8 ; margin: 0 10%;">
+
+            <hr class="clearfix d-md-none rgba-white-light" style="background-color:#faf9f8 ;margin: 10% 15% 5%;">
+            
+            <div class="row pb-3">
+                <div class="col-md-12">
+                    <div class="mb-5 flex-center social-media">
+                        <a class="fb-ic">
+                            <i class="fab fa-facebook-f fa-lg white-text mr-4"> </i>
+                        </a>
+
+                        <a class="tw-ic">
+                            <i class="fab fa-twitter fa-lg white-text mr-4"> </i>
+                        </a>
+                    
+                        <a class="li-ic">
+                            <i class="fab fa-linkedin-in fa-lg white-text mr-4"> </i>
+                        </a>
+                        
+                        <a class="ins-ic">
+                            <i class="fab fa-instagram fa-lg white-text mr-4"> </i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Copyright
+
+        <div class="footer-copyright text-center py-3">© 2018 Copyright:
+          <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
+        </div>
+
+        Copyright -->    
+    </footer>
+</body>
+
+</html>

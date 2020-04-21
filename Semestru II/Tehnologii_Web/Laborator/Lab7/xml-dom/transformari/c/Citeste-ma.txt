@@ -1,0 +1,13 @@
+Acest director contine exemplificari de transformari XSLT oferite 
+de biblioteca libxsl disponibila in distributiile Linux actuale --
+detalii la http://xmlsoft.org/:
+
+* xml-transformer.c - program C care realizeaza transformari XSLT via libxslt
+* Makefile          - fisier folosit pentru compilarea programului prin "make"
+
+Toate aceste fisiere au fost scrise de Sabin-Corneliu Buraga (2004). 
+Permisiunile de utilizare sunt cele stipulate de Creative Commons 
+Attribution-NonCommercial-ShareAlike: 
+http://creativecommons.org/licenses/
+
+Ultima actualizare: 05 aprilie 2011

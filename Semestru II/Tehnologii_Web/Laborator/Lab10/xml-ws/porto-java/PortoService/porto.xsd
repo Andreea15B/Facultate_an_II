@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.1.6 in JDK 6. -->
+<xs:schema xmlns:tns="http://portocale.infoiasi.ro/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://portocale.infoiasi.ro/">
+
+<xs:element name="furnizeazaPret" type="tns:furnizeazaPret"/>
+
+<xs:element name="furnizeazaPretResponse" type="tns:furnizeazaPretResponse"/>
+
+<xs:element name="furnizeazaStoc" type="tns:furnizeazaStoc"/>
+
+<xs:element name="furnizeazaStocResponse" type="tns:furnizeazaStocResponse"/>
+
+<xs:complexType name="furnizeazaStoc">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="furnizeazaStocResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="furnizeazaPret">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="furnizeazaPretResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:double" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

@@ -1,0 +1,86 @@
+<subiecte materie="Tehnologii Web" data="2013-04-19">
+
+<subiect>Explicati necesitatea validarii documentelor XML.</subiect>
+
+<subiect>Enumerati tipurile de date dintr-un arbore DOM.</subiect>
+
+<subiect>Explicati tehnologiile care faciliteaza functionarea unei aplicatii Web sociale.</subiect>
+
+<subiect>Care e diferenta dintre SAX si DOM? In ce context le utilizam?</subiect>
+
+<subiect>Care e cel mai eficient parser XML din perspectiva memoriei folosite?</subiect>
+
+<subiect>Referitor la DOM, un atribut asociat unui element reprezinta un subnod al
+nodului corespunzator elementului?</subiect>
+
+<subiect>Scrieti un fisier DTD care verifica validitatea unui document XML cu o
+structura data.</subiect>
+
+<subiect>Care este semnificatia acronimului JSON?</subiect>
+
+<subiect>Efectuati o procesare a unui flux RSS in orice limbaj doriti.</subiect>
+
+<subiect>Ce este Atom?</subiect>
+
+<subiect>Specificati rolul formatului DocBook.</subiect>
+
+<subiect>Dati un exemplu de cookie si enumerati principalele motive pentru care se
+utilizeaza.</subiect>
+
+<subiect>Ce inseamna SOA?</subiect>
+
+<subiect>Ce diferenta exista intre metodele GET si POST?</subiect>
+
+<subiect>Ce reprezinta specificatia WSDL?</subiect>
+
+<subiect>Comparati procesarea prin SimpleXML fata de DOM.</subiect>
+
+<subiect>Ce reprezinta un arbore DOM?</subiect>
+
+<subiect>Explicati mecanismul de accesare a serviciilor Web.</subiect>
+
+<subiect>Web = Internet?</subiect>
+
+<subiect>Ce este Web-ul?</subiect>
+
+<subiect>Construiti o schema de validare a unui document XML.</subiect>
+
+<subiect>Ce reprezinta o transformare XSLT? Dati cateva exemple de utilizare.</subiect>
+
+<subiect>Scrieti expresia XPath care numara URL-urile specificate intr-un document HTML.</subiect>
+
+<subiect>Pentru urmatorul document XML, extrageti studentii cu note sub 5 si afisati numele lor.</subiect>
+
+<subiect>Ce rol are un serviciu Web?</subiect>
+
+<subiect>Ce avantaje prezinta MVC pentru dezvoltarea aplicatiilor Web?</subiect>
+
+<subiect>Cum functioneaza metoda POST?</subiect>
+
+<subiect>Ce inseamna PCDATA?</subiect>
+
+<subiect>Explicati termenul "cascading" in contextul CSS.</subiect>
+
+<subiect>Cum functioneaza un validator de documente HTML?</subiect>
+
+<subiect>Enumerati motive pro si contra folosirii XML pentru a retine date semistructurate de mici dimensiuni.</subiect>
+
+<subiect>Ce expresie CSS se foloseste pentru a identifica un element unic intr-un document?</subiect>
+
+<subiect>Ce diferenta este intre XML si HTML?</subiect>
+
+<subiect>Descrieti rolul protocolului HTTP.</subiect>
+
+<subiect>Unde e stocat un cookie? Dar o sesiune Web?</subiect>
+
+<subiect>Ce metoda trebuie utilizata pentru a trimite o parola aplicatiei Web de pe server?</subiect>
+
+<subiect>Enumerati principalele caracteristici ale unui server de aplicatii Web.</subiect>
+
+<subiect>Scrieti constructia XSLT care determina daca un numar apartine unei multimi finite de valori intregi.</subiect>
+
+<subiect>La ce este util limbajul XPath?</subiect>
+
+<subiect>Explicati rolul sabloanelor de proiectare in contextul aplicatiilor Web.</subiect>
+
+</subiecte>

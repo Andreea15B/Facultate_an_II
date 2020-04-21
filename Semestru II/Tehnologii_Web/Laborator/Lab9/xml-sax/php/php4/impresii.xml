@@ -1,0 +1,36 @@
+<impresii>
+  <impresie data="02 Nov 2000, 18:42" client="localhost (127.0.0.1)">
+  <nume email="luminish@infoiasi.ro">Luminita Chiran</nume>
+  <ocupatia>Cercetator</ocupatia>
+  <virsta>26</virsta>
+  <text>
+Imi place, insa cred ca ar fi trebuit sa pui si ceva
+referitor la adnotarea lingvistica (e.g. TEI).
+Luminita
+  </text>
+  </impresie>
+  <impresie data="03 Jan 2001, 10:10" client="students.infoiasi.ro (193.231.30.197)">
+  <nume email="socrate@tuiasi.ro">Radu Filip</nume>
+  <ocupatia>Absolvent</ocupatia>
+  <virsta>25</virsta>
+  <text>
+Trebuie sa scriu ceva?
+  </text>
+  </impresie>
+  <impresie data="22 Nov 2003, 12:49" client="localhost (127.0.0.1)">
+  <nume email="adimi@infoiasi.ro">Adrian Mironescu</nume>
+  <ocupatia>Student</ocupatia>
+  <virsta>21</virsta>
+  <text>
+Ultimul test este si cel mai reusit:)
+  </text>
+  </impresie>
+  <impresie data="20 Mar 2007, 15:42" client="localhost (127.0.0.1)">
+  <nume email="busaco@infoiasi.ro">Sabin Buraga</nume>
+  <ocupatia>Cadru didactic</ocupatia>
+  <virsta>33</virsta>
+  <text>
+O actualizare a acestui exemplu vechi...
+  </text>
+  </impresie>
+</impresii>

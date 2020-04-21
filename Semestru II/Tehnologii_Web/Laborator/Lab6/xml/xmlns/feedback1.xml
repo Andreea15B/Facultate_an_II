@@ -1,0 +1,41 @@
+<!-- Document XML privitor la rezultatele primului feedback anonim 
+     dat la "Tehnologii Web" (foloseste spatii de nume si referinte la entitati)
+-->     
+<feedback xmlns="urn:infoiasi.ro:busaco:feedbacks"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" type="results"
+  xml:id="feedback1-2007" version="0.2">
+  <meta>
+    <author uri="http://www.infoiasi.ro/~busaco/">Sabin-Corneliu Buraga</author>
+  </meta>
+  <issue xml:id="i1">
+    <question xml:lang="ro"> Ce alte subiecte ati dori sa fie prezentate? </question>
+    <response xml:lang="ro">
+      <rdf:Seq>
+        <rdf:li>Compararea diverselor tehnologii actuale</rdf:li>
+        <rdf:li>Instalare/configurare Apache, PHP etc.</rdf:li>
+        <rdf:li>Detalii despre ASP.NET si IIS.</rdf:li>
+        <rdf:li>Moduri de securizare a serverelor Web</rdf:li>
+        <rdf:li>Greseli frecvente de proiectare/implementare</rdf:li>
+        <rdf:li>JavaScript + AJAX</rdf:li>
+        <rdf:li>Flash + ActionScript</rdf:li>
+        <rdf:li>Design Web</rdf:li>
+        <rdf:li>Arhitectura aplicatiilor Web de anvergura</rdf:li>
+      </rdf:Seq>
+    </response>
+  </issue>
+  <issue xml:id="i6">
+    <question xml:lang="ro"> Alte pareri, sugestii, nemultumiri,...?</question>
+    <response xml:lang="ro">
+      <rdf:Seq>
+        <rdf:li>Se pune mult accent pe XML. De ce?</rdf:li>
+        <rdf:li>Sa existe pauza intre cele 2 ore de curs.</rdf:li>
+        <rdf:li>Sa se propuna teme de cercetare in fiecare saptamina.</rdf:li>
+        <rdf:li>Slide-urile sa fie mai detaliate.</rdf:li>
+        <rdf:li>Discutii referitoare la unele aspecte de interes.</rdf:li>
+        <rdf:li>Cit mai multe exemple practice la laborator.</rdf:li>
+        <rdf:li>Examenul sa fie mai lung, cu mai multe subiecte, dar fara
+          documentatii disponibile.</rdf:li>
+      </rdf:Seq>
+    </response>
+  </issue>
+</feedback>

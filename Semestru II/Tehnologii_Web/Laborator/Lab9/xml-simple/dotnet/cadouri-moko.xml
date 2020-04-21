@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<Cadouri xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.mag.ro/produse">
+  <cadou pret="100.5">
+    <bucati>1</bucati>
+    <produs>hipomotan</produs>
+  </cadou>
+</Cadouri>

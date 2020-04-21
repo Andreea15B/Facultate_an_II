@@ -1,0 +1,295 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+body{
+    padding-bottom: 70px;
+    position: relative;
+    min-height: 100vh;
+}
+*{
+    -webkit-box-sizing:border-box;
+    box-sizing:border-box;
+}
+#map{
+	width: 100%;
+	height: calc(100vh - 150px); 
+	border: 1px solid #AAA;
+}
+.stanga {
+    width: 450px;
+    height: 100%;
+    position: absolute;
+    /* left: 0px; */
+    z-index: 1001;
+    background-color: #8280805c;
+    box-sizing: border-box;
+    padding: 15px;
+    display: none;
+    /* overflow-x: auto; */
+    cursor: default;
+}
+/* .tweet {
+    margin-bottom: 10px;
+    background-color: #fff;
+    padding: 10px;
+} */
+.stangaSus {
+    width: 100%;
+    position: relative;
+    box-sizing: border-box;
+    height: 20px;
+    margin-bottom: 10px;
+    background-color: #fff;
+}
+.up{
+    display:flex;
+    margin-left:5%;
+}
+.tweet{
+    /* display: inline-block; */
+    /* display:grid; */
+  font-family: "Helvetica Neue", Roboto, "Segoe UI", Calibri, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 16px;
+  border-color: #eee #ddd #bbb;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  margin: 10px 5px;
+  padding: 8px 12px 19px 4px;
+  max-width: 468px;
+  background-color: #fff; 
+}
+.container{
+    
+  background-color: #fff;
+  border-bottom:1px solid lightblue;
+  margin-top:20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  padding: 8px 12px 19px 4px;
+
+}
+.container p{
+    font-size: 16px;
+  font-weight: normal;
+  line-height: 20px;
+}
+.tweet a{
+    color: inherit;
+  font-weight: normal;
+  text-decoration: none;
+  outline: 0 none;
+}
+.profilePic{
+    border-radius: 50%; 
+    height:30px;
+
+}
+.tweetPic{
+    margin-left: 50%;
+    height:30px;
+}
+.tweeterInfos{
+    display:grid;
+}
+.tweeterAccount{
+    white-space: nowrap;
+    grid-row: 1;
+    margin-left:5%;
+    width:100%;
+    display:inline-block;
+    font-size:7px;
+}
+.atTweeter{
+    grid-row:2;
+    font-size:3px;
+    color:grey;
+}
+.tweetContent{
+    margin-top:5%;
+    margin-left:5%;
+    font-size: 9px;
+    /* overflow: auto; */
+
+}
+.x{
+	position: absolute;
+	right: 5px;
+	font-weight: bold;
+	color: red;
+	cursor: pointer;
+}
+.mycluster {
+    text-align: center;
+    font-size: 16px;
+    background-size: cover;
+    padding-top: 17px;
+    box-sizing: border-box;
+    text-shadow: 0px 0px 6px #fff;
+}
+.cluster6 {
+    font-size: 14px;
+    padding-top: 19px;
+    background-image: url(clusters/black.png);
+}
+.cluster5 {
+    background-image: url('clusters/red.png');
+}
+.cluster4 {
+    background-image: url('clusters/orange.png');
+}
+.cluster3 {
+    background-image: url('clusters/lightorange.png');
+}
+.cluster2 {
+    background-image: url('clusters/yellow.png');
+}
+.cluster1 {
+    background-image: url('clusters/green.png');
+}
+.sus{
+    height: 80px;
+    background-color: #273c75;
+    position: relative;
+}
+.footer{
+    height: 70px;
+    background-color: #273c75;
+    bottom: 0px;
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    padding-top: 25px;
+}
+.footer a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 17px;
+    margin-right: 50px;
+}
+.butonFiltre {
+    cursor: pointer;
+    position: fixed;
+    right: 20px;
+    font-size: 24px;
+    color: #fff;
+    margin-top: 27px;
+    margin-bottom: 27px;
+}
+.logo{
+    position: fixed;
+    left: 15px;
+}
+.logo img{
+    height: 80px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.filtre {
+    display: none;
+    border: 15px solid #8280805c;
+    width: 320px;
+    position: absolute;
+    right: 0px;
+    z-index: 200;
+}
+.formular {
+    padding: 20px;
+    background-color: #fff;
+}
+.titluForm {
+    text-align: center;
+    font-size: 20px;
+    color: #353b48;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+.linieForm {
+    display: flex;
+    margin-bottom: 15px;
+}
+.label{
+    flex: 2;
+}
+.input{
+    flex: 4;
+}
+.input input, .input select{
+    background-color: #b2b6bb1f;
+    border: 1px solid #7f8fa6;
+    width: 100%;
+}
+.submit {
+    text-align: center;
+    margin-top: 30px;
+}
+.mb10{
+    margin-bottom: 10px;
+}
+.leaflet-marker-icon:not(.mycluster){
+	width: 24px !important;
+	height: 24px !important;
+}
+.leaflet-popup-content{
+    display:none;
+}
+.leaflet-popup-tip{
+    display:none;
+}
+.leaflet-popup-content-wrapper{
+    display:none;
+}
+.leaflet-popup-tip-container{
+    display:none;
+}
+.leaflet-popup-close-button{
+    display:none;
+}

@@ -1,0 +1,68 @@
+Acest director contine o serie de programe scrise in mai multe limbaje 
+de programare pentru a ilustra modalitatile de efectuare a transformarilor XSL
+via DOM -- mai multe detalii despre aceste exemplificari sunt disponibile 
+in cartea Sabin Buraga, "Tehnologii XML", Polirom, 2006 -- versiunea online 
+poate fi consultata la adresa Web de mai jos
+<https://www.slideshare.net/busaco/sabin-buraga-tehnologii-xml>.
+
+Directorul php\
+Contine programe PHP de transformare a documentelor XML:
+* sub-directorul pinguini\
+    penguins.php  - program PHP5 care va prelua informatii dintr-o baza de date 
+                    SQLite, pentru a genera un arbore DOM caruia ii vom aplica 
+                    o transformare XSLT
+    penguins.xsl  - foaia de stiluri utilizata de programul precedent
+* sub-directorul carti\
+    carti.php     - program PHP4 care va prelua informatii dintr-o baza de date 
+                    MySQL, pentru a genera un arbore DOM caruia ii vom aplica 
+                    o transformare XSLT (exercitiu: modificati pentru PHP5)
+    carti.xsl     - foaia de stiluri utilizata de programul precedent 
+* sub-directorul rss\
+    gen_rss.php   - script PHP5 utilizat pentru generat stiri RSS 
+                    despre punctaje, prin efectuarea unei transformari XSLT 
+    punctaje.xsl  - foaia XSLT folosita la generarea documentului RSS
+    punctaje.xml  - documentul XML continind date despre punctajele studentilor
+    punctaje.rss  - documentul RSS rezultat in urma efectuarii transformarii
+    rss.xpr       - fisier-proiect <oXygen />
+* xml-transformer.php - program PHP generic pentru efectuarea de transformari
+
+--
+
+Directorul perl\
+Include un script CGI folosind modulul XML::XSLT:
+* xml-transformer.pl.cgi - script Perl CGI utilizat pentru realizarea 
+                           de transformari XSLT
+
+--
+
+Directorul java\
+Include un program Java ilustrand modalitatea de realizare a transformarilor
+* XMLTransformer.java - program Java ce recurge la pachetul javax.xml.transform.*
+		                (testat sub J2SE 1.5 si 1.6)
+
+--
+
+Directorul dotnet\
+Fisierele din acest director reprezinta un exemplu de aplicare de transformari XSLT
+in .NET Framework:
+* xml-transformer.cs - program C# ilustrand modalitatea de transformare 
+     oferita de .NET 2.0 (recurge la XslCompiledTransform si XPathDocument)
+     - a se compila in .NET 2.0 sau o versiune ulterioara
+
+--
+
+Directorul c\
+Acest director contine programe C recurgand la biblioteca libxslt:
+* xml-transformer.c - program C care realizeaza transformari XSLT via libxslt
+* Makefile - fisier folosit pentru compilarea programului cu "make"
+
+-- 
+
+Acolo unde nu este precizat altceva, se va considera ca autorul programelor este 
+Sabin-Corneliu Buraga (2000-2007, 2009, 2011) -- https://profs.info.uaic.ro/~busaco/
+
+Permisiunile de utilizare sunt cele stipulate de 
+Creative Commons Attribution-NonCommercial-ShareAlike: 
+https://creativecommons.org/licenses/
+
+Ultima actualizare: 24 aprilie 2018

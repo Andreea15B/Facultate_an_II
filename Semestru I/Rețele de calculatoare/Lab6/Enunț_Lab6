@@ -1,0 +1,15 @@
+Dezvoltați un client și un server TCP, urmând pașii descriși în cadrul laboratorului (sau modificând direct exemplul din pagina cursului), unde: 
+- clientul va trimite două numere și un cod de operație ('+', '-', '*', '/') spre server, și va recepționa înapoi rezultatul 
+- cererea va fi trimisă ca o structură ce include câmpurile necesare, definită astfel:
+
+struct operation
+{
+   int number1;	 //operand 1
+   int number2;  //operand 2
+   char op;      //opcode - '+','-','*' sau '/'
+};
+
+- serverul va primi structura cerere, și va calcula și returna rezultatul clientului ca întreg
+
+Local host: 127.0.0.1
+Port: 2024

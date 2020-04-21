@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<Cadouri xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.mag.ro/produse">
+  <cadou pret="30.25">
+    <bucati>2</bucati>
+    <produs>banchiz&amp;#259; cu &lt;ferestre&gt;</produs>
+  </cadou>
+</Cadouri>

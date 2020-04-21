@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<!-- O antologie de poezii modelata in XML -->
+<antologie>
+	<poem>
+		<titlu>...</titlu>
+		<strofa>
+			<vers>...</vers>
+			<vers>...</vers>
+			...
+		</strofa>
+	</poem>
+	<poem>
+		<!-- mai multe poeme... -->
+	</poem>
+</antologie>

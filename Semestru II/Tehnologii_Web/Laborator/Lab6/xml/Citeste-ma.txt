@@ -1,0 +1,61 @@
+Aceasta arhiva contine o serie de exemple de documente XML,
+marcand (modeland) diverse tipuri de informatii.
+
+Pentru aprofundare, a se parcurge volumul S. Buraga, "Tehnologii XML",
+Polirom, 2006 disponibil liber la adresa 
+<https://www.slideshare.net/busaco/sabin-buraga-tehnologii-xml>.
+
+Directorul xml/ include diverse exemplificari:
+* antologie.xml
+       - document XML ce modeleaza o antologie de poezii
+         (de studiat prezentarea din cadrul orelor de curs)
+* produse.xml
+       - document XML specificand o lista de produse
+         (exemplifica utilizarea caracterelor Unicode, 
+          plus caracterul semi-structurat al datelor)         
+* cuprins.xml   
+       - fisier continand fragmente din cuprinsul unei carti
+* game.xml
+       - date XML referitoare la un joc electronic
+         (de parcurs prezentarea din cadrul orelor de curs)  
+* manifest.xml
+       - document ce specifica diversi parametri de configurare a unei aplicatii
+         inclus in proiectul PCjs <https://github.com/jeffpar/pcjs>
+* x3d.xml
+       - exemplu de lume virtuala modelata prin X3D <http://www.web3d.org/x3d/what-x3d>
+* videos.xml     
+       - document XML oferit de serviciul Web pus la dispozitie de Vimeo (in fapt, API-ul)
+         ca raspuns la o cerere GET in partea unui client
+
+Directorul svg/ pune la dispozitie exemple SVG (Scalable Vector Graphics),
+un dialect XML pentru declararea de grafica vectoriala; 
+       - a se parcurge fisierul 'Citeste-ma.txt' din acel director
+
+Directorul xmlns/ ofera exemplificari referitoare la utilizarea spatiilor de nume:     
+* spatii-de-nume.xml 
+       - foloseste spatii de nume pentru diverse vocabulare XML
+* feedback1.xml (avansat)
+       - document XML privitor la rezultatele unui test de feedback anonim
+* web-test1.xml (avansat)
+       - document XML care stocheaza enuntul unui test scris
+* flux.rss (avansat)
+       - exemplu de document RSS incluzand continut HTML -- generat dinamic
+         si preluat de la <http://feeds2.feedburner.com/tympanus>       
+* XViewAtom.mxml (avansat)
+       - fisier MXML (in fapt, XML) reprezentand o aplicatie Apache Flex (ex-Adobe)
+* carte.epub.xml (avansat)
+       - fragment dintr-un document .epub descriind structura unei carti electronice       
+* photos.rdf.xml (avansat)
+       - document RDF/XML specificand anume fapte despre persoane, fotografii
+       si relatiile dintre acestea pe baza vocabularelor RDF, FOAF, DCMI si XML Schema
+
+Documentele pot fi vizualizate direct intr-un navigator Web actual 
+sau utilizand un instrument disponibil online precum cel oferit de 
+Code Beautify <https://codebeautify.org/online-xml-editor>. 
+
+Acolo unde nu apar alte precizari, fisierele au fost scrise de Dr. Sabin-Corneliu Buraga.
+
+Permisiunile de utilizare sunt cele stipulate de Creative Commons 
+Attribution-NonCommercial-ShareAlike License <https://creativecommons.org/licenses/>
+
+Ultima actualizare: 20 martie 2019

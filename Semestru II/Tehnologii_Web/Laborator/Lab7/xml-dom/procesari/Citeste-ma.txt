@@ -1,0 +1,66 @@
+Acest director contine o serie de programe scrise in mai multe limbaje 
+de programare pentru a ilustra modalitatile de procesare standardizata 
+a documentelor XML prin intermediul modelului DOM -- o parte dintre exemple 
+fac parte din cartea Sabin Buraga, "Tehnologii XML", Polirom, 2006
+-- versiunea online poate fi consultata la adresa Web
+<https://www.slideshare.net/busaco/sabin-buraga-tehnologii-xml>.
+
+Directorul php\
+Ilustreaza procesarea documentelor XML prin DOM in cadrul PHP:
+* dom.php - program PHP utilizat la parcurgerea unui document XML 
+            (in cazul nostru, 'projects.xml'), folosind modelul DOM
+
+--
+
+Directorul perl\
+Contine urmatoarele fisiere utilizate pentru ilustrarea
+procesarii XML prin DOM in cadrul programelor Perl:
+* dom.pl - program Perl pentru parcurgerea unui document XML, 
+           utilizand modelul DOM (necesita instalat modulul XML::DOM);
+		   contorizeaza proiectele de o anumita clasa
+
+--
+
+Directorul python\
+Exemplifica procesarea datelor XML via DOM in Python:
+* dom.py - program Python ce parcurgere un document XML ('projects.xml')
+           pe baza modelului DOM 
+		   (recurge la modulele xml.dom si xml.dom.minidom)
+
+--
+
+Directorul dotnet\
+Acest director contine urmatoarele fisiere utilizate pentru ilustrarea
+procesarii XML prin DOM in cadrul .NET Framework 2.0 sau orice versiune superioara:
+* dom.cs - program C# utilizat la parcurgerea unui document XML
+           pe baza API-ului DOM (clasa XmlDocument)  
+
+--
+
+Directorul java\
+Include fisiere concepute in Java pentru procesarea datelor XML cu DOM:
+* DOM.java - program Java folosit la traversarea recursiva a arborelui DOM 
+             asociat unui document
+
+--
+
+Directorul javascript\
+Subdirectorul 'nodejs\' ilustreaza procesarea prin DOM a unui document HTML 
+la nivel de server, pe baza node.js
+* mini-robot.js - implementeaza un mini-robot Web ce prelucreaza
+                  un document HTML -- foloseste modulul 'xmldom'
+Subdirectorul 'browser\' furnizeaza diverse exemple privind manipularea
+arborelui DOM via programe JavaScript pe partea de client, 
+la nivelul navigatorului Web -- detalii in 'Citeste-ma.txt' din acel director
+
+--
+  
+Acolo unde nu este precizat altceva, se va considera ca autorul programelor 
+este Sabin-Corneliu Buraga (2000-2007, 2009, 2011, 2013-2014, 2018, 2019):
+https://profs.info.uaic.ro/~busaco/
+
+Permisiunile de utilizare sunt cele stipulate de 
+Creative Commons Attribution-NonCommercial-ShareAlike License: 
+http://creativecommons.org/licenses/
+
+Ultima actualizare: 01 aprilie 2019

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Exemplu de lume virtuala modelata prin X3D
+
+     Autor: Sabin-Corneliu Buraga - http://www.infoiasi.ro/~busaco/
+     Versiune: 1.2 / 2009
+     Ultima modificare: 05 februarie 2009
+-->     
+<X3D profile="Interchange" version="3.0">
+  <head>
+    <meta name="creator" content="Sabin Buraga"/>
+    <meta name="description" content="O lume 3D modelata prin X3D."/>
+  </head>
+  <Scene>
+    <!-- un cer albastru (ca de obicei) -->
+    <Background skyColor="0.1 0.3 0.4"/>
+    <!-- un grup de obiecte -->
+    <Group DEF="Obiecte">
+      <!-- o sfera oranj, stralucitoare -->
+      <Transform>
+        <Shape>
+          <Appearance>
+            <Material diffuseColor="1 0.2 0" specularColor="1 0.8 1"
+              shininess="0.9"/>
+          </Appearance>
+          <Sphere radius="2"/>
+        </Shape>
+      </Transform>
+      <!-- un con turtit (un gen de sapca) -->
+      <Transform rotation="0 1 0 1" translation="-1 0.7 -1">
+        <Shape>
+          <Appearance>
+            <Material diffuseColor="0.8 0.4 0"/>
+          </Appearance>
+          <Cone bottomRadius="3.5" height="1.5"/>
+        </Shape>
+      </Transform>
+      <!-- un text -->
+      <Transform translation="0 4 0">
+        <Shape>
+          <Text solid="false" string="Salut din X3D">
+            <FontStyle justify="MIDDLE"/>
+          </Text>
+          <Appearance>
+            <Material diffuseColor="0.8 1 0.3"/>
+          </Appearance>
+        </Shape>
+      </Transform>
+    </Group>
+    <!--
+      <Transform translation='7 2 -7' rotation='1 0.2 0 1'>
+         <Group USE='Obiecte'/>
+      </Transform>
+      -->
+  </Scene>
+</X3D>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="./../css/signup.css" />
+</head>
+
+<body>
+  <!-- this is used so the form redirects to this iframe -->
+  <!-- so the form data won't appear in the url, to avoid showing the password in the url -->
+  <iframe width="0" height="0" frameborder="0" name="dummyframe" id="dummyframe"></iframe>
+
+  <form class="modal-content" target="dummyframe">
+    <div class="container">
+      <h1>Log in</h1>
+      <hr>
+
+      <label for="username"><b>Username or email</b></label>
+      <input type="text" placeholder="Enter username" name="usernameOrEmail" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+
+      <div class="clearfix">
+        <button type="button" onclick="document.getElementById('id01').style.display='none'"
+          class="cancelbtn">Cancel</button>
+        <button type="submit" class="signupbtn" id="login-button">Log in</button>
+      </div>
+      <div id="response"></div>
+    </div>
+  </form>
+</body>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script src="./../js/login.js" type="text/javascript"></script>
+
+</html>

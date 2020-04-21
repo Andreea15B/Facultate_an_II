@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Created with Liquid XML Studio Developer Edition (Trial) 9.1.1.3301 (http://www.liquid-technologies.com)-->
+<definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.whoshurt.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" name="WhosHurt" targetNamespace="http://www.whoshurt.com/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+    <types>
+        <xs:schema xmlns:tns="http://schemas.xmlsoap.org/wsdl/" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.whoshurt.com/">
+            <element name="InputType">
+                <complexType>
+                    <sequence>
+                        <element name="input" type="string" />
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="OutputType">
+                <complexType>
+                    <sequence>
+                        <element name="output" type="string" />
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="Injury">
+                <complexType>
+                    <sequence>
+                        <element name="sport" type="string" />
+                        <element name="league" type="string" />
+                        <element name="team" type="string" />
+                        <element name="num" type="int" />
+                        <element name="pid" type="string" />
+                        <element name="fname" type="string" />
+                        <element name="lname" type="string" />
+                        <element name="pos" type="string" />
+                        <element name="injury" type="string" />
+                        <element name="pracstatus" type="string" />
+                        <element name="gamestatus" type="string" />
+                        <element name="notes" type="string" />
+                        <element name="reportedby" type="string" />
+                        <element name="tstamp" type="int" />
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="InjuryReturn">
+                <complexType>
+                    <sequence>
+                        <element xmlns:q1="http://www.whoshurt.com/" minOccurs="0" maxOccurs="unbounded" ref="q1:Injury" />
+                    </sequence>
+                </complexType>
+            </element>
+        </xs:schema>
+    </types>
+    <message name="IMGetHtml">
+        <part name="url" type="xs:string" />
+        <part name="sport" type="xs:string" />
+        <part name="league" type="xs:string" />
+        <part name="team" type="xs:string" />
+    </message>
+    <message name="OMGetHtml">
+        <part name="html" type="xs:string" />
+    </message>
+    <portType name="PortTypeWhosHurt">
+        <operation name="getHtml">
+            <input message="tns:IMGetHtml" />
+            <output message="tns:OMGetHtml" />
+        </operation>
+    </portType>
+    <binding name="BindingWhosHurt" type="tns:PortTypeWhosHurt">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+        <operation name="getHtml">
+            <soap:operation soapAction="" />
+            <input>
+                <soap:body use="literal" />
+            </input>
+            <output>
+                <soap:body use="literal" />
+            </output>
+        </operation>
+    </binding>
+    <service name="ServiceWhosHurt">
+        <port name="PortWhosHurt" binding="tns:BindingWhosHurt">
+            <soap:address location="http://www.whoshurt.com/wsdl/WhosHurtFree.php" />
+        </port>
+    </service>
+</definitions>

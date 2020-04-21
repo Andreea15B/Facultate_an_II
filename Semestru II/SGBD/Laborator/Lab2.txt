@@ -1,0 +1,102 @@
+1. Ultimul student din catalog dpdv al id-ului:
+
+set serveroutput on;
+DECLARE
+	p_id studenti.id%TYPE;
+	p_nume studenti.nume%TYPE;
+	p_prenume studenti.prenume%TYPE;
+BEGIN
+	SELECT id, nume, prenume
+	INTO p_id, p_nume, p_prenume
+	FROM studenti WHERE id = (SELECT MAX(id) FROM studenti);
+	DBMS_OUTPUT.PUT_LINE(p_id || p_nume || p_prenume);
+END;
+
+2. Afișați numele concatenat cu prenumele al unui student la întâmplare:
+
+set serveroutput on;
+DECLARE
+	p_nr INT;
+	p_std_random INT;
+	p_rez VARCHAR2(100);
+BEGIN
+	SELECT COUNT(*) INTO p_nr FROM studenti;
+	p_std_random := DBMS_RANDOM.VALUE(1, p_nr);
+	SELECT nume || ' ' || prenume INTO p_rez 
+	FROM (SELECT nume, prenume, rownum AS rand FROM studenti)
+	WHERE rand = p_std_random;
+	DBMS_OUTPUT.PUT_LINE(p_rez);
+END;
+
+3. Găsiți persoana sau una dintre persoane cu numele cel mai lung din tabela studenți. Afișați numele cu 
+prima literă cu majusculă și lungimea numelui:
+
+set serveroutput on;
+DECLARE
+  p_nume studenti.nume%TYPE;
+	p_prenume studenti.prenume%TYPE;
+BEGIN
+	SELECT nume, prenume INTO p_nume, p_prenume
+	FROM 
+	(SELECT nume, prenume FROM studenti
+	ORDER BY LENGTH(TRIM(nume)) DESC)
+	WHERE rownum = 1;
+	DBMS_OUTPUT.PUT_LINE(p_nume || ' ' || p_prenume || ' ' || LENGTH(TRIM(p_nume)));
+END;
+
+---------------------------------------------
+
+4. Creați un bloc anonim care să preia din baza de date într-o variabilă numele profesorului care are
+cele mai multe cursuri. Profesorul trebuie să fie primul în ordine alfabetică. Afișați numele profesorului,
+câte caractere are numele acestuia și dacă a pus vreodată o notă de 10.
+
+DECLARE
+	p_nume profesori.nume%type;
+	p_note VARCHAR2(5);
+BEGIN
+	SELECT nume INTO p_nume FROM (SELECT p.nume, COUNT(d.id_curs) FROM profesori p
+	JOIN didactic d on p.id=d.id_profesor  GROUP BY d.id_profesor,p.nume 
+	ORDER BY p.nume ASC)WHERE ROWNUM=1;
+	SELECT DECODE(MAX(n.valoare),10,'DA','Nu') INTO p_note FROM profesori p 
+	JOIN didactic d on p.id=d.id_profesor JOIN note n ON n.id_curs=d.id_curs WHERE p.nume=p_nume;
+	 
+	DBMS_OUTPUT.PUT_LINE(p_nume||' '||LENGTH(p_nume)||' '||p_note);
+END;
+
+5. Pentru o secvență de caractere de la tastatură, afișați nr studenților care au în componența numelui
+acel șir de caractere. Afișați un nr random reprezentând o poziție din lista studenților ce satisfac
+condiția de mai sus.
+
+set serveroutput on;
+DECLARE
+  p_sir VARCHAR2(100) := '%escu%';
+  p_nr INT;
+  p_std_random INT;
+BEGIN
+	SELECT COUNT(*) INTO p_nr FROM studenti s WHERE s.nume LIKE p_sir;
+	p_std_random := DBMS_RANDOM.VALUE(1, p_nr);
+	DBMS_OUTPUT.PUT_LINE(p_std_random);
+END;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,84 @@
+\documentclass[paper=a4, fontsize=12pt]{scrartcl}
+\usepackage[left=32mm,top=25mm,right=32mm,bottom=25mm]{geometry}
+\usepackage{titling}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+\renewcommand{\thesubsection}{\thesection.\alph{subsection}}
+\setlength{\droptitle}{-9em}
+\title{\textbf{Algoritmica grafurilor - Tema 3}}
+\author{Bucătaru Andreea A2 \and Bulboacă Maria A2}
+\date{\normalsize\ 11 ianuarie 2019}
+
+\begin{document}
+\maketitle
+
+\section*{Problema 1}
+\paragraph{a)}
+Fie $c(S,T)$ capacitatea secțiunii $(S,T)$ și $x$ un flux în $R$. $c(S,T)$ este minimă $\Leftrightarrow c(S,T) = \max v(x)$, 
+din Teorema flux maxim - secțiune minimă.
+
+Aflăm valoarea maximă a fluxului folosind algoritmul Edmonds-Karp, în timp $O(n \cdot m^2)$. Dacă $\max v(x) = c(S,T)$,
+atunci secțiunea $(S,T)$ este de capacitate minimă.
+
+\paragraph{b)}
+Din curs avem: fluxul $x$ este de valoare maximă $\Leftrightarrow$ nu există niciun drum de creștere relativ la fluxul $x$.
+
+Construim rețeaua reziduală relativă la fluxul $x$ și încercăm să găsim drumul $p$ de la $s$ la $t$, astfel încât orice
+muchie $e \in p$, satisface condiția: $c(e) > 0$ (în rețeaua reziduală). Dacă găsim un astfe de drum $p$,
+înseamnă că fluxul $x$ ar putea fi mărit cu $\min c(e)$, $e \in p$, deci $x$ nu este flux maxim. 
+
+Drumul poate fi căutat folosind un DFS/BFS, iar dacă folosim liste de adiacență, algoritmul are complexitatea $O(n+m)$.
+
+\paragraph{c)}
+Fie $v(x)$ valoarea fluxului maxim inițial și $v(x')$ valoarea fluxului maxim după ce am incrementat capacitatea unei muchii
+$e$. Demonstrăm că $v(x)+1 \ge v(x')$ (fluxul maxim după incrementare poate crește cu maixm o unitate).
+
+Fie $(S,T)$ o secțiune minimă în graful inițial $G$. Folosind teorema flux maxim - secțiune minimă, știm că $v(x) = c(S,T)$. 
+După ce modificăm $e$ și îi incrementăm capacitatea, avem o nouă secțiune minimă $(S',T')$ în noul graf. Cum capacitatea unei secțiuni 
+este definită prin $c(S',T') = \displaystyle\sum_{\substack{i \in S' \\ j \in T'}} c(ij)$. În cazul în care muchia schimbată $e = (x,y)$
+satisface condiția $x \in S'$ și $y \in T'$ (sau invers), atunci avem $c(S',T') = c(S,T)+1$. Altfel, avem $c(S',T') = c(S,T)$. Din teorema 
+flux maxim - secțiune minimă $\Rightarrow v(x') = v(x) + 1$ sau $v(x') = v(x)$, deci $v(x)+1 \ge v(x')$.
+
+Știm de la punctul b) că există un algoritm de complexitate timp $O(n+m)$ pentru a identifica dacă un flux $x$ este flux maxim într-un
+graf $G$. Testăm dacă fluxul inițial $x$ este flux maxim în graful modificat $G$. Dacă da, atunci $v(x') = v(x)$. Altfel, $v(x') = v(x)+1$. 
+
+\section*{Problema 2}
+\paragraph{}
+Deoarece $v(x) = v_1+v_2+...+v_p$, unde $v_i \in \mathbb{N}^*$ și $i \in [1,p] \Rightarrow$ valoarea minimă a unui flux $v_i$ este 1. Dacă
+$v_i = 1$, oricare $i \in [1,p] \Rightarrow v(x) = 1 \cdot p \Rightarrow p \in [1,v(x)]$.
+
+Fie $x$ fluxul inițial și $E_x = \{e$ $|$ $x(e)>0, e \in E(G)\}$. Demonstrăm că putem construi un flux $x'<=x$, cu $v(x')<v(x)$. Alegem orice muchie
+$e \in E_x$ și decrementăm fluxul de pe ea cu o unitate. Noul flux obținut $x'$ va avea $v(x') = v(x)-1$. Astfel, în mod inductiv, pentru orice flux $x$, 
+putem construi un flux $x'$ astfel încât $v(x') < v(x)$ (decrementând succesiv o muchie care conține flux).
+
+Există astfel, pentru orice $v_i$, $i \in [1,p]$, un flux $x'$ astfel încât $v_i = v(x')$ și $v(x) = \displaystyle\sum_{\substack{i \in [1,p]}} v_i$. 
+
+\section*{Problema 3}
+\paragraph{a)}
+$G$ nu este 2-ring dacă toate gradele sunt multipli de 2 și numărul de muchii este multiplu de 2, sau dacă are și grade impare. În cazul în care sunt și grade impare,
+putem modifica, adăugând un nod nou și legându-l de graful anterior $\Rightarrow$ graful are acum grade pare.
+
+Dacă un graf are grade pare și este conex $\Rightarrow$ este eulerian. Deci putem avea o colorare-fair cu 2 culori.
+\paragraph{b)}
+Dacă graful este p-ring, se poate arăta că clasele de colorare ale muchiilor incidente cu un nod fixat sunt toate de același cardinal.
+
+$c_v^{-1}(h) = c_v^{-1}(k)$, unde $c_v^{-1}(h)$ este nr de muchii incidente cu $v$ de culoare $h$.
+
+$\Rightarrow$ contradicție. Deci dacă $G$ este $\textit p$-ring, atunci nu admite o $\textit p$-colorare-fair.
+
+\section*{Problema 4}
+\paragraph{a)}
+CLUST-P este în NP și există o problemă NP-completă care se reduce la ea. Vom folosi o problemă de colorare, care se poate
+reduce în timp polinomial la problema CLUST-P.
+
+\paragraph{b)}
+Trebuie să demonstrăm că problema dată de \textbf{L}azy este polinomial rezolvabilă pentru $p=2$ clase în partiție. 
+Această problemă este asemănătoare cu demonstrația diferenței dintre problema 2-colorării și cea a 3-colorării.
+
+Am demonstrat la punctul a) că o problemă de colorare se reduce la această problemă. A determina dacă un graf poate fi colorat cu 2 culori este echivalent cu a determina dacă
+graful este bipartit sau nu, ceea ce se poate rezolva în timp polinomial. $\Rightarrow$ Cum problema 2-colorării poate fi rezolvată în timp polinomial,
+atunci și această problemă dată de \textbf{L}azy poate fi rezolvată în timp polinomial.
+
+\end{document}

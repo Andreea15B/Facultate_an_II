@@ -1,0 +1,28 @@
+Acest director include un exemplu de procesare in PHP a unui flux de stiri RSS
+(Really Simple Syndication) -- e.g., cel oferit de situl InfoQ via URL-ul
+<https://www.infoq.com/feed> -- pe baza XPath si SimpleXML.
+
+* infoq-news.php - program PHP care genereaza un document HTML5 
+                   prezentand ultimele noutati oferite de InfoQ
+* infoq.rss      - un document RSS (dialect XML) preluat de pe situl InfoQ.com;
+                   specificatia RSS poate fi consultata la adresa Web
+                   <https://www.rssboard.org/rss-specification>
+
+Un tutorial XPath 1.0 e oferit de ZVON.org 
+<http://zvon.org/comp/r/tut-XPath_1.html>.
+
+Testarea expresiilor XPath se poate face: 
+- online la <http://www.xpathtester.com/xpath>
+- in browser, folosind obiectul $x in consola Chrome
+  <https://developers.google.com/web/tools/chrome-devtools/console/command-line-reference?hl=en#xpath>
+  sau in consola Firefox
+  <https://developer.mozilla.org/Tools/Web_Console/The_command_line_interpreter>
+- recurgand la utilitarul xmllint disponibil in majoritatea distributiilor Linux:
+  <http://xmlsoft.org/xmllint.html> (vezi exemplul din prelegerea cursului)
+- cu extensia XML Tools pentru Visual Studio Code <https://github.com/DotJoshJohnson/vscode-xml>
+
+Codul-sursa a fost conceput de Sabin-Corneliu Buraga, 
+putand fi folosit conform  Creative Commons Attribution-NonCommercial-ShareAlike 4.0 License: 
+<https://creativecommons.org/licenses/>.
+
+Ultima actualizare: 20 martie 2019

@@ -1,0 +1,26 @@
+------------Lab 5----------
+1.	SELECT TRIM(s.nume) || ' ' || TRIM(s.prenume) || ' ' || TRIM(p.nume) || ' ' || TRIM(p.prenume) AS "Nume Studenti & Profi"
+	FROM studenti s JOIN profesori p ON length(s.nume) = length(TRIM(p.nume));
+	
+3.	SELECT titlu_curs FROM cursuri c JOIN note n ON c.id_curs = n.id_curs
+	MINUS
+	SELECT titlu_curs FROM cursuri c JOIN note n ON c.id_curs = n.id_curs WHERE valoare > 8;
+	
+  sau:
+	SELECT DISTINCT titlu_curs FROM cursuri c JOIN note n ON c.id_curs = n.id_curs
+	WHERE c.id_curs NOT IN (SELECT id_curs FROM note WHERE valoare>8);
+
+4.	SELECT s.nume FROM studenti s JOIN note n ON s.nr_matricol = n.nr_matricol
+	MINUS
+	SELECT s.nume FROM studenti s JOIN note n ON s.nr_matricol = n.nr_matricol WHERE valoare < 7;
+	
+5.	SELECT nume || ' ' || prenume FROM studenti s JOIN note n ON s.nr_matricol = n.nr_matricol
+	JOIN cursuri c ON c.id_curs = n.id_curs
+	WHERE titlu_curs = 'OOP' AND TRIM(TO_CHAR(data_notare, 'DAY')) = 'TUESDAY'
+	AND (valoare=7 OR valoare=10);
+	
+6.	SELECT nume, prenume, UPPER(TO_CHAR(data_notare,'month')) || ',' || EXTRACT(year FROM data_nastere) AS sesiune,
+	DECODE(TRIM(TO_CHAR(data_notare, 'month')),'february','+') AS sesiune_grea FROM studenti s
+	JOIN note n ON s.nr_matricol = n.nr_matricol WHERE valoare>5;
+
+	

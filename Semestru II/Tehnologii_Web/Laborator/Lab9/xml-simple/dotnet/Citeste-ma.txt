@@ -1,0 +1,38 @@
+Acest director contine urmatoarele fisiere utilizate pentru ilustrarea
+procesarii XML in .NET Framework, utilizand o interfata simplificata.
+Exemplele sunt detaliate in cartea Sabin Buraga, "Tehnologii XML", Polirom, 2006 
+-- versiunea online poate fi consultata la adresa Web
+<https://www.slideshare.net/busaco/sabin-buraga-tehnologii-xml>.
+
+* xml-indenter.cs   - program care indenteaza un document XML, 
+                      folosind clasa XmlTextReader
+* xml-writer.cs     - program care ilustreaza maniera de folosire 
+                      a clasei XmlWriter pentru a genera un document XML creat 
+                      prin program
+* xml-serializer.cs - program C# care ilustreaza modalitatea 
+                      de serializare/deserializare a obiectelor ca documente XML
+* cadouri*.xml      - documente XML rezultate in urma executiei 
+                      programului de serializare
+
+Directorul linq\ include exemple de utilizare a constructiilor LINQ 
+pentru crearea si interogarea documentelor XML:
+
+* AfiseazaProiecte.cs  - program C# recurgand la LINQ pentru a procesa 
+    documentul XML modeland liste de proiecte
+* GenerareAntologie.cs - program C# care foloseste LINQ in vederea generarii 
+    unui document XML privitor la o antologie de poezii
+* ?.cs - programe C# ilustrand diverse facilitati oferite de LINQ
+    (autori: Emil-Mircea Andriescu si Ionut Ignatescu -- absolventi FII)
+
+Pentru exploatarea aplicatiilor .NET, se recomanda folosirea mediului 
+Visual Studio Community: https://www.visualstudio.com/vs/express/
+
+Exceptand mentiunile explicite, toate aceste fisiere au fost scrise de 
+Sabin-Corneliu Buraga (2003-2004, 2006, 2008, 2011).
+Portiuni din codul unor programe apartin Microsoft.
+
+Permisiunile de utilizare sunt cele stipulate de 
+Creative Commons Attribution-NonCommercial-ShareAlike: 
+http://creativecommons.org/licenses/
+
+Ultima actualizare: 02 mai 2018

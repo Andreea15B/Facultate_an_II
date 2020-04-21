@@ -1,0 +1,138 @@
+Acest director contine exemple demonstrative de servicii Web concepute 
+in diverse limbaje de programare conform paradigmei SOAP.
+
+Detaliile privind o parte dintre exemplificari se gasesc in capitolul 6 
+al volumului "Servicii Web" de L.Alboaie si S.Buraga, Polirom, 2006
+-- varianta online se poate parcurge la adresa Web:
+<https://www.slideshare.net/busaco/l-alboaie-s-buraga-servicii-web-concepte-de-baz-i-implementri-2006>.
+
+Directorul oranges/ exemplifica interogarea sortimentelor de portocale 
+(implementari in PHP5/PHP7 ale serviciului Web si clientului aferent) 
+-- a se studia prelegerea de la curs:
+* oranges-server.php - codul-sursa al serviciului Web, invocabil prin SOAP
+* oranges-client.php - codul programului ce apeleaza
+                       serviciul Web implementat de fisierul anterior
+In prealabil, de inclus linia extension=soap in fisierul de configuratie php.ini
+al mediului PHP dupa care trebuie restartat serverul Web.                       
+
+--
+
+Directorul dict/ furnizeaza maniera de invocare in PHP7 a unui serviciu Web public 
+(aici, Aonaware Dictionary implementat in .NET) pe baza descrierii WSDL
+-- a se studia prelegerea de la curs:
+* dictionar.php - codul-sursa al clientului SOAP ce furnizeaza definitia unui termen
+                  furnizat de dictionarul oferit de serviciul Web
+                  
+In prealabil, de inclus linia extension=soap in fisierul de configuratie php.ini
+al mediului PHP dupa care trebuie restartat serverul Web.                       
+
+--
+
+Directorul porto-java/ exemplifica crearea si invocarea unui serviciu Web 
+pe baza JAX-WS disponibil in J2SE 1.6+ si Jakarta (ex-J2EE) -- pentru avansati
+(pentru editare si exploatare, recomandam mediul Eclipse):
+
+Sub-directorul PortoService/ (cuprinde cod al pachetelor ro.infoiasi.portocale)
+* src/ro/infoiasi/portocale/Portocale.java
+    - un pachet ce incapsuleaza implementarea unui serviciu Web					
+* src/ro/infoiasi/portocale/serviciu/ServiciuExpus.java
+	- expune serviciul Web la adresa http://localhost:8888/porto
+* porto.wsdl - fisier WSDL ce descrie serviciul Web; se poate obtine automat,
+               folosind adresa "http://localhost:8888/porto?wsdl" in browser
+* porto.xsd  - schema XML definind tipurile de date ale mesajelor SOAP,
+               obtinuta via "http://localhost:8888/porto?xsd=1"		   
+
+Pentru ca serviciul sa poata fi invocat si de alti clienti, 
+trebuie generate clasele proxy. Se va apela in consola utilitarul
+'wsgen -s src -cp bin -d bin ro.infoiasi.portocale.Portocale' (codul generat 
+al acestor clase e localizat in PortoService/src/ro/infoiasi/portocale/jaxws/).
+
+Sub-directorul PortoClient/ (include codul clientului 
+incapsulat de pachetul ro.infoiasi.portocale.client)
+* src/ro/infoiasi/portocale/client/ClientDorindPortocale.java
+    - defineste o clasa implementand un client SOAP simplu
+
+In prealabil, se va rula in consola comanda
+'wsimport -s src -d bin http://localhost:8888/porto?wsdl'
+pentru a se genera automat, pe baza WSDL, clasele proxy responsabile
+la nivel de client cu 'dialogul' SOAP cu serviciul Web (aceste clase sunt 
+stocate in sub-directorul PortoClient/src/ro/infoiasi/portocale/).
+
+-- 
+
+Directorul xml-validator/ ofera un serviciu Web pentru validarea documentelor 
+XML si clientii sai aferenti (implementari C#, PHP si Perl) -- pentru avansati:
+
+Sub-directorul web-service/ (director virtual al serverului Web)
+* xml-validator.asmx - codul-sursa C# al serviciului Web de validare 
+    a documentelor XML stocate pe server (se pot folosi doar scheme XML); 
+    se implementeaza doua metode: CheckIfExists() -- verifica existenta 
+    unui fisier in directorul virtual unde este instalat serviciul Web si 
+    Validate() -- valideaza via o schema un document XML
+* xml-validator2.asmx - codul-sursa C# al serviciului Web de mai sus, 
+    dar utilizand explicit 'SOAP encoding' pentru a putea fi invocat 
+    si de un client PHP
+* xml-validator.wsdl - document WSDL (generat automat) descriind serviciul Web
+* cuprins.xsd - schema XML demonstrativa folosita pentru validare
+* cuprins-xsd.xml - un document XML valid relativ la schema cuprins.xsd
+* cuprins-xsd-invalid.xml - un document XML invalid relativ la cuprins.xsd
+
+Sub-directorul web-client/
+* xml-validator-client.cs - codul-sursa al programului C# care reprezinta 
+    un client verificand daca un document XML e valid prin invocarea 
+    serviciului Web via o clasa proxy, automat creata cu 
+    'make-proxy.cmd'; clientul se va compila cu 'make-client.cmd'
+    dintr-o consola Windows
+* XMLValidator.cs - cod generat automat de 'make-proxy.cmd', 
+    utilizat pentru accesul din programul client la serviciul Web 
+    (pentru a putea realiza generarea, serviciul Web trebuie sa fie 
+    operational pe server; in acest exemplu, se foloseste portul 8080)
+* make-proxy.cmd - fisier de comenzi utilizat pentru compilarea proxy-ului
+* make-client.cmd - fisier de comenzi folosit pentru compilarea clientului
+* xml-validator-client.php - codul-sursa al unui client PHP5 verificand daca 
+    un document XML e valid prin invocarea serviciului Web ruland sub .NET    
+
+--
+
+Directorul xml-files/ ilustreaza maniera de dezvoltare si invocare 
+a unui serviciu Web oferind accesul la sistemul de fisiere al serverului 
+(implementari Perl si PHP) -- pentru avansati:
+
+Sub-directorul web-service/ (director virtual al serverului Web)
+* xml-files.pl     - implementeaza un server SOAP oferind un serviciu Web 
+                     la portul 3333 (se utilizeaza modulul SOAP::Lite)
+* servicii-web.txt - un fisier text de test
+
+Sub-directorul web-client/
+* xml-files-client.pl  - program Perl de invocare a serviciului Web
+* xml-files-client.php - script PHP5 care invoca o metoda a unui serviciu Web, 
+    pentru a obtine lista de fisiere existente la distanta
+    (recurge si la Simple XML)
+
+--
+    
+Directorul wsdl/ include o serie de documente WSDL specificand operatiile
+oferite de o suita de servicii Web publice -- pentru avansati:
+* DictService.wsdl - document WSDL corespunzator serviciului Web ce permite
+                     interogari privind anumite personalitati;
+					 generat de http://services.aonaware.com/DictService/DictService.asmx?WSDL
+* PDFGenerator.wsdl - specifica operatiile oferite de un serviciu Web de generare online
+                      a documentelor PDF
+* WhosHurtFree.wsdl - descriere a unui serviciu Web furnizand informatii despre sportivi accidentati;
+                      detalii la <http://www.whoshurt.com/content.php?132-web-services>  
+
+Structura mesajelor SOAP (cerere si raspuns) poate fi studiata recurgand la: 
+- extensia Boomerang pentru Chrome:
+  <https://chrome.google.com/webstore/detail/boomerang-soap-rest-clien/eipdnjedkpcnlmmdfdkgfpljanehloah?hl=en>
+- WSDL SOAP Analyzer incorporat in mediul de dezvoltare <oXygen />: 
+  <https://www.oxygenxml.com/>
+- utilitarul SOAPUI: 
+  <https://www.soapui.org/>
+					 
+Toate aceste fisiere -- exceptandu-le pe cele din directorul wsdl/ si 
+cele generate automat de diverse instrumente -- au fost concepute de 
+Sabin-Corneliu Buraga (2003-2004, 2006-2007, 2013, 2016, 2017, 2019) putand fi utilizate sub 
+auspiciile prevazute de Creative Commons Attribution-NonCommercial-ShareAlike
+License: https://creativecommons.org/licenses/
+
+Ultima actualizare: 22 aprilie 2019

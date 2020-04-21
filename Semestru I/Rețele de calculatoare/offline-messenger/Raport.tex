@@ -1,0 +1,160 @@
+\documentclass[runningheads]{llncs}
+\usepackage[left=30mm,top=30mm,right=30mm,bottom=30mm]{geometry}
+\usepackage{graphicx}
+\usepackage{datetime2}
+\usepackage{listings, lstautogobble}
+\usepackage{xcolor}
+\definecolor{light-gray}{gray}{0.95}
+\lstnewenvironment{queryl}[1][] 
+ {\lstset{autogobble=true, backgroundcolor=\color{light-gray}, language=C++, frame=shadowbox, escapechar=`, #1}}
+ {}
+\renewcommand\refname{Bibliografie}
+
+
+\title{Offline Messenger}
+\author{Bucătaru Andreea A2}
+\institute{Facultatea de Informatică, Iași}
+
+\setlength{\parindent}{4em}
+
+\begin{document}
+
+\maketitle
+\noindent
+\makebox[\linewidth]{\small 14 Decembrie 2018}
+
+\section{Introducere}
+\paragraph{}
+Offline Messenger este o aplicație care permite schimbul de mesaje între utilizatori care sunt conectați și oferă
+funcționalitatea trimiterii mesajelor și către utilizatorii offline, acestora din urmă apărându-le mesajele atunci
+când se vor conecta la server. De asemenea, utilizatorii au posibilitatea de a trimite un răspuns (reply) în mod
+specific la anumite mesaje primite. Aplicația oferă și istoricul conversațiilor pentru și cu fiecare utilizator
+în parte.
+
+\section{Tehnologii utilizate}
+\paragraph{}
+Aplicația trebuie să țină evidența userilor conectați. Având în vedere acest lucru, vom folosi protocolul de comunicare TCP, deoarece
+acesta ne asigură realizarea unei conexiuni între client și server. TCP asigură ordinea și retransmiterea pachetelor în caz de pierdere, oferind siguranță.
+\vspace{-4mm}
+\paragraph{}
+Ca limbaj de programare, aplicația este scrisă în C/C++.
+
+\section{Arhitectura aplicației}
+\paragraph{}
+Am folosit principiile programării orientate pe obiect pentru o mai bună organizare și modificare a 
+funcționalităților aplicației.
+\vspace{-4mm}
+\paragraph{}
+Aplicația este formată din două părți: server și client. 
+\vspace{-4mm}
+\paragraph{}
+Serverul va gestiona clienții în mod concurent. De asemenea, acesta se va ocupa de
+transmiterea datelor preluate de la un client la un altul în două moduri: online sau offline. 
+\vspace{-4mm}
+\paragraph{}
+Partea de client se va ocupa doar de preluarea inputului de la utilizator și trimiterea acestuia către server pentru a fi procesat.
+Pe lângă acest lucru, va furniza utilizatorului informații primite de la server.
+
+\section{Detalii de implementare}
+\paragraph{}
+Modelul TCP este implementat concurent, folosindu-se $socket$-uri pentru comunicarea între procese.
+\vspace{-4mm}
+\paragraph{}
+În server, pentru a gestiona clienții în mod concurent, vom crea un proces separat, cu $fork()$, menit să se ocupe de fiecare client:
+
+\begin{queryl}[linewidth=16.2cm, frame=single]
+    void Server::listenClients() {
+        listen(serverDescriptor, 5);
+        while (1) {
+          clientDescriptor = accept(serverDescriptor, &from, &length);
+          handleClient(clientDescriptor); // servim in mod concurent clientii
+        }
+    }
+\end{queryl}
+
+\begin{queryl}[linewidth=16.2cm, frame=single]
+    void Server::handleClient(int clientDescriptor) {
+        if (fork() != 0) return; // parintele continua listenClients
+        while (1) {
+          myRead(clientDescriptor, user.state);
+          if(user.state == 1) { // log in
+            myRead (clientDescriptor, user.username);
+            myRead (clientDescriptor, user.password);
+            int found = checkUsernamePassword(user.username, user.password);
+            myWrite(clientDescriptor, found);
+          }
+          else if(user.state == 2) { // sign up
+            myRead (clientDescriptor, user.username);
+            myRead (clientDescriptor, user.password);
+            int found = checkUsername(user.username);
+            myWrite(clientDescriptor, found);
+            if(!found)
+              addNewUser(user.username, user.password); // il adaug in fisier
+          }
+          else if(user.state == 3) break; // quit
+          else if(user.state == 5) { // chat
+            userToChat = chooseUserToChat(clientDescriptor, user);
+            chat(clientDescriptor, user, userToChat);
+          }
+          else if(user.state == 6) to be continued... // view history
+          else if(user.state == 7) break; // log out
+        }
+      }
+\end{queryl}
+
+\paragraph{}
+Partea de client se va ocupa de citirea comezilor și procesarea acestora:
+
+\begin{queryl}[linewidth=12cm, frame=single]
+void Client::listenInput() {
+    while(!quited) {
+        showMenu();
+        cin >> state;
+        validateInput(input);
+        processInput(input);
+    }
+}
+\end{queryl}
+
+\begin{queryl}[linewidth=12cm, frame=single]  
+void Client::processInput(string input) {
+    switch (state) {
+        case 1: login(); break;
+        case 2: signUp(); break;
+        case 3: quit(); break;
+        case 4: chat(); break;
+        case 5: viewHistory(); break;
+        case 6: logOut(); break;
+    }
+}
+\end{queryl}
+
+\section{Concluzii}
+\paragraph{}
+$fork()$ este un mecanism costisitor din punctul de vedere al timpului, de aceea soluția propusă ar putea fi îmbunătățită folosind 
+$thread$-uri.
+\vspace{-4mm}
+\paragraph{}
+Aplicația ar fi mult mai ușor de utilizat dacă partea de client ar avea și o interfață grafică.
+\vspace{-4mm}
+\paragraph{}
+Pentru stocarea datelor utilizatorilor și pentru ușurința decodificării acestora, am putea salva informațiile într-o bază de date sau în fișiere de tip $xml$.
+
+\bibliographystyle{splncs}
+\bibliography{mybibliography}
+
+\begin{thebibliography}{}
+
+\bibitem{}
+Cursurile de la Rețele de calculatoare: 
+https://profs.info.uaic.ro/$\sim$computernetworks/cursullaboratorul.php
+
+\bibitem{}
+Laboratoarele de la Rețele de calculatoare:
+https://profs.info.uaic.ro/$\sim$eonica/rc/
+
+\bibitem{}
+https://stackoverflow.com/
+
+\end{thebibliography}
+\end{document}

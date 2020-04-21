@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<produse> 
+    <produs>
+       <nume>Ping Uinix</nume>
+       <ofertant>http://www.pinguin.info</ofertant> 
+       <promo>Mascota lunii</promo>
+   </produs> 
+   <produs> 
+       <!-- un soi de portocale albastre -->
+       <nume>Blue Ory</nume>
+       <descriere />
+   </produs>
+   <produs>
+       <nume>⌚ cu gust de 🍎</nume>
+   </produs>
+</produse> 

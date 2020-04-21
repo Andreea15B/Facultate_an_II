@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- O aplicatie Flex 2 care afiseaza intrarile dintr-un document Atom, obtinut via HTTP de la un script CGI
+
+    Parti din acest cod apartin Adobe (c)2006 -- actualmente, proiect Apache: http://flex.apache.org/
+    Autor: Sabin-Corneliu Buraga
+    Ultima actualizare: 28 noiembrie 2006
+-->
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute"
+    creationComplete="cerereServiciu.send()">
+    <mx:Script>
+        <![CDATA[
+	import mx.controls.Alert; // folosit pentru Alert
+]]>
+    </mx:Script>
+    <!-- cererea spre un serviciu via metoda POST -->
+    <mx:HTTPService id="cerereServiciu" destination="cerereServiciu"
+        method="POST" url="http://localhost/flex/get-atom.pl.cgi"
+        useProxy="false" showBusyCursor="true"
+        fault="Alert.show('Serviciul nu poate fi contactat.', 'Eroare')"/>
+    <!-- declararea unui efect de afisare de tip WipeDown 
+     (de incercat si cu Blur, Fade, Glow,...) -->
+    <mx:WipeDown id="efectAfis" duration="2000"/>
+    <!-- zona de afisare a datelor -->
+    <mx:Panel id="afisaj" x="10" y="10" width="675" height="316"
+        layout="absolute" backgroundAlpha="0.4" cornerRadius="7"
+        borderStyle="inset" title="{cerereServiciu.lastResult.feed.author.name}"
+        creationCompleteEffect="{efectAfis}">
+        <!-- o componenta atasata la datele XML preluate via HTTPService -->
+        <mx:DataGrid x="20" y="20" id="dgIntrari" width="600"
+            dataProvider="{cerereServiciu.lastResult.feed.entry}">
+            <mx:columns>
+                <!-- coloanele 'umplute' cu subiecte & datele publicarii -->
+                <mx:DataGridColumn headerText="Subiect" dataField="title"
+                    width="350"/>
+                <mx:DataGridColumn headerText="Data" dataField="published"
+                    textAlign="center" backgroundColor="#EEEEEE"/>
+            </mx:columns>
+        </mx:DataGrid>
+        <!-- zona de text ce va contine textul stirii -->
+        <mx:TextArea x="20" y="170" width="600" height="57" color="white"
+            backgroundColor="#808080" condenseWhite="true" wordWrap="true"
+            editable="false" htmlText="{dgIntrari.selectedItem.content}"/>
+        <!-- butonul ce activeaza reincarcarea documentului Atom -->
+        <mx:Button x="20" y="235" activate="cerereServiciu.send()"
+            label="Reincarca" click="Reincarca()"/>
+    </mx:Panel>
+    <mx:Script>
+        <![CDATA[
+    // functie privata care reincarca documentul Atom
+	private function Reincarca():void {
+	 	cerereServiciu.send();
+	}
+]]>
+    </mx:Script>
+</mx:Application>

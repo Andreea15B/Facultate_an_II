@@ -1,0 +1,20 @@
+Acest director ilustreaza modul de specificare a ilustratiilor SVG 
+(Scalable Vector Graphics) -- continut grafic vectorial pentru Web.
+
+Pentru detalii, a se consulta volumul S. Buraga (coord.), "Situri Web la cheie", 
+Polirom, 2004 (in special, capitolul "Noua provocare în grafica 2D: SVG" 
+realizat de Catalin Bulancea, absolvent FII)
+
+* svg.html -- furnizeaza maniera de includere a continutului SVG 
+              direct intr-un document HTML
+* svg.svg  -- un exemplu de document SVG de sine-statator ce recurge
+              la diverse constructii uzuale: forme geometrice 
+              precum <text>, <rect>, <path>, definitii de degrade-uri sau filtre,
+              utilizarea textului
+
+Alte resurse de interes:
+* https://www.w3.org/Graphics/SVG/
+* https://developer.mozilla.org/docs/Web/SVG
+* https://github.com/willianjusten/awesome-svg
+
+Ultima actualizare: 16 martie 2018

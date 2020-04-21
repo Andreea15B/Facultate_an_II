@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!-- Document XML continind informatii despre proiectele propuse
+     la "Retele de calculatoare" (fragment)
+     
+     Autor: Sabin-Corneliu Buraga - http://www.purl.org/net/busaco
+     Versiune: 1.8 / 2002-2005, 2011
+     Ultima actualizare: 26 martie 2011
+-->     
+
+<!-- Pentru validare se foloseste o schema XML -->
+<pr:projects xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://infoiasi.ro/web/Projects projects.xsd"
+  xmlns:pr="http://infoiasi.ro/web/Projects">
+
+  <pr:project pr:class="A">
+    <pr:title>Super</pr:title>
+    <pr:desc> Un super proiect pentru niste super studenti! </pr:desc>
+    <pr:stud>1</pr:stud>
+    <pr:url>http://www.super.ro</pr:url>
+  </pr:project>
+
+  <pr:project pr:class="B">
+    <pr:title>Super--</pr:title>
+    <pr:desc> Un proiect care nu e foarte super... </pr:desc>
+    <pr:stud>2</pr:stud>
+    <pr:url>http://www.supermm.org</pr:url>
+  </pr:project>
+
+</pr:projects>

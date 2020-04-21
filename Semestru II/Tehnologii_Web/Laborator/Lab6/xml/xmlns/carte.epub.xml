@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!-- Document XML folosit pentru descrierea unei carti electronice in format .epub.
+  Se recurse la vocabularele OPF (Open Publishing Format) si DCMI (Dublin Core Metadata Initiative)
+  
+  Fragment preluat din pachetul Calibre: http://calibre-ebook.com/
+-->
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="BookID" version="2.0">
+  <!-- metadate specificate via DCMI -->
+  <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+    <dc:title>Calibre Quick Start Guide</dc:title>
+    <dc:creator opf:role="aut" file-as="Schember, John">John Schember</dc:creator>
+    <dc:language>en</dc:language>
+    <dc:identifier id="BookID" opf:scheme="UUID">urn:uuid:2c3272a4-731b-4348-909d-6f38b97b18eb</dc:identifier>
+    <dc:publisher>calibre</dc:publisher>
+    <meta content="cover.jpg" name="cover" />
+    <meta content="0.4.0" name="Sigil version" />
+  </metadata>
+  <manifest>
+    <!-- cuprinsul cartii -->
+    <item href="toc.ncx" id="ncx" media-type="application/x-dtbncx+xml" />
+	<!-- coperta cartii -->
+    <item href="Images/cover.jpg" id="cover.jpg" media-type="image/jpeg" />
+	<!-- proprietatile de stil -->
+    <item href="Styles/stylesheet.css" id="stylesheet.css" media-type="text/css" />
+	<!-- capitolele cartii -->
+    <item href="Text/calibre_quick_start_split_000.xhtml" id="calibre_quick_start_split_000.xhtml" media-type="application/xhtml+xml" />
+    <item href="Text/calibre_quick_start_split_001.xhtml" id="calibre_quick_start_split_001.xhtml" media-type="application/xhtml+xml" />
+    <item href="Text/calibre_quick_start_split_002.xhtml" id="calibre_quick_start_split_002.xhtml" media-type="application/xhtml+xml" />
+    <!-- ...si altele -->
+	<!-- pagina de titlu a cartii -->
+    <item href="Text/titlepage.xhtml" id="titlepage.xhtml" media-type="application/xhtml+xml" />
+  </manifest>
+  <spine toc="ncx">
+    <itemref idref="titlepage.xhtml" />
+    <itemref idref="calibre_quick_start_split_000.xhtml" />
+    <itemref idref="calibre_quick_start_split_001.xhtml" />
+    <itemref idref="calibre_quick_start_split_002.xhtml" />    
+  </spine>
+  <guide>
+    <reference href="Text/titlepage.xhtml" title="Cover" type="cover" />
+  </guide>
+</package>

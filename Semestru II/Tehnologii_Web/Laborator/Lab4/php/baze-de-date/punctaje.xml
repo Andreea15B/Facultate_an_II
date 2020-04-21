@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="afiseaza_maxim.xsl" ?>
+<!-- Fisierul continind punctajele obtinute de studenti la un anumit obiect -->
+<punctaje exam="Retele de calculatoare">
+	<punctaj stud="Cosmina Croitoru">
+		<nota tip="test">10</nota>
+		<nota tip="proiect">10</nota>
+		<nota tip="lab">10</nota>
+	</punctaj>
+	<punctaj stud="Florin-Tudor Cristea">
+		<nota tip="test">10</nota>
+		<nota tip="proiect">11</nota>
+		<nota tip="bonus">8</nota>
+	</punctaj>
+	<punctaj stud="Catalin Gheorghita Bordianu">
+		<nota tip="test">10</nota>
+		<nota tip="proiect">10</nota>
+		<nota tip="lab">5</nota>
+		<nota tip="bonus">5</nota>
+	</punctaj>
+	<punctaj stud="Serban Ioan Iorga">
+		<nota tip="test">8</nota>
+		<nota tip="proiect">12</nota>		
+		<nota tip="lab">10</nota>
+	</punctaj>
+	<punctaj stud="Irina Diana Lungu">
+		<nota tip="test">6</nota>
+		<nota tip="lab">10</nota>		
+		<nota tip="proiect">11</nota>
+		<nota tip="bonus">5</nota>		
+	</punctaj>
+</punctaje>

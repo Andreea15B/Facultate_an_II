@@ -1,0 +1,14 @@
+Acest director contine un exemplu de procesare cu PHP5 a documentelor HTML 
+(invalide) pe baza functionalitatilor oferite de biblioteca 
+Simple HTML DOM Parser <http://simplehtmldom.sourceforge.net/>.
+
+* scraping.php - program care preia informatii despre produse (albume muzicale)
+                 de pe un sit Web de profil
+
+Toate aceste fisiere au fost scrise de Sabin-Corneliu Buraga (2019).
+
+Permisiunile de utilizare sunt cele stipulate de 
+Creative Commons Attribution-NonCommercial-ShareAlike: 
+https://creativecommons.org/licenses/
+
+Ultima actualizare: 05 aprilie 2019

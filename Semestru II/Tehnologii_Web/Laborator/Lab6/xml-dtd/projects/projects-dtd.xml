@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!-- Document XML continand informatii despre proiectele propuse
+     la "Retele de calculatoare" (fragment)
+     
+     Autor: Sabin-Corneliu Buraga - http://profs.info.uaic.ro/~busaco/
+     Versiune: 1.7.2 / 2002-2004, 2006, 2009, 2016
+     Ultima actualizare: 23 martie 2016
+-->     
+
+<!-- Pentru validare se foloseste un DTD intern -->
+
+<!DOCTYPE projects [ <!-- element radacina al documentului -->
+
+<!ELEMENT projects (project+)>
+<!ELEMENT project (title, desc?, stud, url?)>
+<!ELEMENT title   (#PCDATA)>
+<!ELEMENT desc    (#PCDATA)>
+<!ELEMENT stud    (#PCDATA)>
+<!ELEMENT url     (#PCDATA)>
+
+<!-- elementul 'projects' are un atribut 'update' avand un anumit continut textual  -->
+<!ATTLIST projects
+	update 	CDATA  #FIXED "07 ianuarie 2016"
+>	
+
+<!-- lista claselor de proiecte, implicita fiind 'A' -->
+<!ATTLIST project
+	class   (A|B|C)     "A" 
+>
+]>
+<projects>
+  <project class="A">
+    <title>Super</title>
+    <desc>Un super proiect pentru niste super studenti!</desc>
+    <stud>1</stud>
+    <url>http://www.super.ro/</url>
+  </project>
+
+  <project class="B">
+    <title>Super--</title>
+    <desc>Un proiect care nu e foarte super...</desc>
+    <stud>2</stud>
+    <url>http://www.supermm.org/</url>
+  </project>
+</projects>

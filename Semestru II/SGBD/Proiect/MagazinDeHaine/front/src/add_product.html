@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="./../css/signup.css" />
+    <title>Add product</title>
+</head>
+
+<body>
+    <!-- so the form data won't appear in the url, to avoid showing the password in the url -->
+    <iframe width="0" height="0" frameborder="0" name="dummyframe" id="dummyframe"></iframe>
+
+    <form class="modal-content" target="dummyframe" id="add-product-form">
+        <div class="container">
+            <h1>Add a new product</h1>
+            <hr>
+
+            <label for="id_category"><b>Category</b></label>
+            <br>
+            <select name="id_category" id="select-category">
+            </select>
+            <br><br>
+
+            <label for="id_producer"><b>Producer</b></label>
+            <br>
+            <select name="id_producer" id="select-producer">
+            </select>
+            <br><br>
+
+            <label for="product_image"><b>Product image</b></label>
+            <input type="file" accept="image/*" name="product_image" id="product-image-input" required><br>
+
+            <label for="name"><b>Name</b></label>
+            <input type="text" placeholder="Enter Name" name="name">
+
+            <label for="price"><b>Price</b></label>
+            <input type="number" placeholder="Enter price" name="price">
+
+            <label for="color"><b>Color</b></label>
+            <input type="text" placeholder="Enter Color" name="color">
+
+            <label for="product_size"><b>Product Size</b></label>
+            <input type="text" placeholder="Enter Size" name="product_size">
+
+            <label for="material_type"><b>Material Type</b></label>
+            <input type="text" placeholder="Enter material type" name="material_type">
+
+            <label for="stock"><b>Stock</b></label>
+            <input type="number" placeholder="Enter stock" name="stock">
+
+            <label for="gender"><b>Gender</b></label>
+            <input type="text" placeholder="Enter gender" name="gender">
+
+            <label for="password"><b>Password for logged in user</b></label>
+            <input type="password" placeholder="Enter old Password" name="password" required>
+            <div class="clearfix">
+                <button type="submit" class="signupbtn" id="add-product-button">Add product</button>
+            </div>
+            <div id="response"></div>
+        </div>
+    </form>
+
+
+</body>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script src="./../js/add_product.js" type="text/javascript"></script>
+
+</html>

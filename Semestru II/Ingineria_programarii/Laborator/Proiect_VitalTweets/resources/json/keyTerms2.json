@@ -1,0 +1,6 @@
+[
+    { "ID":1, "Continent":"Europe", "Country":"Romania", "Latitude":"45,9443", "Longitude":"25,0094" },
+    { "ID":2, "Continent":"Europe", "Country":"Spain", "Latitude":"41,2948", "Longitude":"-4,0556" } ,
+    { "ID":3, "Continent":"Africa", "Country":"Egypt", "Latitude":"31.2057", "Longitude":"29.9245" } ,
+    { "ID":3, "Continent":"Asia", "Country":"Israel", "Latitude":"31.7719", "Longitude":"35.2170" }
+]

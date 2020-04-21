@@ -1,0 +1,15 @@
+Acest director contine exemplificari de procesare XML simplificata oferita 
+de biblioteca libxml (disponibila, uzual, in distributiile Linux actuale);
+detalii la http://xmlsoft.org/
+
+* procxml.c  - program C care proceseaza (parcurge) un document XML,
+               folosind functiile xmlTextReader
+* Makefile   - fisier folosit pentru compilarea programului prin "make"
+* autori.xml - un document XML de test
+
+Toate aceste fisiere au fost scrise de Sabin-Corneliu Buraga (2004).
+Permisiunile de utilizare sunt cele stipulate de 
+Creative Commons Attribution-NonCommercial-ShareAlike: 
+http://creativecommons.org/licenses/
+
+Ultima actualizare: 28 aprilie 2014

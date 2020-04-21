@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+    <meta>
+        <filters directoryPatterns="" filePatterns=""
+            positiveFilePatterns="" showHiddenFiles="false"/>
+        <options/>
+    </meta>
+    <projectTree name="rss.xpr">
+        <file name="gen_rss.php"/>
+        <file name="punctaje.rss"/>
+        <file name="punctaje.xml"/>
+        <file name="punctaje.xsl"/>
+    </projectTree>
+</project>

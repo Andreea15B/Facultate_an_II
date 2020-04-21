@@ -1,0 +1,26 @@
+<?xml version="1.0"?> 
+<!-- Un exemplu de document XML care foloseste diverse spatii de nume
+     pentru a identifica diverse vocabulare, in vederea evitarii conflictelor
+-->
+<c:calendars xmlns:c="http://www.calendar.info">
+  <e:participant
+    xmlns:s="http://www.info.uaic.ro/Students/"
+    xmlns:e="http://www.info.uaic.ro/Events/">
+    <s:name>Tuxy Pinguinnescool</s:name>
+    <s:year s:kind="Bachelor">2</s:year>
+    <c:calendar>
+      <!-- xml:id si xml:lang sunt atribute XML predefinite -->
+      <e:event xml:id="SpB">
+        <e:name xml:lang="ro">Stagii pe Bune</e:name>
+        <e:year>2018</e:year>
+        <e:url>https://www.stagiipebune.ro/</e:url>
+      </e:event>
+      <e:event xml:id="GSoC">
+        <e:name xml:lang="en">Google Summer of Code</e:name>
+        <e:year>2018</e:year>
+        <e:url>https://summerofcode.withgoogle.com/</e:url>
+      </e:event>
+	  <e:event xml:id="ImagineCup" />
+    </c:calendar>
+  </e:participant>
+</c:calendars>

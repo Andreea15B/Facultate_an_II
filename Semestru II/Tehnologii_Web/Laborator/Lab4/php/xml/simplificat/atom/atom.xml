@@ -1,0 +1,203 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom"
+    xmlns:openSearch="http://a9.com/-/spec/opensearchrss/1.0/">
+    <id>tag:blogger.com,1999:blog-23158607</id>
+    <updated>2006-11-22T13:19:11.976+02:00</updated>
+    <title type="text">Random Insanity</title>
+    <link rel="alternate" type="text/html"
+        href="http://busaco.blogspot.com/index.html"/>
+    <link rel="next" type="application/atom+xml"
+        href="http://busaco.blogspot.com/feeds/posts/default?start-index=26&amp;max-results=25"/>
+    <link rel="http://schemas.google.com/g/2005#feed"
+        type="application/atom+xml"
+        href="http://busaco.blogspot.com/feeds/posts/default"/>
+    <link rel="self" type="application/atom+xml"
+        href="http://busaco.blogspot.com/feeds/posts/default"/>
+    <author>
+        <name>Sabin Corneliu Buraga</name>
+    </author>
+    <generator version="7.00" uri="http://beta.blogger.com">Blogger</generator>
+    <openSearch:totalResults>38</openSearch:totalResults>
+    <openSearch:startIndex>1</openSearch:startIndex>
+    <openSearch:itemsPerPage>25</openSearch:itemsPerPage>
+    <entry>
+        <id>tag:blogger.com,1999:blog-23158607.post-728569322066933469</id>
+        <published>2006-11-22T13:11:00.000+02:00</published>
+        <updated>2006-11-22T13:19:12.003+02:00</updated>
+        <category scheme="http://www.blogger.com/atom/ns#" term="Web"/>
+        <category scheme="http://www.blogger.com/atom/ns#" term="persistence"/>
+        <category scheme="http://www.blogger.com/atom/ns#" term="uri"/>
+        <category scheme="http://www.blogger.com/atom/ns#" term="Site"/>
+        <title type="text">http://purl.org/net/busaco</title>
+        <content type="html">&lt;p&gt;I must announce my persistent URL
+            at &lt;a href="http://purl.org/"
+            title="PURL"&gt;purl.org&lt;/a&gt;... So, my "new"
+            (P)URL is &lt;a href="http://purl.org/net/busaco"
+            title="Persistent URL of Sabin-Corneliu Buraga's
+            Website"&gt;http://purl.org/net/busaco&lt;/a&gt; which
+            redirects to the well-known &lt;a
+            href="http://www.infoiasi.ro/~busaco/" title="Website of
+            Sabin-Corneliu
+            Buraga"&gt;www.infoiasi.ro/~busaco/&lt;/a&gt;.&lt;/p&gt;</content>
+        <link rel="alternate" type="text/html"
+            href="http://busaco.blogspot.com/2006/11/httppurlorgnetbusaco.html"/>
+        <link rel="self" type="application/atom+xml"
+            href="http://busaco.blogspot.com/feeds/posts/default/728569322066933469"/>
+        <link rel="edit" type="application/atom+xml"
+            href="http://www.blogger.com/feeds/23158607/posts/default/728569322066933469"/>
+        <author>
+            <name>Sabin Corneliu Buraga</name>
+        </author>
+    </entry>
+    <entry>
+        <id>tag:blogger.com,1999:blog-23158607.post-116186067541626832</id>
+        <published>2006-10-26T13:49:00.000+03:00</published>
+        <updated>2006-11-15T12:42:22.153+02:00</updated>
+        <title type="text">www.uaic.ro &amp; www.infoiasi.ro</title>
+        <content type="html">&lt;p&gt;Finally, the new versions of the
+            &lt;a href="http://www.uaic.ro/"
+            title="&amp;quot;A.I.Cuza&amp;quot; University of
+            Iasi"&gt;"A.I.Cuza" University of Iasi&lt;/a&gt; and
+            &lt;a href="http://www.info.uaic.ro/" title="Faculty of Computer
+            Science"&gt;Faculty of Computer Science&lt;/a&gt; are
+            available.&lt;/p&gt;&lt;p&gt;Based on &lt;a
+            href="http://www.xwiki.org/" title="Visit the XWiki
+            Website"&gt;XWiki&lt;/a&gt; infrastructure, these
+            Websites have a new design and information architecture.
+            Supplementary, &lt;a href="http://www.info.uaic.ro/"
+            title="Faculty of Computer Science"&gt;Faculty of Computer
+            Science&lt;/a&gt; is supporting &lt;a
+            href="http://www.microformats.org/" title="About
+            microformats"&gt;microformats&lt;/a&gt;, and other
+            Semantic Web technologies (e.g., &lt;a
+            href="http://www.dublincore.org/" title="Dublin Core Metadata
+            Initiative"&gt;DCMI&lt;/a&gt;
+            vocabularies).&lt;/p&gt;&lt;p&gt;I must especially
+            mention the hard work of &lt;a
+            href="http://www.infoiasi.ro/~sergiu.dumitriu/" title="Sergiu
+            Dumitriu's Website"&gt;Sergiu Dumitriu&lt;/a&gt; and
+            &lt;a href="http://www.infoiasi.ro/~marta/" title="Marta
+            G&amp;icirc;rdea's Website"&gt;Marta
+            G&amp;icirc;rdea&lt;/a&gt; (important contributors to
+            the XWiki project). I also thank for support to &lt;a
+            href="http://mironescu.blogspot.com/" title="Adrian Mironescu's
+            blog"&gt;Adrian Mironescu&lt;/a&gt; and &lt;a
+            href="http://thor.info.uaic.ro/~adiftene/" title="Adrian Iftene's
+            Website"&gt;Adrian
+            Iftene&lt;/a&gt;.&lt;/p&gt;</content>
+        <link rel="alternate" type="text/html"
+            href="http://busaco.blogspot.com/2006/10/wwwuaicro-wwwinfoiasiro.html"/>
+        <link rel="self" type="application/atom+xml"
+            href="http://busaco.blogspot.com/feeds/posts/default/116186067541626832"/>
+        <link rel="edit" type="application/atom+xml"
+            href="http://www.blogger.com/feeds/23158607/posts/default/116186067541626832"/>
+        <author>
+            <name>Sabin Corneliu Buraga</name>
+        </author>
+    </entry>
+    <entry>
+        <id>tag:blogger.com,1999:blog-23158607.post-116056319421301883</id>
+        <published>2006-10-11T13:32:00.000+03:00</published>
+        <updated>2006-11-15T12:42:21.942+02:00</updated>
+        <title type="text">Web Services book is available!</title>
+        <content type="html">&lt;p&gt;Our book on &lt;a
+            href="http://www.infoiasi.ro/~busaco/books/ws/" title="Visit the
+            Website of Web Services book"&gt;Web services&lt;/a&gt;
+            &amp;ndash; &lt;em&gt;Blue Oranges&lt;/em&gt;
+            internal name &amp;ndash; is available for everyone. Just 320
+            pages to be explored (SOA, XML, WSDL, SOAP, UDDI, AJAX, WS-*, and
+            many more)...&lt;/p&gt;&lt;p&gt;A short &lt;a
+            href="http://www.infoiasi.ro/~busaco/books.html#ws" title="About Web
+            Services book"&gt;presentation of the book&lt;/a&gt;, in
+            English, is also provided. Enjoy!&lt;/p&gt;</content>
+        <link rel="alternate" type="text/html"
+            href="http://busaco.blogspot.com/2006/10/web-services-book-is-available.html"/>
+        <link rel="self" type="application/atom+xml"
+            href="http://busaco.blogspot.com/feeds/posts/default/116056319421301883"/>
+        <link rel="edit" type="application/atom+xml"
+            href="http://www.blogger.com/feeds/23158607/posts/default/116056319421301883"/>
+        <author>
+            <name>Sabin Corneliu Buraga</name>
+        </author>
+    </entry>
+    <entry>
+        <id>tag:blogger.com,1999:blog-23158607.post-115753178274866791</id>
+        <published>2006-09-06T11:30:00.000+03:00</published>
+        <updated>2006-11-15T12:42:21.737+02:00</updated>
+        <title type="text">eLiberatica (Spring 2007, Brasov, Romania)</title>
+        <content type="html">It's time to reveal my support for a new event:
+            &lt;a href="http://www.eliberatica.ro/" title="Visit eLiberatica
+            Web site"&gt;eLiberatica &amp;ndash; The Benefits of Open
+            and Free Technologies&lt;/a&gt;.</content>
+        <link rel="alternate" type="text/html"
+            href="http://busaco.blogspot.com/2006/09/eliberatica-spring-2007-brasov-romania.html"/>
+        <link rel="self" type="application/atom+xml"
+            href="http://busaco.blogspot.com/feeds/posts/default/115753178274866791"/>
+        <link rel="edit" type="application/atom+xml"
+            href="http://www.blogger.com/feeds/23158607/posts/default/115753178274866791"/>
+        <author>
+            <name>Sabin Corneliu Buraga</name>
+        </author>
+    </entry>
+    <entry>
+        <id>tag:blogger.com,1999:blog-23158607.post-115278364437946398</id>
+        <published>2006-07-13T12:30:00.000+03:00</published>
+        <updated>2006-11-15T12:42:21.151+02:00</updated>
+        <title type="text">Next Challenge: MacBook</title>
+        <content type="html">&lt;p&gt;On 07 July, I acquired a &lt;a
+            href="http://www.apple.com/macbook/macbook.html" title="Technical
+            details about MacBook"&gt;MacBook&lt;/a&gt;, "something
+            beautiful, amazing, wonderful, extraordinary beautiful" (to quote
+            &lt;a href="http://www.jonanderson.com/" title="Jon Anderson's
+            personal Web site"&gt;Jon Anderson&lt;/a&gt; - listen to
+            &lt;em&gt;Circus of Heaven&lt;/em&gt;, a musical
+            bijou from "Tormato" album by &lt;a
+            href="http://www.yesworld.com/" title="Official Web site of
+            YES"&gt;YES&lt;/a&gt;). Strange yet powerful, a machine
+            and operating system who made my whole day (and
+            week).&lt;/p&gt;</content>
+        <link rel="alternate" type="text/html"
+            href="http://busaco.blogspot.com/2006/07/next-challenge-macbook.html"/>
+        <link rel="self" type="application/atom+xml"
+            href="http://busaco.blogspot.com/feeds/posts/default/115278364437946398"/>
+        <link rel="edit" type="application/atom+xml"
+            href="http://www.blogger.com/feeds/23158607/posts/default/115278364437946398"/>
+        <author>
+            <name>Sabin Corneliu Buraga</name>
+        </author>
+    </entry>
+    <entry>
+        <id>tag:blogger.com,1999:blog-23158607.post-114951809008570089</id>
+        <published>2006-06-05T17:25:00.000+03:00</published>
+        <updated>2006-11-15T12:42:20.666+02:00</updated>
+        <title type="text">New version of ~busaco/ Website</title>
+        <content type="html">After many years, a major update of main page of my
+            &lt;a href="http://www.infoiasi.ro/~busaco/" title="Visit
+            Website of Sabin-Corneliu Buraga"&gt;Website&lt;/a&gt;
+            &amp;ndash; &lt;a href="http://www.infoiasi.ro/~busaco/"
+            title="Visit Website of Sabin-Corneliu
+            Buraga"&gt;www.infoiasi.ro/~busaco/&lt;/a&gt;...&lt;br
+            /&gt;&lt;br /&gt;This new version includes &lt;a
+            href="http://www.microformats.org/" title="Visit microformats.org
+            site"&gt;microformats&lt;/a&gt; (try load the Website in
+            Firefox, using &lt;a
+            href="https://addons.mozilla.org/firefox/2240/" title="Tails
+            extension for microformats"&gt;Tails&lt;/a&gt;
+            extension), more &lt;a href="http://www.seochat.com/"
+            title="Search Engine Optimization
+            Website"&gt;SEO&lt;/a&gt; and &lt;a
+            href="http://www.w3.org/WAI/" title="W3C Web Accessibility
+            Initiative"&gt;WAI&lt;/a&gt; enhancements, and a new
+            clean design.&lt;br /&gt;&lt;br /&gt;Enjoy!
+            ;)</content>
+        <link rel="alternate" type="text/html"
+            href="http://busaco.blogspot.com/2006/06/new-version-of-busaco-website.html"/>
+        <link rel="self" type="application/atom+xml"
+            href="http://busaco.blogspot.com/feeds/posts/default/114951809008570089"/>
+        <link rel="edit" type="application/atom+xml"
+            href="http://www.blogger.com/feeds/23158607/posts/default/114951809008570089"/>
+        <author>
+            <name>Sabin Corneliu Buraga</name>
+        </author>
+    </entry>
+</feed>

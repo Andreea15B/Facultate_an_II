@@ -1,0 +1,6 @@
+<!-- document XML colectând subiecte de teste scrise -->
+<subiecte materie="Tehnologii Web" data="2019-04-09"> 
+   <subiect>Ce este Web-ul?</subiect>
+   <subiect>Unde e stocat un cookie?</subiect> 
+   <subiect>La ce este util limbajul XPath?</subiect>
+</subiecte>

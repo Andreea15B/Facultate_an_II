@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<autori>
+  <!-- un singur autor, deocamdata -->
+  <autor>
+     <nume><![CDATA[ Sabin Buraga ]]></nume>
+     <adresa email="busaco@infoiasi.ro" />
+  </autor>
+</autori>

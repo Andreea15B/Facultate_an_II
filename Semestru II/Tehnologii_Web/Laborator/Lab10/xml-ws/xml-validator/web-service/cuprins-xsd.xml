@@ -1,0 +1,19 @@
+<!-- pentru validare se foloseste o schema XML -->
+<c:cuprins 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="xsdCuprins cuprins.xsd" xmlns:c="xsdCuprins"  
+  titlu="Programarea in Web 2.0" editura="Polirom" an="2007">  
+   <c:coordonator>Sabin Buraga</c:coordonator>
+   <c:capitol numar="4">
+      <c:nume>Recomandari Web prin intermediul microformatelor</c:nume>
+      <c:autor email="catalinb@infoiasi.ro">
+        Anca-Paula Luca
+      </c:autor>  
+      <c:descriere />      
+   </c:capitol>
+   <c:capitol numar="5">
+      <c:nume>Aplicatii hibride: mashups</c:nume>
+      <c:autor>Ecaterina Valica</c:autor>
+      <c:descriere />        
+   </c:capitol>
+</c:cuprins>

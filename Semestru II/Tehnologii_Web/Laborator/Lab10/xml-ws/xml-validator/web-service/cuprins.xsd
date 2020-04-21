@@ -1,0 +1,94 @@
+<xsd:schema xmlns="xsdCuprins" targetNamespace="xsdCuprins"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+            elementFormDefault="qualified"
+            attributeFormDefault="unqualified">
+
+<xsd:annotation>
+  <xsd:documentation xml:lang="ro">
+   Exemplu de schema utilizata la validarea cuprinsului unui carti 
+   
+   (c)2003-2004, 2007 Sabin-Corneliu Buraga - http://www.infoiasi.ro/~busaco/
+   Ultima actualizare: 24 noiembrie 2007
+  </xsd:documentation>
+</xsd:annotation>
+
+<!-- definirea elementului-radacina "cuprins" -->
+<xsd:element name="cuprins" type="cuprinsType" />
+
+<!-- tipul complex "cuprinsType" -->
+<xsd:complexType name="cuprinsType">
+  <xsd:sequence>
+     <!-- include elementul "coordonator" (care poate lipsi) -->
+     <xsd:element name="coordonator" type="xsd:string"
+                  minOccurs="0" maxOccurs="1" />
+     <!-- contine referinta la elementul "cuprins" 
+          care trebuie sa apara cel putin 1 data -->
+     <xsd:element ref="capitol" 
+                  minOccurs="1" maxOccurs="unbounded" />     
+  </xsd:sequence> 
+  <!-- contine diverse atribute  -->
+     <xsd:attribute name="titlu" type="xsd:string" use="required" />             
+     <xsd:attribute name="editura" type="xsd:string" />
+     <xsd:attribute name="an" type="anType" />
+</xsd:complexType>
+
+<!-- definirea tipului simplu "anType" folosit pentru
+     specificarea valorilor atributului "an" -->
+<xsd:simpleType name="anType">
+   <xsd:restriction base="xsd:gYear">   
+       <xsd:enumeration value="2004"/>
+       <xsd:enumeration value="2005"/>
+       <xsd:enumeration value="2006"/>
+       <xsd:enumeration value="2007"/>
+       <xsd:enumeration value="2008"/>
+   </xsd:restriction> 
+</xsd:simpleType>          
+
+<!-- definirea elementului "capitol" -->
+<xsd:element name="capitol" type="capitolType" />
+
+<!-- tipul complex "capitolType" -->
+<xsd:complexType name="capitolType">
+  <!-- elementele vor aparea in ordinea de mai jos -->
+  <xsd:sequence>
+     <xsd:element name="nume" type="xsd:string" />
+     <xsd:element ref="autor" minOccurs="1" maxOccurs="unbounded" />
+     <xsd:element name="descriere" type="xsd:string" />
+  </xsd:sequence>
+  <!-- contine un atribut obligatoriu -->
+  <xsd:attribute name="numar" type="nrcapType" use="required" />
+</xsd:complexType>
+
+<!-- tipul simplu "nrcapType" folosit pentru 
+     a specifica valorile atributului "numar" -->
+<xsd:simpleType name="nrcapType"> 
+   <xsd:restriction base="xsd:integer">   
+       <xsd:minInclusive value="0" /> 
+       <xsd:maxInclusive value="9" />  
+   </xsd:restriction> 
+</xsd:simpleType> 
+
+<!-- specificarea elementului "autor" -->
+<xsd:element name="autor">
+   <xsd:complexType>
+      <!-- derivam dintr-un tip simplu -->
+      <xsd:simpleContent>
+         <xsd:extension base="xsd:string">
+            <!-- specificam aparitia (optionala) 
+                 a atributului "email" -->
+            <xsd:attribute name="email" type="addrType" />
+         </xsd:extension>
+      </xsd:simpleContent>
+  </xsd:complexType>
+</xsd:element>   
+
+<!-- tipul simplu "addrType" specificind restrictiile
+     valorilor atributului "email" -->
+<xsd:simpleType name="addrType"> 
+   <xsd:restriction base="xsd:string">   
+       <!-- utilizam o expresie regulata -->
+       <xsd:pattern value=".+@.+\.(.){2,4}" />
+   </xsd:restriction>      
+</xsd:simpleType>
+
+</xsd:schema>

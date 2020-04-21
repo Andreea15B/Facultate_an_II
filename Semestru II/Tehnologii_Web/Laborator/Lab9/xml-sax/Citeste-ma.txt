@@ -1,0 +1,65 @@
+Acest director contine o serie de programe scrise in mai multe limbaje 
+de programare pentru a ilustra modalitatile de procesare a documentelor XML 
+prin intermediul interfetei SAX (Simple API for XML).
+Mai multe detalii despre aceste exemplificari sunt disponibile 
+in cartea Sabin Buraga, "Tehnologii XML", Polirom, 2006 -- versiunea online
+e disponibila la <https://www.slideshare.net/busaco/sabin-buraga-tehnologii-xml>.
+
+Directorul php\
+Contine o serie de programe PHP care ilustreaza modul de procesare via SAX 
+a documentelor XML (varianta moderna si varianta clasica):
+
+Sub-directorul php5\ include rescrierea codului pentru versiunile moderne (PHP 5.4+):
+* parseXML.php - clasa incapsuland facilitatile pentru prelucrarea datelor XML
+* subiecte-test.php - un program ce afiseaza lista unor subiecte de examen
+                      pe baza functionalitatilor implementate de parseXML.php
+* web-test.xml - un document XML de test
+
+Sub-directorul php4\ furnizeaza o solutie implementata in PHP4 si ulterioarele:
+* parseXML.php - cod PHP definind clasa de procesare a documentelor XML
+* sax.php      - un exemplu de script care proceseaza elementele 
+                 unui document XML, folosind parseXML.php
+* sax2.php     - un exemplu de script care proceseaza si atributele 
+                 unor elemente XML, recurgand la parseXML.php      
+* impresii.xml - un document XML cuprinzand impresiile vizitatorilor unui sit Web
+* subiecte-test.php - un program ce afiseaza lista unor subiecte de examen
+                      pe baza functionalitatilor implementate de parseXML.php
+* web-test.xml - un document XML care cuprinde diverse subiecte de examen
+                 propuse de studenti
+-- 
+
+Directorul java\
+Ofera cod Java (testat sub J2SE 1.5) pentru ilustrarea procesarii SAX:
+
+* SAX.java - program Java folosit la procesarea unui document XML continand
+             informatii privitoare la proiecte propuse la o disciplina
+
+--
+
+Directorul perl\ -- pentru avansati
+Include o serie de script-uri CGI scrise in limbajul Perl  
+demonstrand modul de procesare via SAX a documentelor XML:
+
+* cuprins-sax.pl.cgi - script CGI care afiseaza cuprinsul unei carti, 
+                       cuprins modelat in XML
+* cuprins.xml - fisierul XML folosit pentru procesare      
+
+-- 
+
+Directorul python\ -- pentru avansati
+Ilustreaza manierea de procesare a documentelor XML prin intermediul 
+interfetei SAX oferite de modulul xml.sax:
+
+* sax.py - program care realizeaza procesarea unui document XML
+* cuprins.xml - documentul XML utilizat pentru procesare
+
+--
+
+Acolo unde nu este precizat altceva, se va considera ca autorul programelor
+este Sabin-Corneliu Buraga (2000-2007, 2009, 2013, 2015-2017, 2019).
+
+Permisiunile de utilizare sunt cele stipulate de 
+Creative Commons Attribution-NonCommercial-ShareAlike License: 
+https://creativecommons.org/licenses/
+
+Ultima actualizare: 12 aprilie 2019

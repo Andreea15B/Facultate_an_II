@@ -1,0 +1,19 @@
+Acest director contine o serie de fisiere pentru a ilustra modul de validare
+a unui document XML, folosind declaratii DTD, scheme XML si RELAX NG
+-- aceste exemple de cod-sursa sunt prezentate pe larg in cartea Sabin Buraga, 
+"Tehnologii XML", Polirom, 2006 -- versiunea online poate fi consultata la 
+adresa Web <https://www.slideshare.net/busaco/sabin-buraga-tehnologii-xml>.
+
+Pentru verificarea validitatii, se poate recurge la:
+
+- programul xml-validator.php (poate valida conform declaratiilor DTD, 
+    schemelor XML si RELAX NG)
+
+- programul xml-validator.cs (se pot folosi atat scheme XML, 
+    cat si declaratii DTD; a se compila cu "csc xml-validator.cs" si 
+    a se executa cu "xml-validator <fisier.xml> [ --dtd ]" 
+    - necesita .NET Framework SDK)
+
+Portiuni din codul programului xml-validator.cs apartin Microsoft.
+
+Ultima actualizare: 24 aprilie 2018

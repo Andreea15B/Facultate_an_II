@@ -1,0 +1,28 @@
+"Servicii Web. Concepte de baza si implementari"
+
+Lenuta Alboaie si Sabin Buraga
+
+Editura Polirom, 2006
+
+http://www.infoiasi.ro/~busaco/ws/
+
+Volumul este adresat programatorului Web (viitor sau actual) si initiaza 
+cititorul într-un mod sistematic în tehnologiile si metodologiile de dezvoltare 
+a serviciilor Web. Implementarile sunt detaliate în cele mai utilizate limbaje, 
+via instrumente si platforme care ofera suport pentru crearea si invocarea de 
+servicii Web. 
+  * Dezvoltarea aplicatiilor distribuite bazate pe XML
+  * Arhitectura orientata spre servicii: SOA
+  * Descrierea serviciilor Web prin WSDL
+  * Protocolul SOAP (structura si codificarea mesajelor, 
+    mod de procesare si transport ale datelor, SOAP si HTTP, exemple)
+  * Descoperirea serviciilor Web;
+    crearea unui registru UDDI prin jUDDI
+  * Dezvoltarea si utilizarea serviciilor Web în C/C++, C#, Java, Perl, PHP 
+    si Visual Basic via .NET, Java, Delphi si Apache Axis2, gSOAP, NuSOAP si 
+    SOAP::Lite
+  * Accesarea serviciilor externe (Google si XMethods)
+  * AJAX pentru invocarea asincrona a serviciilor;
+    utilizarea framework-urilor Prototype si Atlas ASP.NET
+  * Ingineria, securitatea si inter-operabilitatea serviciilor Web
+  * Servicii Web pentru afaceri, grid si Web 2.0

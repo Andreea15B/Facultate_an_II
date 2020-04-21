@@ -1,0 +1,471 @@
+*** SELECT nume, prenume, FLOOR(MONTHS_BETWEEN(TO_DATE(SYSDATE),TO_DATE(data_nastere))/12) || ' ani ' ||
+	FLOOR(MOD(MONTHS_BETWEEN(TO_DATE(SYSDATE), TO_DATE(data_nastere)),12)) || ' luni ' ||
+	FLOOR(MOD(MOD(MONTHS_BETWEEN(TO_DATE(SYSDATE), TO_DATE(data_nastere)),12),4)) || ' si zile '
+	AS varsta FROM studenti;
+	
+*** SELECT nume FROM studenti WHERE grupa LIKE 'B%' AND TRIM(TO_CHAR(data_nastere,'day')) = 'TUESDAY';
+
+*** SELECT DISTINCT prenume || '++' || upper(nume) || '++' || TO_CHAR(data_nastere, 'day') AS "New String" FROM studenti
+	WHERE bursa IS NULL;
+	
+*** SELECT INITCAP(nume), SUBSTR(prenume,2), DECODE(bursa, 450, 'premiul 1', 350, 'premiul 2', 250, 'premiul 3', '?')
+	AS "Premii" FROM studenti;
+
+*** SELECT nr_matricol FROM studenti WHERE grupa LIKE 'A%' AND bursa IS NOT NULL
+	UNION
+	SELECT nume FROM studenti WHERE grupa LIKE 'B%' AND bursa IS NULL;
+	
+*** SELECT LOWER(SUBSTR(prenume, 1, 1)) || UPPER(SUBSTR(prenume, 2, 1)) || LOWER(nume) AS "Redenumire" FROM studenti
+	WHERE bursa IS NOT NULL AND an = 2;
+	
+*** SELECT nr_matricol || '/' || nume || '/' || prenume || '/' || an || '/' || bursa AS "Studenti" FROM studenti
+	WHERE an <> 3 AND nr_matricol NOT LIKE '%2%' AND bursa IS NOT NULL;
+	
+*** SELECT nr_matricol, valoare FROM note WHERE valoare>7;
+
+*** SELECT nume FROM studenti WHERE bursa IS NOT NULL AND an IN (1,3);
+
+*** SELECT nume, prenume FROM studenti WHERE prenume LIKE '%a'
+	UNION
+	SELECT nume, prenume FROM profesori WHERE prenume LIKE '%a';
+	
+*** SELECT REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(LOWER(SUBSTR(nume, 1, LENGTH(nume)/2)), 'a', 'aa'), 'e', 'ee'), 
+	'i', 'ii'), 'o', 'oo'), 'u', 'uu') ||
+	REVERSE(UPPER(SUBSTR(nume, LENGTH(nume)/2+1))) AS "Nu mai rezist", CEIL(SQRT(nr_matricol)*an) AS "SAD"
+	FROM studenti WHERE MOD(LENGTH(nume),2)=0;
+	
+*** SELECT DISTINCT UPPER(SUBSTR(nume, 1, 2)) || UPPER(SUBSTR(prenume, 3, length(prenume)-2)) AS "Codificare" FROM studenti;
+
+*** SELECT id_prof, id_curs FROM didactic WHERE MOD(TO_NUMBER(SUBSTR(id_prof, 2)),2) = MOD(id_curs,2) 
+	ORDER BY 1;
+
+*** SELECT ASCII(nume) AS "nume", ASCII(prenume) AS "prenume", ADD_MONTHS(data_nastere, 1) AS "data_nastere+1"
+	FROM studenti WHERE grupa = 'A1' OR grupa = 'B1';
+	
+*** SELECT nume, prenume AS "Profesori" FROM profesori WHERE grad_didactic = 'Lect' ORDER BY 1 DESC;
+
+*** SELECT titlu_curs || ' ' || an || ' ' || semestru AS "Credite pare" FROM cursuri WHERE MOD(credite,2) = 0;
+
+*** SELECT DISTINCT nume, prenume, an, grupa, UPPER(SUBSTR(nume,1,1)) || ' ' || LOWER(SUBSTR(prenume,length(prenume)-1,1)) 
+	AS "litere" FROM studenti WHERE (an = 1 OR an = 3) AND grupa LIKE 'A%';
+	
+*** SELECT SUBSTR(nume, length(nume)/2, 2) AS "Mijloc" FROM studenti WHERE MOD(length(nume), 2) = 0
+	ORDER BY nume DESC;
+	
+*** SELECT nume, prenume, length(nume)+length(prenume) AS "LUNGIME" FROM studenti
+	WHERE grupa LIKE 'B%' AND bursa IS NULL ORDER BY 3;
+	
+*** SELECT nume, bursa, prenume FROM studenti WHERE bursa >= 200 AND grupa LIKE 'A%' AND nr_matricol NOT LIKE '%2%';
+
+*** SELECT nume FROM studenti WHERE (prenume LIKE '%a%' OR prenume LIKE '%b%') AND bursa IS NOT NULL
+	UNION
+	SELECT nume FROM profesori WHERE (prenume LIKE '%a%' OR prenume LIKE '%b%') AND grad_didactic IS NULL;
+	
+*** SELECT nume, prenume, data_nastere FROM studenti WHERE TRIM(TO_CHAR(data_nastere, 'day')) = 'saturday' OR
+	TRIM(TO_CHAR(data_nastere, 'day')) = 'friday' ORDER BY 3;
+	
+*** SELECT UPPER(SUBSTR(nume,2, length(nume)-4)) AS "Fragment_Nume" FROM studenti ORDER BY data_nastere DESC;
+
+*** SELECT nr_matricol AS "NR" , valoare, id_curs AS "ID" FROM note WHERE MOD(nr_matricol,2) = 0 AND valoare>=7 AND
+	id_curs LIKE '2%';
+	
+*** SELECT bursa+100 AS "Bursa", ASCII(an) AS "Ascii", reverse(grupa) AS "Grupa" FROM studenti
+	WHERE bursa IS NOT NULL AND MOD(nr_matricol,2) = 0 ORDER BY 1;
+	
+*** SELECT 'Studentul ' || nume || ' ' || prenume || ' adora limbajul C++ de cand avea doar ' ||
+	FLOOR((FLOOR(MONTHS_BETWEEN(TO_DATE(sysdate), TO_DATE(data_nastere))/12)) /
+	(TO_NUMBER(EXTRACT(month FROM data_nastere))+TO_NUMBER(SUBSTR(grupa,2,1)))) || ' ani' FROM studenti;
+	
+*** SELECT TO_CHAR(EXTRACT(month FROM data_nastere),'month') FROM studenti WHERE bursa IS NOT NULL;
+
+*** SELECT LOWER(SUBSTR(nume, 1, 1)) || TRANSLATE(nume, 'aeiou', 'AEIOU') || '-' || ASCII(grupa) AS "Stud.I" FROM studenti WHERE bursa IS NOT NULL
+	AND nume NOT LIKE 'A%';
+	
+*** SELECT ASCII(nume) || SUBSTR(nr_matricol, LENGTH(nr_matricol)-1, 1) AS "Halloween" FROM studenti WHERE 
+	TO_CHAR(data_nastere, 'day') = 'wednesday';
+	
+*** SELECT TO_CHAR(data_nastere, 'mm*dd/yyyy') AS "TrickyDate", EXTRACT(month FROM data_nastere)*EXTRACT(
+	month FROM data_nastere) + FLOOR(nr_matricol/5) AS "Formula Matematica" FROM studenti WHERE an=2 AND grupa
+	LIKE 'A%';
+	
+*** SELECT TRANSLATE(SUBSTR(nume, LENGTH(nume)/2+1), 'aeiou', 'AEIOU') || '-' || reverse(prenume) || '-' || 2*ASCII(
+	EXTRACT(year FROM data_nastere)) AS "stUds_nAmE" FROM studenti WHERE an=3 AND LENGTH(nume)=7;
+	
+*** SELECT 'I' || 's' || REPLACE(SUBSTR(prenume, LENGTH(prenume)-2), 'a', 'YOU') || ' -_-' AS "Emoji"
+	FROM studenti WHERE EXTRACT(year FROM data_nastere)=1997 AND prenume LIKE '%a' AND 
+	MOD(TO_NUMBER(SUBSTR(grupa, 2, 1)),2)=0;
+	
+*** SELECT prenume AS "Nume sau Prenume" FROM studenti WHERE bursa IS NULL AND 
+	EXTRACT(day FROM data_nastere)<=15
+	UNION
+	SELECT nume AS "Nume sau Prenume" FROM studenti WHERE bursa IS NOT NULL AND EXTRACT(day FROM data_nastere)>15;
+	
+*** SELECT nume || SUBSTR(FLOOR(MONTHS_BETWEEN(data_nastere, sysdate)/12),2) FROM studenti 
+	WHERE SUBSTR(nr_matricol,1,1)+SUBSTR(nr_matricol,2,1)+SUBSTR(nr_matricol,3,1) IN (2, 3, 5, 7, 11);
+	
+*** SELECT TO_CHAR(LAST_DAY(data_nastere), 'dd-mm-yyyy') AS "Ultima zi", 
+	nume || '-' || prenume AS "Nume", TO_CHAR(bursa*3) AS "Bursa" FROM studenti WHERE an=3 AND bursa IS NOT NULL
+	UNION
+	SELECT TO_CHAR(LAST_DAY(data_nastere), 'dd-mm-yyyy') AS "Ultima zi", 
+	nume || '-' || prenume AS "Nume", 'Zacusca power' AS "Bursa" FROM studenti WHERE an=3 AND bursa IS NULL;
+	
+*** SELECT TRANSLATE(nume, '*bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ', '*') || 
+	REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(prenume, 'a', '@#$%^&*'), 'e', '@#$%^&*'), 'i', '@#$%^&*'), 
+	'o', '@#$%^&*'), 'u', '@#$%^&*') || 2*SUBSTR(EXTRACT(year FROM data_nastere), 4, 1) AS "Codificare student." 
+	FROM studenti WHERE MOD(nr_matricol, 4)=0 AND MOD(nr_matricol, 8)<>0;
+	
+*** SELECT SUBSTR(nume,1,2) || EXTRACT(year FROM data_nastere) || reverse(substr(prenume,1,2)) AS "Dosar",
+	POWER(bursa/an, TO_NUMBER(SUBSTR(nr_matricol, 3, 1))) AS "Spaga", 'p' || SUBSTR(nr_matricol, 3, 1) AS "Nu primim"
+	FROM studenti WHERE bursa IS NOT NULL;
+	
+*** SELECT UPPER(SUBSTR(nume, 2)) AS "NUME", SUBSTR(grupa, 1, 1) AS "SEMIAN" FROM studenti
+	WHERE an=2 AND EXTRACT(day FROM data_nastere) = 03;
+	
+*** SELECT TRANSLATE(nume, 'aeiou', 'AEIOU') || '~' || TRANSLATE(prenume, 'bcdfghjklmnpqrstvwxyz', 'BCDFGHJKLMNPQRSTVWXYZ')
+	AS "NUM.PREN." FROM studenti;
+	
+*** SELECT nume || ' Cola ' || TRANSLATE(UPPER(SUBSTR(reverse(prenume),1,3)), 'aeiouAEIOU', '^^^^^^^^^^') 
+	|| TRANSLATE(SUBSTR(reverse(prenume), 4), 'aeiouAEIOU', '^^^^^^^^^^') AS "Fanta",
+	grupa || an*5 || an AS "Sprite!"
+	FROM studenti WHERE an>1 AND bursa IS NULL;
+	
+*** SELECT SUBSTR(nume,1,1) || translate(lower(prenume), 'iI', 'rR') || CEIL(sqrt(EXTRACT(year FROM data_nastere))) 
+	AS "Cod", bursa*5 AS "Am bani" FROM studenti WHERE bursa IS NOT NULL AND an=3;
+	
+*** SELECT lower(SUBSTR(nume,1,LENGTH(nume)-2)) || UPPER(SUBSTR(nume,LENGTH(nume)-1)) || '*.' || 
+	ASCII(substr(prenume,LENGTH(prenume),1)) || '*.' || grupa FROM studenti WHERE 
+	(TRIM(TO_CHAR(data_nastere, 'month')) = 'april' or TRIM(TO_CHAR(data_nastere, 'month')) = 'february') AND
+	LENGTH(prenume)-LENGTH(TRANSLATE(prenume, '*aeiouAEIOU', '*')) >= 2;
+	
+*** SELECT TRANSLATE(nume, 'abis', 'bcxe') || ' ' || SUBSTR(prenume,1,2) || ' ' || grupa 
+	AS "Studenti" FROM studenti WHERE MOD(LENGTH(prenume),2) = 0 AND MOD(LENGTH(nume),4) = 0 AND bursa=250 AND
+	MOD(nr_matricol, 2) = 0 AND TRIM(TO_CHAR(data_nastere, 'month')) = 'august';
+	
+*** SELECT SUBSTR(nume, 1, 3) || '~~~' || SUBSTR(TRIM(prenume), LENGTH(TRIM(prenume))-2) || '~~~' || 
+	SUBSTR(TRIM(id_prof), 2) * LENGTH(TRIM(prenume)) AS "BD1" 
+	FROM profesori WHERE grad_didactic IS NOT NULL;
+	
+*** SELECT TRANSLATE(nume, 'aeiou', 'AEIOU') || '@#$' || TRANSLATE(prenume, '*aeiouAEIOU', '*') 
+	AS "Pantera", TO_CHAR(data_nastere, 'dd_') || REVERSE(TRIM(TO_CHAR(data_nastere, '_month'))) || 
+	TO_CHAR(data_nastere, 'yyyy') AS "Roz" FROM studenti;
+
+*** SELECT TRANSLATE(nume, 'aeou', 'zdnt') || TRANSLATE(prenume, 'aeiou', 'cgkqw') AS "BAJETZI" 
+	FROM studenti WHERE prenume NOT LIKE '%a';
+	
+*** SELECT DECODE(grad_didactic, 'Lect', 'Lector', 'Conf', 'Conferentiar', 'Prof', 'Profesor', 'Colaborator') 
+	|| '-' || UPPER(nume) || '-' || UPPER(prenume) FROM profesori;
+	
+*** SELECT nume || TRANSLATE(prenume, 'aeiou', 'AEIOU') AS "Studs", TO_CHAR(data_nastere, 'DDTH') || ' of ' ||
+	TRIM(TO_CHAR(data_nastere, 'Month')) || ', ' || TO_CHAR(data_nastere, 'YYYY')
+	AS "DataNou", bursa*ASCII(prenume) AS "Bursa" FROM studenti WHERE bursa IS NOT NULL;
+	
+*** SELECT replace(replace(replace(nume, 'a', ASCII('a')), 'A', ASCII('A')), 'o', 'c') AS "CiudaT",
+	RPAD(bursa+38/100*bursa, 8, '@') || '.' AS "B", SUBSTR(TRIM(nr_matricol), 2) || SUBSTR(grupa,1,1) || ' ' AS "Ghiveci" 
+	FROM studenti WHERE bursa IS NOT NULL;
+	
+*** SELECT TRANSLATE(nume, 'aeiouAEIOU', '          ') || CHR(66) || CHR(105) || CHR(110) || CHR(101) ||
+	TRANSLATE(prenume, 'bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ', '                                          ') 
+	AS "-.-Final._." FROM studenti WHERE bursa IS NOT NULL;
+	
+*** SELECT TRANSLATE(prenume, 'aeiou', 'AEIOU') || '~!@#$%^' || RPAD(nume, 25, '~') AS ".B.D." FROM studenti
+	WHERE bursa IS NOT NULL AND MOD(EXTRACT(month FROM data_nastere),2)=1;
+	
+*** SELECT lower(SUBSTR(nume,1,1)) || SUBSTR(nume,2,LENGTH(nume)-3) || UPPER(SUBSTR(nume,LENGTH(nume)-1)) ||
+	INSTR(prenume, 'a') || SUBSTR(grupa,2) AS "Nirvana" FROM studenti WHERE bursa IS NULL;
+	
+*** SELECT reverse(TRANSLATE(nume, 'aeiou', 'AEIOU')) || '*' || prenume || '#' || 
+	DECODE(an, 1, 'I', 2, 'II', 3, 'III') || '&' || SUBSTR(grupa,2) AS "student" FROM studenti WHERE
+	EXTRACT(year FROM data_nastere) = 1995 OR EXTRACT(year FROM data_nastere) = 1996 OR grupa LIKE 'B%';
+	
+*** SELECT TRANSLATE(titlu_curs, 'BCDFGHJKLMNPQRSTVWXYZ', '%%%%%%%%%%%%%%%%%%%%%'),
+	DECODE(MOD(id_curs*an,2), 0, ASCII(semestru), ASCII(credite)) AS "Alia$" FROM cursuri;
+	
+*** SELECT ceil(sqrt(nr_matricol+substr(extract(year FROM data_nastere), 3, 2))) || '. ' || substr(nume,1,2) 
+	|| substr(prenume, LENGTH(prenume)-1) AS "NP" FROM studenti WHERE bursa IS NOT NULL AND grupa LIKE 'A%';
+	
+*** SELECT DISTINCT nume || ' ' || prenume AS "Nume distince" FROM studenti WHERE nume LIKE 'P%' OR prenume LIKE 'A%';
+
+*** SELECT TO_NUMBER(SUBSTR(id_prof, 2))*LENGTH(prenume) AS "COD", UPPER(nume) || ' ' || REVERSE(prenume) || '*'
+	AS "V-ATI ARS" FROM profesori WHERE grad_didactic IS NOT NULL;
+	
+*** SELECT lower(SUBSTR(nume, 1, 1)) || UPPER(SUBSTR(nume,2)) || '#' || TRANSLATE(prenume, '*aeiouAEIOU', '*') || '#'
+	|| data_nastere AS "Tabela ", TRIM(TO_CHAR(data_nastere, 'DD-MONTH')) || '-2018' AS "Sarbatoare" FROM studenti;
+	
+*** SELECT SUBSTR(nume,1,1) || ':\.' || TRANSLATE(prenume, 'aeiou', '\\\\\/') AS "Path\/",
+	RPAD(TRIM(id_prof), 8, SUBSTR(TRIM(prenume),LENGTH(prenume)-2)) AS "*.ExE"
+	FROM profesori WHERE grad_didactic IS NOT NULL;
+	
+*** SELECT REVERSE(prenume) AS "Restantieri", bursa*LENGTH(nume) AS "Suma", 
+	TRIM(TO_CHAR(data_nastere, 'MONTH', 'nls_date_language=romanian')) AS "PanaCand" FROM studenti 
+	WHERE bursa IS NOT NULL AND EXTRACT(year FROM data_nastere)<1997;
+	
+*** SELECT nume FROM studenti WHERE SUBSTR(POWER(LENGTH(nume), LENGTH(prenume)), 
+	LENGTH(POWER(LENGTH(nume), LENGTH(prenume)))) = 7 OR 
+	SUBSTR(POWER(LENGTH(nume), LENGTH(prenume)), LENGTH(POWER(LENGTH(nume), LENGTH(prenume)))) = 0;
+	
+*** SELECT nume || '*' || prenume FROM studenti WHERE LENGTH(nume)+LENGTH(prenume) > 15;
+
+*** SELECT REVERSE(nume) || LENGTH(prenume) || POWER(bursa, SUBSTR(grupa,2,1)*an) AS "coloana" 
+	FROM studenti WHERE bursa IS NOT NULL AND TRIM(TO_CHAR(data_nastere, 'MONTH')) = 'APRIL';
+	
+*** SELECT nume || '+' || prenume AS "Nume+Prenume=", TO_CHAR(data_nastere, 'day', 'nls_date_language=romanian') 
+	AS "ZiNastere" FROM studenti WHERE EXTRACT(month FROM data_nastere) IN (6,7,8);
+
+*** SELECT reverse(TRIM(nr_matricol)) AS "Inv", TRIM(id_curs), TO_CHAR(data_notare, 'year') AS "Data"
+	FROM note WHERE MOD(valoare,2)=1 AND TRIM(TO_CHAR(data_notare, 'day')) = 'wednesday';
+	
+*** SELECT nume, prenume, nr_matricol, DECODE(bursa, 450, bursa+15/100*bursa, 350, bursa+25/100*bursa, 250, 
+	bursa+50/100*bursa) AS "marire bursa" FROM studenti WHERE bursa IS NOT NULL;
+	
+*** SELECT LENGTH(TRANSLATE(TRIM(TO_CHAR(data_nastere, 'dd-mm-yy')), '*123456789', '*'))-2 AS "Nr zero" 
+	FROM studenti WHERE prenume NOT LIKE '%a' AND bursa IS NOT NULL;
+	
+*** SELECT SUBSTR(prenume,1,4) || SUBSTR(nume, LENGTH(nume)-2) AS "dorel" FROM studenti WHERE bursa IS NOT NULL
+	AND MOD(nr_matricol - TO_NUMBER(SUBSTR(grupa,2,1)), 2) = 0;
+	
+*** SELECT TRUNC(SIN(FLOOR(MONTHS_BETWEEN(sysdate, data_nastere)/12)), 3) AS ".836", UPPER(SUBSTR(REVERSE(nume),1,1))
+	|| LOWER(SUBSTR(REVERSE(nume),2)) AS "Urazboc" FROM studenti WHERE SUBSTR(TRIM(prenume),1,1) 
+	NOT IN ('A', 'E', 'I', 'O', 'U');
+	
+*** SELECT TRUNC(SQRT(TO_NUMBER(SUBSTR(grupa,2,1))), 2) AS "NR", NVL(bursa, 0) AS "Bursa0",
+	UPPER(nume) AS "Doar numele" FROM studenti WHERE MOD(EXTRACT(month FROM data_nastere), 2) = 0;
+	
+*** SELECT REVERSE(nume) || SUBSTR(SIN(nr_matricol),1,10) AS "sinuzita" FROM studenti WHERE bursa IS NULL AND
+	MOD(EXTRACT(day FROM data_nastere), 2) = 0;
+	
+*** SELECT TRANSLATE(nume, 'aeiou', 'AEIOU') || '.' || UPPER(prenume) || '***' || grupa AS "NEwNamE", 
+	REVERSE(TRIM(TO_CHAR(data_nastere, 'month', 'nls_date_language=spanish'))) AS "Data" 
+	FROM studenti WHERE TRIM(TO_CHAR(data_nastere, 'month')) = 'april' OR 
+	TRIM(TO_CHAR(data_nastere, 'month')) = 'august';
+	
+*** SELECT prenume AS "BeauApa" FROM studenti WHERE MOD(LENGTH(prenume), 2) = 0 AND (bursa > 100 AND bursa < 300) 
+	AND an = 1;
+	
+*** SELECT nume, DECODE(bursa, 450, '$$$$$$$$$', 350, '$$$$$$$', 250, '$$$$$') FROM studenti WHERE bursa IS NOT NULL;
+
+
+----------- JOIN ------------
+
+
+*** SELECT nume AS "Nume", prenume AS "Prenume", titlu_curs AS "Curs", 
+	DECODE(valoare, 4, 'PICAT', 'PROMOVAT') AS "Situatie" FROM studenti 
+	JOIN note ON studenti.nr_matricol = note.nr_matricol JOIN cursuri ON note.id_curs = cursuri.id_curs;
+	
+*** SELECT nume, prenume, note.valoare FROM studenti JOIN note ON studenti.nr_matricol = note.nr_matricol 
+	WHERE bursa IS NOT NULL;
+	
+*** SELECT nume, prenume, titlu_curs FROM studenti JOIN note ON studenti.nr_matricol = note.nr_matricol
+	JOIN cursuri ON note.id_curs = cursuri.id_curs WHERE note.valoare = 10;
+	
+*** SELECT s.nume, s.prenume, c.titlu_curs FROM studenti s JOIN note n ON s.nr_matricol = n.nr_matricol
+	JOIN cursuri c ON n.id_curs = c.id_curs WHERE n.valoare < 5;
+	
+*** SELECT c.titlu_curs FROM cursuri c JOIN note n ON c.id_curs = n.id_curs WHERE n.valoare = 10
+	MINUS SELECT c.titlu_curs FROM cursuri c JOIN note n ON c.id_curs = n.id_curs WHERE n.valoare = 8;
+	
+*** SELECT s.nume, s.prenume, c.titlu_curs, DECODE(n.valoare, 4, 'DA', 'NU') 
+	FROM studenti s JOIN note n ON s.nr_matricol = n.nr_matricol JOIN cursuri c ON n.id_curs = c.id_curs;
+	
+*** SELECT DISTINCT s.nume, s.prenume FROM studenti s JOIN note n ON s.nr_matricol = n.nr_matricol
+	WHERE TRIM(TO_CHAR(s.data_nastere, 'DD-MM')) = TRIM(TO_CHAR(n.data_notare, 'DD-MM'));
+	
+*** SELECT s.prenume AS "Prenume", s.nume AS "Nume", data_notare AS "Data", n.valoare FROM studenti s
+	JOIN note n ON s.nr_matricol = n.nr_matricol JOIN cursuri c ON n.id_curs = c.id_curs 
+	WHERE n.valoare >= 9 AND TRIM(c.titlu_curs) = 'OOP';
+	
+*** SELECT * FROM studenti NATURAL JOIN cursuri;
+
+Afisati primele trei litere din numele studenţilor care au luat nota 10 la BD.
+SELECT SUBSTR(s.nume,1,3) FROM studenti s JOIN note n ON s.nr_matricol = n.nr_matricol 
+JOIN cursuri c ON c.id_curs = n.id_curs WHERE n.valoare = 10 AND c.titlu_curs = 'BD'; 
+
+*** SELECT s.prenume FROM studenti s JOIN note n ON s.nr_matricol = n.nr_matricol 
+	WHERE s.prenume LIKE '%a' AND n.valoare < 5;
+	
+*** SELECT s.* FROM studenti s LEFT OUTER JOIN note n ON s.nr_matricol = n.nr_matricol WHERE n.valoare IS NULL;
+	
+*** SELECT s.nume AS "numeS", p.nume AS "numeP" FROM studenti s CROSS JOIN profesori p;
+
+*** SELECT UPPER(SUBSTR(TRIM(s.prenume),1,1)) || LOWER(SUBSTR(TRIM(s.prenume),2)) AS "PrenumeS", 
+	UPPER(SUBSTR(TRIM(p.prenume),1,1)) || LOWER(SUBSTR(TRIM(p.prenume),2)) AS "PrenumeP" 
+	FROM studenti s CROSS JOIN profesori p WHERE SUBSTR(s.prenume,1,1) = SUBSTR(p.prenume,1,1);
+	
+*** SELECT TRIM(s.nr_matricol) AS "NRMAT", s.nume AS "NAME" FROM studenti s JOIN note n ON s.nr_matricol = n.nr_matricol 
+	JOIN cursuri c ON c.id_curs = n.id_curs WHERE n.valoare = 9 AND c.titlu_curs = 'Matematica'
+	AND TO_CHAR(n.data_notare, 'day') = 'wednesday'; 
+	
+*** SELECT DISTINCT p.nume, p.prenume FROM profesori p JOIN didactic d ON p.id_prof = d.id_prof
+	LEFT OUTER JOIN cursuri c ON d.id_curs = c.id_curs
+	WHERE TRIM(p.grad_didactic) = 'Lect' OR TRIM(p.grad_didactic) = 'Conf' AND c.titlu_curs IS NOT NULL;
+	
+*** SELECT s.nume, s.prenume, c.titlu_curs FROM studenti s JOIN note n ON s.nr_matricol = n.nr_matricol 
+	JOIN cursuri c ON c.id_curs = n.id_curs WHERE n.valoare = 10 AND TRIM(TO_CHAR(s.data_nastere, 'day')) = 'friday'
+	AND TRIM(TO_CHAR(n.data_notare, 'day')) = 'tuesday';
+	
+*** SELECT NVL(TRIM(p.nume), 'No prof') AS "NUME_PROF", NVL(p.grad_didactic, '*') AS "GRAD_DIDACTIC", 
+	NVL(c.titlu_curs, '*') AS "TITLU_CURS" FROM profesori p 
+	FULL OUTER JOIN didactic d ON p.id_prof = d.id_prof FULL OUTER JOIN cursuri c ON d.id_curs = c.id_curs;
+
+*** SELECT p1.nume, c.titlu_curs FROM profesori p1 JOIN profesori p2 ON p1.id_prof = p2.id_prof
+	LEFT JOIN didactic d ON p1.id_prof = d.id_prof JOIN cursuri c ON d.id_curs = c.id_curs
+	WHERE TRIM(p1.nume) IN ('Masalagiu', 'Ciobaca', 'Breaban', 'Varlan') AND c.titlu_curs IN ('BD', 'Logica');
+	
+*** SELECT UPPER(s.nume) || '_*_' || s.prenume AS "Student", c.titlu_curs AS "Materie" FROM studenti s
+	JOIN note n ON s.nr_matricol = n.nr_matricol JOIN cursuri c ON n.id_curs = c.id_curs
+	WHERE n.valoare = 8 AND MOD(EXTRACT(day FROM data_notare), 2) = 0;
+	
+*** SELECT s.nume AS "Student", p.nume AS "Profesor", c.titlu_curs AS "Licenta" FROM studenti s
+	JOIN note n ON s.nr_matricol = n.nr_matricol JOIN cursuri c ON c.id_curs = n.id_curs
+	JOIN didactic d ON d.id_curs = c.id_curs JOIN profesori p ON d.id_prof = p.id_prof
+	WHERE valoare >= 9 ORDER BY "Student";
+	
+*** SELECT s.nume, s.prenume, n.valoare, 'DA' AS "Restanta" FROM studenti s, note n 
+	WHERE s.nr_matricol = n.nr_matricol AND n.valoare < 5 AND an = 2
+	UNION
+	SELECT s.nume, s.prenume, n.valoare, 'NU' AS "Restanta" FROM studenti s, note n 
+	WHERE s.nr_matricol = n.nr_matricol AND n.valoare >= 5 AND an = 2;
+	
+??? SELECT UPPER(nume), LOWER(prenume), c.titlu_curs, n.valoare FROM studenti s
+	JOIN note n ON s.nr_matricol=n.nr_matricol JOIN cursuri c ON n.id_curs=c.id_curs
+	WHERE n.valoare >= 5 AND TRIM(c.titlu_curs) LIKE 'OOP' AND MOD(TO_NUMBER(SUBSTR(grupa, 2)), 2) = 0
+	UNION
+	SELECT UPPER(nume), LOWER(prenume), c.titlu_curs, n.valoare FROM studenti s
+	JOIN note n ON s.nr_matricol=n.nr_matricol JOIN cursuri c ON n.id_curs=c.id_curs
+	WHERE n.valoare <= 8 AND TRIM(c.titlu_curs) LIKE 'Logica' AND MOD(TO_NUMBER(SUBSTR(grupa, 2)), 2) = 0;
+
+*** select distinct s.nume || '*' || s.prenume AS "NickName", s.DATA_NASTERE as DN 
+	from studenti s join note n on s.nr_matricol=n.nr_matricol where n.valoare>=7
+	minus
+	select distinct s.nume || '*' || s.prenume as "NickName", s.DATA_NASTERE as DN from studenti s 
+	join note n on s.nr_matricol=n.nr_matricol where n.valoare<7 order by "NickName" desc;
+	
+*** SELECT TRIM(p.prenume) FROM profesori p JOIN didactic d ON d.id_prof = p.id_prof
+	JOIN note n ON n.id_curs = d.id_curs WHERE n.valoare = 6 AND MOD(EXTRACT(year FROM data_notare), 2) = 1
+	MINUS
+	SELECT TRIM(p.prenume) FROM profesori p JOIN didactic d ON d.id_prof = p.id_prof
+	JOIN note n ON n.id_curs = d.id_curs WHERE n.valoare = 10 AND MOD(EXTRACT(day FROM data_notare), 2) = 0;
+	
+Afisati numele profesorilor, in coloana "Nume_prof", si cursurile pe care le tine, in coloana "Cursuri". 
+Daca un profesor nu are alocat un curs, afisati "Fara curs".
+SELECT p.nume AS "Nume_prof", NVL(c.titlu_curs, 'Fara curs') AS "Cursuri" FROM profesori p 
+LEFT JOIN didactic d ON d.id_prof = p.id_prof
+LEFT JOIN cursuri c ON d.id_curs = c.id_curs;
+
+*** SELECT p.nume AS "Prenume", p.prenume AS "Nume", c.titlu_curs FROM profesori p
+	JOIN didactic d ON d.id_prof = p.id_prof JOIN cursuri c ON d.id_curs = c.id_curs
+	WHERE c.an = 2 AND c.semestru = 1 AND MOD(credite,2) = 0 AND TRIM(p.nume) LIKE '%n';
+	
+*** SELECT s.*, c.titlu_curs FROM studenti s JOIN note n ON s.nr_matricol = n.nr_matricol
+	JOIN cursuri c ON n.id_curs = c.id_curs WHERE n.valoare >= 6 AND MOD(EXTRACT(day FROM data_notare),2)=0 
+	AND TO_CHAR(data_notare, 'month') <> 'february'; 
+	
+*** select distinct nume ||' '|| prenume from studenti s  join note n on s.nr_matricol=n.nr_matricol 
+	join cursuri c on n.id_curs=c.id_curs where titlu_curs = 'Matematica';
+	
+*** SELECT UPPER(SUBSTR(s.nume,1,1)) || LOWER(SUBSTR(s.nume,2)) AS "S", 
+	UPPER(SUBSTR(p.nume,1,1)) || LOWER(SUBSTR(p.nume,2)) AS "P" FROM studenti s
+	LEFT OUTER JOIN note n on s.nr_matricol=n.nr_matricol CROSS JOIN profesori p
+	LEFT OUTER JOIN didactic d ON p.id_prof = d.id_prof
+	WHERE LENGTH(TRIM(s.nume)) = LENGTH(TRIM(p.nume)) AND n.valoare IS NULL AND d.id_curs IS NULL;
+	
+*** SELECT p.nume, c.titlu_curs, n.data_notare FROM profesori p JOIN didactic d ON d.id_prof = p.id_prof
+	JOIN cursuri c ON d.id_curs = c.id_curs JOIN note n ON c.id_curs = n.id_curs
+	WHERE n.valoare = 10;
+	
+*** select upper(nume)||'&'||prenume|| as "N_P" from studenti s join note n on n.nr_matricol=s.nr_matricol
+	join cursuri c on c.id_curs=n.id_curs where c.titlu_curs like 'BD%' and (n.valoare=4 or n.valoare=6) 
+	and TRIM(to_char(n.data_notare,'day')) = 'tuesday' order by "N_P" desc;
+	
+*** SELECT DISTINCT p.nume, p.prenume, p.grad_didactic FROM profesori p JOIN didactic d ON d.id_prof = p.id_prof
+	JOIN cursuri c ON d.id_curs = c.id_curs JOIN note n ON c.id_curs = n.id_curs
+	WHERE n.valoare = 10 AND p.grad_didactic IS NOT NULL;
+	
+*** SELECT p.prenume || ' ' || p.nume || ' ' || UPPER(REVERSE(c.titlu_curs)) AS "Info" FROM profesori p
+	LEFT OUTER JOIN didactic d ON d.id_prof = p.id_prof LEFT OUTER JOIN cursuri c ON d.id_curs = c.id_curs;
+	
+*** SELECT s.prenume AS "first_name", s.nume AS "last_name", n.data_notare AS "date",
+	n.valoare AS "you_are_lucky" FROM studenti s JOIN note n ON n.nr_matricol=s.nr_matricol
+	WHERE n.valoare >= 5;
+	
+Afisati toate informatiile despre studentii care s-au nascut in 1996 si au macar o nota de 7 la logica.
+SELECT s.* FROM studenti s
+JOIN note n ON n.nr_matricol=s.nr_matricol
+JOIN cursuri c ON c.id_curs=n.id_curs
+WHERE TRIM(c.titlu_curs) = 'Logica' AND n.valoare = 7 AND EXTRACT(year FROM s.data_nastere) = 1996;
+
+*** SELECT s.nume, s.prenume FROM studenti s LEFT OUTER JOIN note n ON n.nr_matricol=s.nr_matricol
+	WHERE MOD(s.nr_matricol, 2) = 0 AND n.valoare IS NULL;
+	
+*** SELECT p.nume, c.titlu_curs FROM profesori p FULL OUTER JOIN didactic d ON d.id_prof = p.id_prof
+	FULL JOIN cursuri c ON d.id_curs = c.id_curs WHERE d.id_prof IS NULL AND d.id_curs IS NULL;
+
+*** SELECT s1.nume || '-' || s2.nume AS "Rivali" FROM studenti s1 CROSS JOIN studenti s2
+	WHERE s1.bursa IS NOT NULL AND s1.grupa LIKE 'A%' AND s2.bursa IS NOT NULL AND s2.grupa LIKE 'B%';
+	
+*** SELECT DISTINCT c.*, p.nume, p.prenume FROM cursuri c JOIN note n ON c.id_curs = n.id_curs
+	JOIN didactic d ON c.id_curs = d.id_curs JOIN profesori p ON d.id_prof = p.id_prof WHERE n.valoare < 5;
+	
+*** SELECT p.nume AS "Profesor", c.titlu_curs AS "Curs" FROM cursuri c
+	JOIN didactic d ON c.id_curs = d.id_curs JOIN profesori p ON d.id_prof = p.id_prof;
+	
+*** SELECT s.nume AS "Studenti", p.nume AS "Profesori" FROM studenti s
+	FULL JOIN note n ON s.nr_matricol = n.nr_matricol FULL JOIN cursuri c ON n.id_curs = c.id_curs
+	FULL JOIN didactic d ON c.id_curs = d.id_curs FULL JOIN profesori p ON d.id_prof = p.id_prof
+	WHERE n.valoare IS NOT NULL AND p.grad_didactic LIKE 'Lect%';
+	
+*** SELECT ln(n.valoare)*c.credite AS "formula" FROM note n FULL JOIN cursuri c ON n.id_curs = c.id_curs
+	WHERE MOD(c.credite,2)=1 AND EXTRACT(day FROM n.data_notare) = 22;
+	
+*** SELECT s.nume, s.prenume, c.titlu_curs FROM studenti s JOIN note n ON n.nr_matricol = s.nr_matricol
+	JOIN cursuri c ON n.id_curs = c.id_curs WHERE c.credite = 8 AND n.valoare < 5;
+	
+*** SELECT s.*, n.* FROM studenti s JOIN note n ON n.nr_matricol = s.nr_matricol
+	WHERE n.valoare > 5 AND n.valoare < 8 AND SUBSTR(grupa,2,1) = '2';
+	
+*** SELECT p.nume || ' ' || c.titlu_curs AS "Prof", DECODE(n.valoare, 4, 'Restantier', 'Promovat') 
+	AS "Situatie" FROM profesori p JOIN didactic d ON d.id_prof = p.id_prof
+	JOIN cursuri c ON d.id_curs = c.id_curs JOIN note n ON c.id_curs = n.id_curs WHERE MOD(c.id_curs,2) = 0;
+	
+*** SELECT c.titlu_curs AS "CursConferentiar" FROM cursuri c
+	JOIN didactic d ON c.id_curs = d.id_curs JOIN profesori p ON p.id_prof = d.id_prof
+	WHERE p.grad_didactic LIKE 'Conf%';
+	
+*** SELECT s.nume, s.prenume FROM studenti s JOIN note n ON n.nr_matricol = s.nr_matricol
+	JOIN cursuri c ON n.id_curs = c.id_curs
+	WHERE c.titlu_curs LIKE 'OOP%' AND n.valoare = 9 AND MOD(EXTRACT(day FROM n.data_notare),2) = 1; 
+	
+*** SELECT s2.nume || ' ' || s2.prenume || ' a luat nota mai mare decat ' || s1.nume || ' ' || s1.prenume || ' la ' || 
+	c.titlu_curs || '.' AS "Raspuns" FROM studenti s1
+	JOIN studenti s2 ON s1.nr_matricol < s2.nr_matricol JOIN note n1 ON n1.nr_matricol = s1.nr_matricol
+	JOIN note n2 ON n2.nr_matricol = s2.nr_matricol JOIN cursuri c ON n1.id_curs = c.id_curs
+	WHERE n1.valoare < n2.valoare;
+	
+*** SELECT DISTINCT p.nume, p.prenume, c.titlu_curs FROM profesori p JOIN didactic d ON d.id_prof = p.id_prof
+	JOIN cursuri c ON d.id_curs = c.id_curs JOIN note n ON c.id_curs = n.id_curs WHERE n.valoare = 10;
+	
+*** SELECT p.nume, p.prenume FROM profesori p FULL JOIN didactic d ON d.id_prof = p.id_prof
+	WHERE d.id_curs IS NULL AND p.grad_didactic IS NULL AND MOD(LENGTH(TRIM(p.nume)),2)=0;
+	
+*** SELECT UPPER(s.nume) || ' ' || UPPER(s.prenume) AS "BD" FROM studenti s
+	FULL JOIN note n ON n.nr_matricol = s.nr_matricol WHERE n.valoare IS NULL;
+	
+*** SELECT p.nume || ' ' || p.prenume AS "NumePrenume", c.titlu_curs FROM profesori p
+	FULL JOIN didactic d ON d.id_prof = p.id_prof FULL JOIN cursuri c ON d.id_curs = c.id_curs
+	WHERE p.grad_didactic NOT LIKE 'Conf%';
+	
+*** SELECT c.titlu_curs FROM cursuri c JOIN note n ON c.id_curs = n.id_curs WHERE n.valoare >= 4 AND n.valoare <= 9;
+	
+*** SELECT UPPER(p.nume) AS "LY" FROM profesori p FULL JOIN didactic d ON d.id_prof = p.id_prof
+	WHERE d.id_curs IS NULL AND MOD(LENGTH(TRIM(p.nume)),2) = 1
+	UNION
+	SELECT LOWER(p.nume) AS "LY" FROM profesori p FULL JOIN didactic d ON d.id_prof = p.id_prof
+	WHERE d.id_curs IS NULL AND MOD(LENGTH(TRIM(p.nume)),2) = 0;
+	
+*** SELECT DISTINCT ASCII(SUBSTR(TRIM(s.nume),3,1)) || s.an || SUBSTR(s.prenume,1,3) AS "Chestiie", 
+	c.credite AS "aTrap ", p.grad_didactic AS "Celsius" FROM studenti s
+	JOIN note n ON n.nr_matricol = s.nr_matricol JOIN cursuri c ON n.id_curs = c.id_curs
+	JOIN didactic d ON d.id_curs = c.id_curs JOIN profesori p ON d.id_prof = p.id_prof
+	WHERE s.an < 3 AND n.valoare > 6;
+	
+*** SELECT s.nume, s.prenume, c.titlu_curs FROM studenti s JOIN note n ON n.nr_matricol = s.nr_matricol
+	JOIN cursuri c ON n.id_curs = c.id_curs WHERE n.valoare = 8;

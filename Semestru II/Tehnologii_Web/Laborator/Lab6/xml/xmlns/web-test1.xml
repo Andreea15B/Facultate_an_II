@@ -1,0 +1,116 @@
+<?xml version="1.0" ?>
+<!-- Document XML care stocheaza enuntul primului test scris dat 
+     la Tehnologii Web in anul universitar 2003/2004 -->
+<examen>
+   <meta>
+      <desc>Primul test scris la Tehnologii Web</desc>
+      <autor email="busaco@infoiasi.ro">Sabin-Corneliu Buraga</autor>
+      <data tip="actualizare">22-11-2003</data>
+      <data tip="creare">21-11-2003</data>
+   </meta>
+   <subiecte>
+      <subiect punctaj="6" id="1">
+         <desc xmlns:h="http://www.w3.org/1999/xhtml">
+            <h:p>Sa se specifice o schema XML care valideaza documentul de fata,
+               tinind cont de urmatoarele:</h:p>
+            <h:ul>
+               <h:li>Orice element 'examen' va include optional maxim 1 element
+                  'meta', dar obligatoriu 1 element 'subiecte', in aceasta
+                  ordine.</h:li>
+               <h:li>Un element 'meta' va putea contine un numar de minim 1
+                  'autor' si o succesiune de elemente 'data'. Valoarea
+                  atributului optional 'email' va trebui sa fie o adresa de
+                  e-mail corecta, iar continutul elementului 'data' o data
+                  calendaristica in formatul DD-LL-AAAA. Valorile permise pentru
+                  atributul obligatoriu 'tip' vor fi doar 'creare' si
+                  'actualizare'. De asemenea, elementul 'autor' va include
+                  obligatoriu 1 element 'desc' care nu va putea avea si alte
+                  elemente, ci doar continut text.</h:li>
+               <h:li>Un element 'subiecte' va include macar 1 element 'subiect'.
+                  Elementul 'subiect' va putea contine cite un element 'desc' cu
+                  continut elemente si atribute XHTML, conform spatiului de nume
+                  specificat. Valoarea atributului obligatoriu 'punctaj' va fi
+                  un numar intreg pozitiv, in intervalul inchis [1-10]. Valoarea
+                  atributului obligatoriu 'id' va fi un numar intreg pozitiv mai
+                  mare ca 0.</h:li>
+               <h:li>De asemenea, elementul 'subiect' va putea avea ca
+                  sub-element elementul vid optional 'dep', care va avea un
+                  atribut obligatoriu 'subiect' cu valoarea un numar intreg mai
+                  mare sau egal ca 0.</h:li>
+            </h:ul>
+         </desc>
+      </subiect>
+      <subiect punctaj="4" id="2">
+         <desc xmlns:h="http://www.w3.org/1999/xhtml">
+            <h:p>Sa se scrie o foaie de stiluri XSL care transforma acest
+               document XML intr-un document XHTML, conform regulilor de mai
+               jos:</h:p>
+            <h:ol type="a">
+               <h:li>Se va genera un tabel continind informatii privitoare la
+                  subiectele propuse, fiecare rind de tabel cuprinzind
+                  informatii despre un subiect, iar celulele rindului vor
+                  include, in ordine: descrierea subiectului, punctajul maxim
+                  acordat, identificatorul subiectului si daca subiectul depinde
+                  de alt subiect (se folosesc informatiile furnizate de
+                  elementul 'dep').</h:li>
+               <h:li>Coloanele care contin punctajul maxim acordat vor avea
+                  culoarea de fundal albastru inchis, textul fiind scris cu alb,
+                  pentru aceasta folosindu-se proprietati CSS specificate intr-o
+                  foaie de stiluri externa. Rindurile de tabel vor avea chenar
+                  numai in partea inferioara a fiecarei celule.</h:li>
+               <h:li>Ultimul rind al tabelului va include doar o singura celula
+                  care va afisa totalul de puncte acordate (suma tuturor
+                  valorilor atributelor 'punctaj' asociate elementelor
+                  'subiect') si media (totalul impartit la numarul de
+                  subiecte).</h:li>
+               <h:li>La finalul documentului se va genera codul (afisabil in
+                  navigator) al unei asertiuni RDF care va specifica faptul ca
+                  valoarea elementului 'autor' este creatorul colectiei de
+                  resurse desemnind subiectele propuse (de exemplu,
+                  Sabin-Corneliu Buraga este creatorul colectiei Bag de
+                  subiecte, fiecare subiect fiind identificat prin 'id'-ul
+                  specificat).</h:li>
+               <h:li>Fontul folosit va fi un font fara serife, de dimensiune
+                  12pt, specificat prin proprietati de stil CSS.</h:li>
+            </h:ol>
+         </desc>
+         <dep subiect="1"/>
+      </subiect>
+      <subiect punctaj="3" id="3">
+         <desc xmlns:h="http://www.w3.org/1999/xhtml">
+            <h:p>Scrieti o foaie de stiluri XSL care genereaza un document WML
+               simplu, astfel incit din 15 in 15 secunde sa fie afisat, prin
+               intermediul unui 'card', continutul fiecarui prim paragraf
+               (element 'h:p') inclus in descrierea fiecarui subiect propus).
+               Primul cuvint al paragrafului va fi afisat ingrosat. </h:p>
+         </desc>
+         <dep subiect="1"/>
+      </subiect>
+      <subiect punctaj="5" id="4">
+         <desc xmlns:h="http://www.w3.org/1999/xhtml">
+            <h:p>Intocmiti o foaie de stiluri XSL care genereaza un script CGI
+               scris in Perl care afiseaza ca lista ordonata descrierea fiecarui
+               subiect si solicita de la utilizator completarea raspunsului via
+               un element 'textarea' pentru fiecare raspuns in parte.</h:p>
+            <h:p>Butonul de tip <h:i>submit</h:i> va putea invoca un script
+               denumit <h:tt>rezolvari.cgi</h:tt>.<h:br/> Care metoda de
+               transfer o considerati optima? Argumentati alegerea facuta.
+            </h:p>
+         </desc>
+         <dep subiect="1"/>
+      </subiect>
+      <subiect punctaj="2" id="5">
+         <desc xmlns:h="http://www.w3.org/1999/xhtml">
+            <h:p>Acest document XML este bine-formatat? Argumentati
+               raspunsul.</h:p>
+            <h:p>Acest document XML este valid? Argumentati raspunsul. </h:p>
+         </desc>
+      </subiect>
+   </subiecte>
+   <!-- Toate subiectele sunt obligatorii, 
+        putind fi folosite orice referinte bibliografice tiparite.
+        Termenul maxim alocat rezolvarii acestui test este de 90 de minute!
+        Punctajul la acest test poate fi de maxim 20 de puncte. 
+        Pentru a asigura promovarea, nota la acest test 
+        trebuie sa fie mai mare de 5 (adica mai mare de 10 puncte). -->
+</examen>

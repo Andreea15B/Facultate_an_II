@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title>HTML + SVG</title>
+ </head>
+ <body>
+  <h1>SVG &icirc;ntr-o pagin&#259; Web</h1>
+
+  <!-- Elemente si atribute SVG incluse in documentul HTML, 
+       recunoscute pe baza spatiului de nume SVG -->
+  <svg width="500" height="200" xmlns="http://www.w3.org/2000/svg">
+    <!-- o zona rectangulara cu colturi rotunjite -->
+    <rect x="50" y="50" rx="7" ry="7" width="450" height="150"
+     style="fill: #00CCEE; stroke: #3333CC;"/>
+    <!-- continut textual -->
+    <text x="70" y="90" 
+          style="stroke: black; fill: gray; font-size: 32pt;">
+     SVG direct &icirc;n browser...
+    </text>
+  <!-- un cerc galben -->
+  <circle cx="400" cy="150" r="33" style="fill: yellow;" />
+  </svg>
+  
+  <p>De utilizat un navigator Web oferind suport nativ pentru SVG.</p>
+</body>
+</html>
